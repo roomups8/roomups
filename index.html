@@ -10,32 +10,17 @@
 
 <style>
 
-/* =========================================================
-   ROOMUPS.in
-   WARM PREMIUM + SOFT 3D
-========================================================= */
-
 :root{
     --bg:#F4F1EA;
-    --bg-soft:#ECE8DF;
     --white:#FFFFFF;
-
     --navy:#1E3A5F;
     --navy-dark:#172F4D;
-    --navy-light:#31577F;
-
     --gold:#D89B4A;
     --gold-dark:#B8792D;
-    --gold-soft:#F4E4CE;
-
     --text:#172033;
     --text-light:#526174;
     --muted:#7B8797;
-
     --border:#E3DED4;
-
-    --shadow:0 15px 35px rgba(38,45,55,.10);
-    --shadow-heavy:0 25px 55px rgba(38,45,55,.15);
 }
 
 *{
@@ -50,12 +35,8 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:
-    radial-gradient(circle at 10% 0%,rgba(216,155,74,.08),transparent 28%),
-    radial-gradient(circle at 90% 15%,rgba(30,58,95,.07),transparent 30%),
-    var(--bg);
+    background:var(--bg);
     color:var(--text);
-    min-height:100vh;
 }
 
 body.modal-open{
@@ -74,21 +55,19 @@ button{
 }
 
 a{
-    color:inherit;
     text-decoration:none;
+    color:inherit;
 }
 
 
-/* =========================================================
-   HEADER
-========================================================= */
+/* ================= HEADER ================= */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(244,241,234,.88);
-    backdrop-filter:blur(16px);
+    background:rgba(244,241,234,.94);
+    backdrop-filter:blur(15px);
     border-bottom:1px solid rgba(30,58,95,.08);
 }
 
@@ -105,7 +84,6 @@ header{
 .logo{
     font-size:26px;
     font-weight:900;
-    letter-spacing:-1px;
     color:var(--navy);
 }
 
@@ -121,16 +99,12 @@ header{
 
 .language-select{
     height:42px;
-    min-width:105px;
     padding:0 30px 0 12px;
-    color:var(--navy);
-    background:var(--white);
+    background:#fff;
     border:1px solid var(--border);
     border-radius:9px;
-    outline:none;
-    font-size:13px;
+    color:var(--navy);
     font-weight:700;
-    box-shadow:0 4px 12px rgba(38,45,55,.06);
 }
 
 .list-property-btn{
@@ -141,46 +115,33 @@ header{
     border-radius:9px;
     font-size:14px;
     font-weight:800;
-    box-shadow:0 8px 18px rgba(30,58,95,.20);
-    transition:.25s;
-}
-
-.list-property-btn:hover{
-    transform:translateY(-2px);
 }
 
 
-/* =========================================================
-   HERO
-========================================================= */
+/* ================= HERO ================= */
 
 .hero{
-    position:relative;
-    overflow:hidden;
-    padding:95px 20px 100px;
+    padding:90px 20px 100px;
+    text-align:center;
     background:
-    radial-gradient(circle at 50% -10%,rgba(216,155,74,.13),transparent 40%),
-    linear-gradient(180deg,#F7F4EE,#F1EEE6);
+        radial-gradient(circle at 50% -10%,rgba(216,155,74,.14),transparent 40%),
+        linear-gradient(180deg,#F7F4EE,#F1EEE6);
 }
 
 .hero-container{
-    position:relative;
-    z-index:2;
     max-width:1200px;
     margin:auto;
-    text-align:center;
 }
 
 .hero-badge{
     display:inline-block;
     padding:9px 16px;
     border-radius:30px;
-    color:var(--navy);
     background:rgba(30,58,95,.06);
-    border:1px solid rgba(30,58,95,.10);
+    color:var(--navy);
     font-size:13px;
     font-weight:800;
-    margin-bottom:22px;
+    margin-bottom:20px;
 }
 
 .hero h1{
@@ -189,7 +150,6 @@ header{
     font-size:54px;
     line-height:1.08;
     letter-spacing:-2px;
-    color:var(--text);
 }
 
 .hero h1 span{
@@ -205,9 +165,7 @@ header{
 }
 
 
-/* =========================================================
-   SEARCH
-========================================================= */
+/* ================= SEARCH ================= */
 
 .search-box{
     max-width:950px;
@@ -217,12 +175,10 @@ header{
     grid-template-columns:1.2fr 1fr 1fr auto;
     gap:8px;
     text-align:left;
+    background:#fff;
     border:1px solid rgba(30,58,95,.10);
     border-radius:16px;
-    background:rgba(255,255,255,.92);
-    box-shadow:
-    0 25px 55px rgba(38,45,55,.13),
-    0 8px 20px rgba(38,45,55,.06);
+    box-shadow:0 20px 50px rgba(38,45,55,.12);
 }
 
 .search-field{
@@ -238,7 +194,6 @@ header{
     color:var(--muted);
     font-weight:800;
     text-transform:uppercase;
-    letter-spacing:.7px;
 }
 
 .search-field select{
@@ -258,13 +213,10 @@ header{
     font-size:14px;
     font-weight:800;
     background:linear-gradient(135deg,var(--gold),var(--gold-dark));
-    box-shadow:0 8px 20px rgba(184,121,45,.25);
 }
 
 
-/* =========================================================
-   SECTIONS
-========================================================= */
+/* ================= SECTIONS ================= */
 
 .section{
     max-width:1200px;
@@ -288,9 +240,7 @@ header{
 }
 
 
-/* =========================================================
-   CATEGORIES
-========================================================= */
+/* ================= CATEGORIES ================= */
 
 .categories{
     display:grid;
@@ -299,9 +249,7 @@ header{
 }
 
 .category-card{
-    position:relative;
-    overflow:hidden;
-    background:linear-gradient(145deg,#FFFFFF,#F8F5EF);
+    background:#fff;
     border:1px solid var(--border);
     border-radius:15px;
     padding:27px 15px;
@@ -311,14 +259,13 @@ header{
 }
 
 .category-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 25px 45px rgba(38,45,55,.13);
+    transform:translateY(-6px);
 }
 
 .category-icon{
     width:56px;
     height:56px;
-    margin:0 auto 15px;
+    margin:auto auto 15px;
     border-radius:15px;
     display:flex;
     align-items:center;
@@ -328,9 +275,9 @@ header{
 }
 
 .category-card h3{
+    color:var(--navy);
     font-size:15px;
     margin-bottom:6px;
-    color:var(--navy);
 }
 
 .category-card p{
@@ -339,9 +286,7 @@ header{
 }
 
 
-/* =========================================================
-   AREAS
-========================================================= */
+/* ================= AREAS ================= */
 
 .areas{
     display:grid;
@@ -352,9 +297,10 @@ header{
 .area-card{
     padding:21px;
     border-radius:13px;
-    background:rgba(255,255,255,.72);
+    background:#fff;
     border:1px solid var(--border);
     box-shadow:0 10px 22px rgba(38,45,55,.06);
+    cursor:pointer;
     transition:.25s;
 }
 
@@ -362,16 +308,9 @@ header{
     transform:translateY(-5px);
 }
 
-.area-number{
-    font-size:10px;
-    color:var(--gold-dark);
-    font-weight:800;
-    margin-bottom:8px;
-}
-
 .area-card h3{
-    font-size:15px;
     color:var(--navy);
+    font-size:15px;
     margin-bottom:6px;
 }
 
@@ -381,9 +320,7 @@ header{
 }
 
 
-/* =========================================================
-   LISTINGS
-========================================================= */
+/* ================= LISTINGS ================= */
 
 .listings{
     display:grid;
@@ -397,12 +334,6 @@ header{
     background:#fff;
     border:1px solid var(--border);
     box-shadow:0 16px 35px rgba(38,45,55,.09);
-    transition:.3s;
-}
-
-.listing-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 28px 55px rgba(38,45,55,.14);
 }
 
 .listing-image{
@@ -411,9 +342,8 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
+    background:#E8E1D4;
     font-size:48px;
-    background:radial-gradient(circle at center,#E8E1D4,#DCD5C8);
-    overflow:hidden;
 }
 
 .listing-image img{
@@ -495,10 +425,15 @@ header{
     font-weight:400;
 }
 
-
-/* =========================================================
-   EMPTY / LOADING
-========================================================= */
+.view-btn{
+    border:none;
+    color:#fff;
+    background:linear-gradient(135deg,var(--navy),var(--navy-dark));
+    padding:10px 16px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:800;
+}
 
 .listing-message{
     grid-column:1/-1;
@@ -511,12 +446,10 @@ header{
 }
 
 
-/* =========================================================
-   HOW IT WORKS
-========================================================= */
+/* ================= HOW IT WORKS ================= */
 
 .how-section{
-    background:linear-gradient(180deg,#EDE9E0,#E8E3D9);
+    background:#EDE9E0;
     border-top:1px solid rgba(30,58,95,.06);
     border-bottom:1px solid rgba(30,58,95,.06);
 }
@@ -531,22 +464,21 @@ header{
     padding:25px;
     text-align:center;
     border-radius:15px;
-    background:rgba(255,255,255,.68);
+    background:#fff;
     border:1px solid rgba(30,58,95,.08);
-    box-shadow:0 12px 25px rgba(38,45,55,.06);
 }
 
 .step-number{
     width:50px;
     height:50px;
-    margin:0 auto 18px;
+    margin:auto auto 15px;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
     color:#fff;
+    background:linear-gradient(135deg,var(--navy),#31577F);
     font-weight:900;
-    background:linear-gradient(145deg,var(--navy),var(--navy-dark));
 }
 
 .step h3{
@@ -561,87 +493,117 @@ header{
 }
 
 
-/* =========================================================
-   OWNER CTA
-========================================================= */
+/* ================= OWNER CTA ================= */
 
 .owner-section{
     padding:80px 20px;
 }
 
 .owner-box{
-    max-width:1160px;
+    max-width:1100px;
     margin:auto;
-    padding:55px;
+    padding:40px;
     border-radius:20px;
+    color:#fff;
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:30px;
-    background:
-    radial-gradient(circle at 85% 20%,rgba(216,155,74,.18),transparent 35%),
-    linear-gradient(145deg,var(--navy),var(--navy-dark));
-    box-shadow:0 25px 60px rgba(30,58,95,.20);
+    background:linear-gradient(135deg,var(--navy),var(--navy-dark));
 }
 
 .owner-box h2{
-    color:#fff;
     font-size:30px;
     margin-bottom:10px;
 }
 
 .owner-box p{
-    max-width:600px;
-    color:#D6DFEA;
+    color:rgba(255,255,255,.75);
+    max-width:650px;
     line-height:1.6;
+    font-size:14px;
 }
 
 .owner-btn{
+    flex-shrink:0;
     border:none;
     padding:14px 20px;
     border-radius:9px;
-    background:#fff;
     color:var(--navy);
-    font-weight:800;
+    background:#fff;
+    font-size:13px;
+    font-weight:900;
 }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* ================= FOOTER ================= */
 
 footer{
-    background:#172B45;
-    padding:55px 20px 25px;
+    background:#172F4D;
     color:#fff;
+    padding:60px 20px 20px;
 }
 
 .footer-container{
     max-width:1200px;
     margin:auto;
     display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:50px;
+    grid-template-columns:2fr 1fr 1.4fr 1fr 1.2fr;
+    gap:45px;
+}
+
+.footer-brand h2{
+    font-size:25px;
+    margin-bottom:12px;
 }
 
 .footer-brand p{
-    max-width:420px;
-    margin-top:12px;
-    color:#B9C6D5;
-    font-size:13px;
+    color:rgba(255,255,255,.65);
+    max-width:450px;
     line-height:1.7;
+    font-size:13px;
+}
+
+.footer-column{
+    display:flex;
+    flex-direction:column;
+    gap:11px;
 }
 
 .footer-column h3{
     font-size:14px;
-    margin-bottom:15px;
+    margin-bottom:2px;
 }
 
 .footer-column a{
-    display:block;
-    color:#B9C6D5;
+    color:rgba(255,255,255,.65);
     font-size:13px;
-    margin-bottom:11px;
+}
+
+.footer-column a:hover{
+    color:#fff;
+}
+
+.footer-founders{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.footer-founder-name{
+    color:rgba(255,255,255,.72);
+    font-size:13px;
+    line-height:1.4;
+}
+
+.footer-email{
+    color:rgba(255,255,255,.72);
+    font-size:13px;
+    word-break:break-word;
+}
+
+.footer-email:hover{
+    color:#fff;
 }
 
 .footer-bottom{
@@ -649,14 +611,14 @@ footer{
     margin:40px auto 0;
     padding-top:20px;
     border-top:1px solid rgba(255,255,255,.10);
-    color:#8FA1B5;
+    color:rgba(255,255,255,.45);
     font-size:11px;
     text-align:center;
 }
 
 
 /* =========================================================
-   MODALS
+   MODAL
 ========================================================= */
 
 .modal-overlay{
@@ -667,7 +629,7 @@ footer{
     align-items:center;
     justify-content:center;
     padding:20px;
-    background:rgba(23,32,51,.60);
+    background:rgba(15,24,37,.65);
     backdrop-filter:blur(8px);
 }
 
@@ -676,64 +638,65 @@ footer{
 }
 
 .property-modal{
-    width:100%;
-    max-width:850px;
+    width:min(900px,100%);
     max-height:92vh;
     overflow-y:auto;
-    border-radius:18px;
+    border-radius:20px;
     background:#fff;
-    box-shadow:0 40px 100px rgba(23,32,51,.30);
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
 }
 
 .modal-header{
     position:sticky;
     top:0;
-    z-index:5;
-    padding:25px 30px;
+    z-index:10;
+    padding:22px 30px;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(15px);
+    align-items:flex-start;
+    background:#fff;
     border-bottom:1px solid var(--border);
 }
 
 .modal-header h2{
     color:var(--navy);
-    font-size:25px;
+    font-size:24px;
 }
 
 .modal-header p{
-    color:var(--muted);
-    font-size:13px;
     margin-top:5px;
+    color:var(--muted);
+    font-size:12px;
 }
 
 .close-modal{
+    border:none;
+    background:#F4F1EA;
+    color:var(--navy);
     width:38px;
     height:38px;
-    border:none;
     border-radius:50%;
-    background:#F2EEE7;
-    color:var(--navy);
     font-size:22px;
 }
 
 .property-form{
-    padding:30px;
+    padding:25px 30px 30px;
 }
 
+
+/* ================= FORM SECTIONS ================= */
+
 .form-section{
-    margin-bottom:32px;
+    margin-bottom:30px;
 }
 
 .form-section-title{
+    margin-bottom:18px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--border);
     color:var(--navy);
     font-size:18px;
-    font-weight:800;
-    padding-bottom:10px;
-    margin-bottom:18px;
-    border-bottom:1px solid var(--border);
+    font-weight:900;
 }
 
 .form-grid{
@@ -754,25 +717,25 @@ footer{
 
 .form-group label{
     color:var(--text);
-    font-size:13px;
-    font-weight:700;
+    font-size:12px;
+    font-weight:800;
 }
 
 .required{
-    color:#D9534F;
+    color:#C44343;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
     width:100%;
-    padding:12px 13px;
-    border-radius:8px;
+    padding:13px;
+    border:1px solid #DCD7CD;
+    border-radius:9px;
     outline:none;
-    border:1px solid var(--border);
-    background:#FAF8F4;
     color:var(--text);
-    font-size:14px;
+    background:#fff;
+    font-size:13px;
 }
 
 .form-group textarea{
@@ -780,41 +743,50 @@ footer{
     resize:vertical;
 }
 
-.helper-text{
-    color:var(--muted);
-    font-size:10px;
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(216,155,74,.12);
 }
 
 
-/* =========================================================
-   LOCATION
-========================================================= */
+/* ================= AVAILABILITY ================= */
+
+.availability-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:17px;
+}
+
+
+/* ================= LOCATION ================= */
 
 .location-box{
     padding:18px;
     border-radius:12px;
-    background:linear-gradient(145deg,#F8F4EC,#F1ECE3);
-    border:1px solid var(--border);
+    border:1px solid #DCD7CD;
+    background:#FAF8F3;
 }
 
 .location-box-title{
     color:var(--navy);
     font-size:14px;
-    font-weight:800;
-    margin-bottom:6px;
+    font-weight:900;
+    margin-bottom:7px;
 }
 
 .location-box-description{
     color:var(--text-light);
     font-size:12px;
-    line-height:1.5;
+    line-height:1.6;
     margin-bottom:14px;
 }
 
 .location-buttons{
     display:flex;
-    gap:10px;
     flex-wrap:wrap;
+    gap:10px;
 }
 
 .location-btn{
@@ -832,45 +804,30 @@ footer{
 
 .maps-btn{
     color:var(--navy);
-    background:#fff;
-    border:1px solid var(--border);
+    background:#E8EDF2;
 }
 
 .maps-btn:disabled{
-    opacity:.4;
+    opacity:.45;
     cursor:not-allowed;
 }
 
 .location-status{
-    display:none;
-    margin-top:12px;
-    padding:10px;
-    border-radius:7px;
+    margin-top:10px;
+    color:var(--text-light);
     font-size:12px;
 }
 
-.location-status.success{
-    display:block;
-    color:#24703A;
-    background:#EAF5EC;
-}
-
-.location-status.error{
-    display:block;
-    color:#A63B38;
-    background:#FBEAEA;
-}
-
 .coordinates{
+    margin-top:13px;
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:10px;
-    margin-top:12px;
 }
 
 .coordinate-box{
-    padding:9px;
-    border-radius:7px;
+    padding:10px;
+    border-radius:8px;
     background:#fff;
     border:1px solid var(--border);
 }
@@ -879,7 +836,7 @@ footer{
     display:block;
     color:var(--muted);
     font-size:9px;
-    margin-bottom:3px;
+    margin-bottom:4px;
 }
 
 .coordinate-box strong{
@@ -888,201 +845,266 @@ footer{
 }
 
 
-/* =========================================================
-   FACILITIES
-========================================================= */
+/* ================= FACILITIES ================= */
 
 .checkbox-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    width:100%;
+    gap:9px;
 }
 
 .checkbox-item{
-    min-height:40px;
-    width:100%;
     display:flex;
     align-items:center;
-    gap:10px;
-    padding:9px 11px;
-    border-radius:8px;
-    background:#FAF8F4;
+    gap:8px;
+    padding:10px;
     border:1px solid var(--border);
-    color:var(--text);
+    border-radius:8px;
     font-size:12px;
-    font-weight:700;
-    cursor:pointer;
+    background:#fff;
 }
 
 .checkbox-item input{
-    width:15px;
-    height:15px;
-    accent-color:var(--navy);
+    width:auto;
 }
 
 
-/* =========================================================
-   FOOD
-========================================================= */
+/* ================= FOOD ================= */
 
-#foodOptions{
-    grid-column:1/-1;
+.food-extra{
     display:none;
-    grid-template-columns:repeat(3,1fr);
-    gap:17px;
-    width:100%;
+    margin-top:17px;
+}
+
+.food-extra.active{
+    display:block;
 }
 
 
-/* =========================================================
-   PHOTOS
-========================================================= */
+/* ================= PHOTOS ================= */
 
 .photo-upload{
-    padding:28px;
+    padding:25px;
+    border:2px dashed #D8D1C5;
+    border-radius:12px;
+    background:#FAF8F3;
     text-align:center;
-    border:2px dashed #D9D2C6;
-    border-radius:11px;
-    background:#FAF8F4;
-    cursor:pointer;
 }
 
 .photo-upload-icon{
-    font-size:30px;
-    margin-bottom:8px;
-}
-
-.photo-upload strong{
-    display:block;
-    color:var(--navy);
-    font-size:14px;
-    margin-bottom:5px;
-}
-
-.photo-upload span{
-    color:var(--muted);
-    font-size:11px;
-}
-
-.photo-preview{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    margin-top:12px;
-}
-
-.photo-preview img{
-    width:100%;
-    height:90px;
-    object-fit:cover;
-    border-radius:7px;
-}
-
-
-/* =========================================================
-   DECLARATION
-========================================================= */
-
-.declaration{
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-    padding:15px;
-    border-radius:9px;
-    background:#FAF8F4;
-    border:1px solid var(--border);
-}
-
-.declaration input{
-    margin-top:3px;
-    accent-color:var(--navy);
-}
-
-.declaration label{
-    color:var(--text-light);
-    font-size:11px;
-    line-height:1.6;
-}
-
-
-/* =========================================================
-   FORM ACTIONS
-========================================================= */
-
-.form-actions{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:12px;
-    padding-top:20px;
-    border-top:1px solid var(--border);
-}
-
-.cancel-btn{
-    padding:12px 18px;
-    border-radius:8px;
-    color:var(--navy);
-    background:#F4F0E8;
-    border:1px solid var(--border);
-    font-weight:700;
-}
-
-.submit-property-btn{
-    border:none;
-    padding:13px 22px;
-    border-radius:8px;
-    color:#fff;
-    background:linear-gradient(135deg,var(--navy),var(--navy-dark));
-    font-weight:800;
-}
-
-
-/* =========================================================
-   SUCCESS
-========================================================= */
-
-.success-message{
-    display:none;
-    text-align:center;
-    padding:60px 30px;
-}
-
-.success-icon{
-    width:70px;
-    height:70px;
-    margin:0 auto 20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    color:#24703A;
-    background:#E8F4EA;
     font-size:35px;
-}
-
-.success-message h2{
-    color:var(--navy);
-    font-size:25px;
     margin-bottom:10px;
 }
 
-.success-message p{
-    color:var(--text-light);
-    font-size:13px;
-    line-height:1.7;
+.photo-upload-title{
+    color:var(--navy);
+    font-size:14px;
+    font-weight:900;
+    margin-bottom:6px;
 }
 
-.success-close-btn{
-    margin-top:25px;
-    padding:12px 20px;
+.photo-upload-subtitle{
+    color:var(--muted);
+    font-size:11px;
+    margin-bottom:15px;
+}
+
+.file-input{
+    width:100%;
+}
+
+
+/* ================= CONFIRMATION ================= */
+
+.confirmation-box{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    padding:15px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    background:#FAF8F3;
+}
+
+.confirmation-box input{
+    margin-top:2px;
+}
+
+.confirmation-box label{
+    color:var(--text-light);
+    font-size:11px;
+    line-height:1.6;
+    font-weight:500;
+}
+
+
+/* ================= SUBMIT ================= */
+
+.submit-property-btn{
+    width:100%;
     border:none;
-    border-radius:8px;
+    padding:16px;
+    border-radius:10px;
     color:#fff;
-    background:var(--navy);
+    background:linear-gradient(135deg,var(--navy),var(--navy-dark));
+    font-size:14px;
+    font-weight:900;
+}
+
+.submit-property-btn:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+
+/* ================= SEARCH RESULT ================= */
+
+.search-result-bar{
+    max-width:1200px;
+    margin:-35px auto 0;
+    padding:0 20px;
+    position:relative;
+    z-index:10;
+    display:none;
+}
+
+.search-result-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:14px 18px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:#fff;
+}
+
+.search-result-text{
+    color:var(--text-light);
+    font-size:13px;
+    font-weight:700;
+}
+
+.clear-search-btn{
+    border:none;
+    padding:8px 12px;
+    border-radius:7px;
+    color:var(--navy);
+    background:#F1EEE6;
+    font-size:11px;
     font-weight:800;
 }
 
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .search-box{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .categories{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .areas{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .listings{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:650px){
+
+    .navbar{
+        height:68px;
+        padding:0 14px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .language-select{
+        display:none;
+    }
+
+    .list-property-btn{
+        padding:10px 12px;
+        font-size:11px;
+    }
+
+    .hero{
+        padding:70px 15px 75px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .search-box{
+        grid-template-columns:1fr;
+    }
+
+    .search-field{
+        border-right:none;
+        border-bottom:1px solid rgba(30,58,95,.08);
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .areas{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .listings{
+        grid-template-columns:1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .owner-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .owner-btn{
+        width:100%;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .availability-grid{
+        grid-template-columns:1fr;
+    }
+
+    .checkbox-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .property-form{
+        padding:20px;
+    }
+
+}
 
 /* =========================================================
    ADMIN
@@ -1273,12 +1295,6 @@ footer{
     color:#A63B38;
 }
 
-.remove-btn{ background:#FBE5E4; color:#A63B38; }
-.approved-badge{height:max-content;padding:6px 9px;border-radius:20px;background:#E4F3E7;color:#24703A;font-size:10px;font-weight:800;}
-.admin-section{margin-top:28px;}
-.admin-section-header{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;}
-.admin-section-title{color:var(--navy);font-size:18px;font-weight:800;}
-
 .maps-admin-btn{
     background:#E7EDF5;
     color:var(--navy);
@@ -1451,6 +1467,8 @@ footer{
 
 }
 
+
+
 </style>
 
 </head>
@@ -1465,37 +1483,42 @@ footer{
 
 <header>
 
-<nav class="navbar">
+<div class="navbar">
 
-<a href="#" class="logo">
+<div class="logo">
 Room<span>Ups</span>
-</a>
+</div>
 
 <div class="nav-actions">
 
 <select
-id="languageSelector"
 class="language-select"
+id="languageSelect"
 onchange="changeLanguage(this.value)">
 
-<option value="en">English</option>
-<option value="hi">हिन्दी</option>
-<option value="hinglish">Hinglish</option>
+<option value="en">
+English
+</option>
+
+<option value="hi">
+हिन्दी
+</option>
 
 </select>
 
+
 <button
 class="list-property-btn"
-id="listPropertyButton"
+type="button"
 onclick="openPropertyModal()">
 
-+ List Your Property
+List Your Property
 
 </button>
 
 </div>
 
-</nav>
+</div>
 
 </header>
 
@@ -1508,33 +1531,58 @@ onclick="openPropertyModal()">
 
 <div class="hero-container">
 
-<div class="hero-badge" id="heroBadge">
-Made for Students in Dharamshala
+<div class="hero-badge">
+🎓 Built for students in Dharamshala
 </div>
 
-<h1 id="heroTitle">
-Find your next <span>destination</span> in Dharamshala.
+<h1>
+Find your <span>Room, PG & Stay</span> easily.
 </h1>
 
-<p id="heroDescription">
-Find student-friendly rooms, PGs, flats, shared accommodation and food services in one place.
+<p>
+Search verified rooms, PGs, flats and student-friendly
+accommodation across Dharamshala — all in one place.
 </p>
 
 
 <div class="search-box">
 
+
 <div class="search-field">
 
-<label>Looking For</label>
+<label>
+Looking For
+</label>
 
 <select id="searchType">
 
-<option value="all">Anything</option>
-<option value="room">Single Room</option>
-<option value="pg">PG</option>
-<option value="1bhk">1BHK / 1RK</option>
-<option value="shared">Shared Room</option>
-<option value="food">Mess / Tiffin</option>
+<option value="">
+Any Type
+</option>
+
+<option value="Room">
+Room
+</option>
+
+<option value="PG">
+PG
+</option>
+
+<option value="1BHK">
+1BHK
+</option>
+
+<option value="Flat">
+Flat
+</option>
+
+<option value="Hostel">
+Hostel
+</option>
+
+<option value="Shared Room">
+Shared Room
+</option>
 
 </select>
 
@@ -1543,40 +1591,107 @@ Find student-friendly rooms, PGs, flats, shared accommodation and food services 
 
 <div class="search-field">
 
-<label>Location</label>
+<label>
+Location
+</label>
 
-<select id="searchLocation">
+<select id="searchArea">
 
-<option value="all">All Areas</option>
+<option value="">
+Any Area
+</option>
 
-<option value="dari">Dari</option>
-<option value="sidhpur">Sidhpur</option>
-<option value="sidhbari">Sidhbari</option>
-<option value="rakkar">Rakkar</option>
-<option value="ram-nagar">Ram Nagar</option>
-<option value="kotwali-bazar">Kotwali Bazar</option>
-<option value="kacheri">Kacheri / Kacheri Adda</option>
-<option value="civil-lines">Civil Lines</option>
-<option value="jawahar-nagar">Jawahar Nagar</option>
-<option value="sakoh">Sakoh</option>
-<option value="shamnagar">Shamnagar</option>
-<option value="darnu">Darnu</option>
-<option value="sheela">Sheela / Sheela Chowk</option>
-<option value="sudher">Sudher</option>
-<option value="chilgari">Chilgari</option>
-<option value="mcleod-ganj">McLeod Ganj</option>
-<option value="bhagsunag">Bhagsunag / Bhagsu</option>
-<option value="dharamkot">Dharamkot</option>
-<option value="naddi">Naddi</option>
-<option value="forsyth-ganj">Forsyth Ganj</option>
-<option value="jogiwara">Jogiwara</option>
-<option value="dal-lake">Dal Lake Area</option>
-<option value="khanyara">Khanyara</option>
-<option value="tang-narwana">Tang Narwana</option>
-<option value="yol">Yol</option>
-<option value="sokni-da-kot">Sokni Da Kot</option>
-<option value="narwana">Narwana</option>
-<option value="shahpur">Shahpur</option>
+<option value="Kotwali Bazar">
+Kotwali Bazar
+</option>
+
+<option value="Kacheri / Kacheri Adda">
+Kacheri / Kacheri Adda
+</option>
+
+<option value="Civil Lines">
+Civil Lines
+</option>
+
+<option value="Jawahar Nagar">
+Jawahar Nagar
+</option>
+
+<option value="Sakoh">
+Sakoh
+</option>
+
+<option value="Shamnagar">
+Shamnagar
+</option>
+
+<option value="Darnu">
+Darnu
+</option>
+
+<option value="Sheela / Sheela Chowk">
+Sheela / Sheela Chowk
+</option>
+
+<option value="Sudher">
+Sudher
+</option>
+
+<option value="Chilgari">
+Chilgari
+</option>
+
+<option value="McLeod Ganj">
+McLeod Ganj
+</option>
+
+<option value="Bhagsunag / Bhagsu">
+Bhagsunag / Bhagsu
+</option>
+
+<option value="Dharamkot">
+Dharamkot
+</option>
+
+<option value="Naddi">
+Naddi
+</option>
+
+<option value="Forsyth Ganj">
+Forsyth Ganj
+</option>
+
+<option value="Jogiwara">
+Jogiwara
+</option>
+
+<option value="Dal Lake Area">
+Dal Lake Area
+</option>
+
+<option value="Khanyara">
+Khanyara
+</option>
+
+<option value="Tang Narwana">
+Tang Narwana
+</option>
+
+<option value="Yol">
+Yol
+</option>
+
+<option value="Sokni Da Kot">
+Sokni Da Kot
+</option>
+
+<option value="Narwana">
+Narwana
+</option>
+
+<option value="Shahpur">
+Shahpur
+</option>
 
 </select>
 
@@ -1585,21 +1700,31 @@ Find student-friendly rooms, PGs, flats, shared accommodation and food services 
 
 <div class="search-field">
 
-<label>Budget</label>
+<label>
+Budget
+</label>
 
 <select id="searchBudget">
 
-<option value="all">Any Budget</option>
+<option value="">
+Any Budget
+</option>
 
-<option value="3000-4000">₹3,000 – ₹4,000</option>
-<option value="4000-5000">₹4,000 – ₹5,000</option>
-<option value="5000-6000">₹5,000 – ₹6,000</option>
-<option value="6000-7000">₹6,000 – ₹7,000</option>
-<option value="7000-8000">₹7,000 – ₹8,000</option>
-<option value="8000-9000">₹8,000 – ₹9,000</option>
-<option value="9000-10000">₹9,000 – ₹10,000</option>
-<option value="10000-11000">₹10,000 – ₹11,000</option>
-<option value="11000-12000">₹11,000 – ₹12,000</option>
+<option value="0-4000">
+Under ₹4,000
+</option>
+
+<option value="4000-6000">
+₹4,000 – ₹6,000
+</option>
+
+<option value="6000-8000">
+₹6,000 – ₹8,000
+</option>
+
+<option value="8000-99999999">
+Above ₹8,000
+</option>
 
 </select>
 
@@ -1608,17 +1733,48 @@ Find student-friendly rooms, PGs, flats, shared accommodation and food services 
 
 <button
 class="search-btn"
-onclick="searchListings()">
+type="button"
+id="searchButton">
 
 Search
 
 </button>
+
 
 </div>
 
 </div>
 
 </section>
+
+
+<!-- =========================================================
+     SEARCH RESULT
+========================================================= -->
+
+<div
+class="search-result-bar"
+id="searchResultBar">
+
+<div class="search-result-inner">
+
+<div
+class="search-result-text"
+id="searchResultText">
+</div>
+
+<button
+class="clear-search-btn"
+type="button"
+onclick="clearSearch()">
+
+Clear Search
+
+</button>
+
+</div>
+
+</div>
 
 
 <!-- =========================================================
@@ -1629,68 +1785,104 @@ Search
 
 <div class="section-heading">
 
-<h2>What are you looking for?</h2>
+<h2>
+What are you looking for?
+</h2>
 
-<p>Find the right option based on your needs.</p>
+<p>
+Choose the type of accommodation that suits you.
+</p>
 
 </div>
 
 
 <div class="categories">
 
-<div class="category-card" onclick="selectCategory('room')">
 
-<div class="category-icon">🛏️</div>
+<div class="category-card">
 
-<h3>Single Rooms</h3>
+<div class="category-icon">
+🏠
+</div>
 
-<p>Private rooms</p>
+<h3>
+Rooms
+</h3>
+
+<p>
+Single & private rooms
+</p>
 
 </div>
 
 
-<div class="category-card" onclick="selectCategory('pg')">
+<div class="category-card">
 
-<div class="category-icon">🏠</div>
+<div class="category-icon">
+🏢
+</div>
 
-<h3>PGs</h3>
+<h3>
+PGs
+</h3>
 
-<p>Student-friendly PGs</p>
+<p>
+Student-friendly PGs
+</p>
 
 </div>
 
 
-<div class="category-card" onclick="selectCategory('1bhk')">
+<div class="category-card">
 
-<div class="category-icon">🏡</div>
+<div class="category-icon">
+🏡
+</div>
 
-<h3>1BHK / 1RK</h3>
+<h3>
+Flats
+</h3>
 
-<p>Independent spaces</p>
+<p>
+1BHK & shared flats
+</p>
 
 </div>
 
 
-<div class="category-card" onclick="selectCategory('shared')">
+<div class="category-card">
 
-<div class="category-icon">👥</div>
+<div class="category-icon">
+🛏️
+</div>
 
-<h3>Shared Rooms</h3>
+<h3>
+Hostels
+</h3>
 
-<p>Save on rent</p>
+<p>
+Affordable student stays
+</p>
 
 </div>
 
 
-<div class="category-card" onclick="selectCategory('food')">
+<div class="category-card">
 
-<div class="category-icon">🍱</div>
+<div class="category-icon">
+🍱
+</div>
 
-<h3>Mess & Tiffin</h3>
+<h3>
+Food
+</h3>
 
-<p>Student food</p>
+<p>
+Mess & tiffin services
+</p>
 
 </div>
+
 
 </div>
 
@@ -1705,10 +1897,13 @@ Search
 
 <div class="section-heading">
 
-<h2>Explore areas in Dharamshala</h2>
+<h2>
+Explore areas
+</h2>
 
 <p>
-Find rooms, PGs and other student services across Dharamshala and nearby areas.
+Find accommodation in popular areas around Dharamshala.
+Click an area to see available listings.
 </p>
 
 </div>
@@ -1716,61 +1911,144 @@ Find rooms, PGs and other student services across Dharamshala and nearby areas.
 
 <div class="areas">
 
-<div class="area-card"><div class="area-number">AREA 01</div><h3>Dari</h3><p>Student accommodation</p></div>
 
-<div class="area-card"><div class="area-number">AREA 02</div><h3>Sidhpur</h3><p>Residential area</p></div>
+<div class="area-card" data-area="Kotwali Bazar">
+<h3>Kotwali Bazar</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 03</div><h3>Sidhbari</h3><p>Residential area</p></div>
 
-<div class="area-card"><div class="area-number">AREA 04</div><h3>Rakkar</h3><p>Affordable options</p></div>
+<div class="area-card" data-area="Kacheri / Kacheri Adda">
+<h3>Kacheri / Kacheri Adda</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 05</div><h3>Ram Nagar</h3><p>Residential area</p></div>
 
-<div class="area-card"><div class="area-number">AREA 06</div><h3>Kotwali Bazar</h3><p>Central location</p></div>
+<div class="area-card" data-area="Civil Lines">
+<h3>Civil Lines</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 07</div><h3>Kacheri / Kacheri Adda</h3><p>Central Dharamshala</p></div>
 
-<div class="area-card"><div class="area-number">AREA 08</div><h3>Civil Lines</h3><p>Central area</p></div>
+<div class="area-card" data-area="Jawahar Nagar">
+<h3>Jawahar Nagar</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 09</div><h3>Jawahar Nagar</h3><p>Residential area</p></div>
 
-<div class="area-card"><div class="area-number">AREA 10</div><h3>Sakoh</h3><p>Student-friendly area</p></div>
+<div class="area-card" data-area="Sakoh">
+<h3>Sakoh</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 11</div><h3>Shamnagar</h3><p>Residential area</p></div>
 
-<div class="area-card"><div class="area-number">AREA 12</div><h3>Darnu</h3><p>Local residential area</p></div>
+<div class="area-card" data-area="Shamnagar">
+<h3>Shamnagar</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 13</div><h3>Sheela / Sheela Chowk</h3><p>Nearby accommodation</p></div>
 
-<div class="area-card"><div class="area-number">AREA 14</div><h3>Sudher</h3><p>Residential area</p></div>
+<div class="area-card" data-area="Darnu">
+<h3>Darnu</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 15</div><h3>Chilgari</h3><p>Local area</p></div>
 
-<div class="area-card"><div class="area-number">AREA 16</div><h3>McLeod Ganj</h3><p>Upper Dharamshala</p></div>
+<div class="area-card" data-area="Sheela / Sheela Chowk">
+<h3>Sheela / Sheela Chowk</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 17</div><h3>Bhagsunag / Bhagsu</h3><p>Upper Dharamshala</p></div>
 
-<div class="area-card"><div class="area-number">AREA 18</div><h3>Dharamkot</h3><p>Upper Dharamshala</p></div>
+<div class="area-card" data-area="Sudher">
+<h3>Sudher</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 19</div><h3>Naddi</h3><p>Upper Dharamshala</p></div>
 
-<div class="area-card"><div class="area-number">AREA 20</div><h3>Forsyth Ganj</h3><p>McLeod Ganj side</p></div>
+<div class="area-card" data-area="Chilgari">
+<h3>Chilgari</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 21</div><h3>Jogiwara</h3><p>Upper Dharamshala</p></div>
 
-<div class="area-card"><div class="area-number">AREA 22</div><h3>Dal Lake Area</h3><p>Upper Dharamshala</p></div>
+<div class="area-card" data-area="McLeod Ganj">
+<h3>McLeod Ganj</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 23</div><h3>Khanyara</h3><p>Nearby area</p></div>
 
-<div class="area-card"><div class="area-number">AREA 24</div><h3>Tang Narwana</h3><p>Nearby area</p></div>
+<div class="area-card" data-area="Bhagsunag / Bhagsu">
+<h3>Bhagsunag / Bhagsu</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 25</div><h3>Yol</h3><p>Nearby area</p></div>
 
-<div class="area-card"><div class="area-number">AREA 26</div><h3>Sokni Da Kot</h3><p>Nearby area</p></div>
+<div class="area-card" data-area="Dharamkot">
+<h3>Dharamkot</h3>
+<p>Explore listings</p>
+</div>
 
-<div class="area-card"><div class="area-number">AREA 27</div><h3>Narwana</h3><p>Nearby area</p></div>
 
-<div class="area-card"><div class="area-number">AREA 28</div><h3>Shahpur</h3><p>Nearby area</p></div>
+<div class="area-card" data-area="Naddi">
+<h3>Naddi</h3>
+<p>Explore listings</p>
+</div>
+
+
+<div class="area-card" data-area="Forsyth Ganj">
+<h3>Forsyth Ganj</h3>
+<p>Explore listings</p>
+</div>
+
+
+<div class="area-card" data-area="Jogiwara">
+<h3>Jogiwara</h3>
+<p>Explore listings</p>
+</div>
+
+
+<div class="area-card" data-area="Dal Lake Area">
+<h3>Dal Lake Area</h3>
+<p>Explore listings</p>
+</div>
+
+
+<div class="area-card" data-area="Khanyara">
+<h3>Khanyara</h3>
+<p>Explore listings</p>
+</div>
+
+
+<div class="area-card" data-area="Tang Narwana">
+<h3>Tang Narwana</h3>
+<p>Explore listings</p>
+</div>
+
+
+<div class="area-card" data-area="Yol">
+<h3>Yol</h3>
+<p>Explore listings</p>
+</div>
+
+
+<div class="area-card" data-area="Sokni Da Kot">
+<h3>Sokni Da Kot</h3>
+<p>Explore listings</p>
+</div>
+
+
+<div class="area-card" data-area="Narwana">
+<h3>Narwana</h3>
+<p>Explore listings</p>
+</div>
+
+
+<div class="area-card" data-area="Shahpur">
+<h3>Shahpur</h3>
+<p>Explore listings</p>
+</div>
+
 
 </div>
 
@@ -1781,11 +2059,15 @@ Find rooms, PGs and other student services across Dharamshala and nearby areas.
      LISTINGS
 ========================================================= -->
 
-<section class="section" id="properties">
+<section
+class="section"
+id="properties">
 
 <div class="section-heading">
 
-<h2>Available accommodation</h2>
+<h2>
+Available accommodation
+</h2>
 
 <p>
 Only approved RoomUps listings are displayed here.
@@ -1793,9 +2075,12 @@ Only approved RoomUps listings are displayed here.
 
 </div>
 
-<div class="listings" id="listingContainer">
 
-<div class="listing-message" id="listingMessage">
+<div
+class="listings"
+id="listingContainer">
+
+<div class="listing-message">
 Loading approved listings...
 </div>
 
@@ -1814,20 +2099,29 @@ Loading approved listings...
 
 <div class="section-heading">
 
-<h2>How RoomUps works</h2>
+<h2>
+How RoomUps works
+</h2>
 
-<p>Finding a place should be simple.</p>
+<p>
+Finding a place should be simple.
+</p>
 
 </div>
 
 
 <div class="steps">
 
+
 <div class="step">
 
-<div class="step-number">1</div>
+<div class="step-number">
+1
+</div>
 
-<h3>Search</h3>
+<h3>
+Search
+</h3>
 
 <p>
 Choose your budget, location, room type and requirements.
@@ -1838,9 +2132,13 @@ Choose your budget, location, room type and requirements.
 
 <div class="step">
 
-<div class="step-number">2</div>
+<div class="step-number">
+2
+</div>
 
-<h3>Compare</h3>
+<h3>
+Compare
+</h3>
 
 <p>
 Compare rent, amenities, location and availability.
@@ -1851,15 +2149,20 @@ Compare rent, amenities, location and availability.
 
 <div class="step">
 
-<div class="step-number">3</div>
+<div class="step-number">
+3
+</div>
 
-<h3>Contact</h3>
+<h3>
+Contact
+</h3>
 
 <p>
 Contact the owner directly through call or WhatsApp.
 </p>
 
 </div>
+
 
 </div>
 
@@ -1878,18 +2181,21 @@ Contact the owner directly through call or WhatsApp.
 
 <div>
 
-<h2>Have a room or PG?</h2>
+<h2>
+Have a room or PG?
+</h2>
 
 <p>
 List your property for free on RoomUps.
-Your listing will first go through verification
-and will only become public after approval.
+Your listing will be reviewed before it appears on the website.
 </p>
 
 </div>
 
+
 <button
 class="owner-btn"
+type="button"
 onclick="openPropertyModal()">
 
 List Your Property →
@@ -1909,14 +2215,17 @@ List Your Property →
 
 <div class="footer-container">
 
+
 <div class="footer-brand">
 
-<h2>RoomUps</h2>
+<h2>
+RoomUps
+</h2>
 
 <p>
-RoomUps is a student-focused platform helping
-students find rooms, PGs, flats, shared accommodation
-and food services in Dharamshala.
+RoomUps is a student-focused platform helping students
+find rooms, PGs, flats, shared accommodation and food
+services in Dharamshala.
 </p>
 
 </div>
@@ -1924,18 +2233,92 @@ and food services in Dharamshala.
 
 <div class="footer-column">
 
-<h3>Explore</h3>
+<h3>
+Explore
+</h3>
 
-<a href="#properties">Rooms & PGs</a>
-<a href="#properties">Areas</a>
-<a href="#properties">Food</a>
+<a href="#properties">
+Rooms & PGs
+</a>
+
+<a href="#properties">
+Areas
+</a>
+
+<a href="#properties">
+Food
+</a>
 
 </div>
 
 
 <div class="footer-column">
 
-<h3>For Owners</h3>
+<h3>
+Co-Founders
+</h3>
+
+<div class="footer-founders">
+
+<div class="footer-founder-name">
+Dhiraj Kumar Gupta
+</div>
+
+<div class="footer-founder-name">
+Harsh Thakur
+</div>
+
+<div class="footer-founder-name">
+Rishi Kapoor
+</div>
+
+<div class="footer-founder-name">
+Neeraj Kapoor
+</div>
+
+<div class="footer-founder-name">
+Vipul Verma
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+For Owners
+</h3>
+
+<a
+    href="#"
+    onclick="openPropertyModal();return false;">
+    List Property
+</a>
+
+<a
+    href="#"
+    onclick="openAdminPanel();return false;">
+    Admin
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+Contact Us
+</h3>
+
+<a
+class="footer-email"
+href="mailto:roomups8@gmail.com">
+
+roomups8@gmail.com
+
+</a>
 
 <a
 href="#"
@@ -1945,15 +2328,8 @@ List Property
 
 </a>
 
-<a
-href="#"
-onclick="openAdminPanel();return false;">
-
-Admin
-
-</a>
-
 </div>
+
 
 </div>
 
@@ -1967,8 +2343,9 @@ Admin
 </footer>
 
 
+
 <!-- =========================================================
-     PROPERTY MODAL
+     LIST YOUR PROPERTY MODAL
 ========================================================= -->
 
 <div
@@ -1976,13 +2353,17 @@ class="modal-overlay"
 id="propertyModal"
 onclick="closeModalOutside(event)">
 
+
 <div class="property-modal">
+
 
 <div class="modal-header">
 
 <div>
 
-<h2>List Your Property</h2>
+<h2>
+List Your Property
+</h2>
 
 <p>
 Submit your property for verification.
@@ -1990,8 +2371,10 @@ Submit your property for verification.
 
 </div>
 
+
 <button
 class="close-modal"
+type="button"
 onclick="closePropertyModal()">
 
 ×
@@ -2007,7 +2390,9 @@ id="propertyForm"
 onsubmit="submitProperty(event)">
 
 
-<!-- BASIC -->
+<!-- =====================================================
+     1. PROPERTY / SERVICE TYPE
+===================================================== -->
 
 <div class="form-section">
 
@@ -2016,29 +2401,53 @@ onsubmit="submitProperty(event)">
 </div>
 
 
-<div class="form-grid">
-
-<div class="form-group full">
+<div class="form-group">
 
 <label>
 Property / Service Type
 <span class="required">*</span>
 </label>
 
+
 <select
 id="propertyType"
 required>
 
-<option value="">Select Type</option>
+<option value="">
+Select Type
+</option>
 
-<option>Single Room</option>
-<option>PG</option>
-<option>1BHK</option>
-<option>1RK</option>
-<option>Shared Room</option>
-<option>Mess</option>
-<option>Tiffin Service</option>
-<option>Home-Cooked Food</option>
+<option value="Room">
+Single Room
+</option>
+
+<option value="PG">
+PG
+</option>
+
+<option value="1BHK">
+1BHK
+</option>
+
+<option value="Flat">
+Flat
+</option>
+
+<option value="Hostel">
+Hostel
+</option>
+
+<option value="Shared Room">
+Shared Room
+</option>
+
+<option value="Mess">
+Mess
+</option>
+
+<option value="Tiffin Service">
+Tiffin Service
+</option>
 
 </select>
 
@@ -2046,10 +2455,10 @@ required>
 
 </div>
 
-</div>
 
-
-<!-- DETAILS -->
+<!-- =====================================================
+     2. BASIC INFORMATION
+===================================================== -->
 
 <div class="form-section">
 
@@ -2059,6 +2468,7 @@ required>
 
 
 <div class="form-grid">
+
 
 <div class="form-group full">
 
@@ -2084,7 +2494,7 @@ Description
 </label>
 
 <textarea
-id="propertyDescription"
+id="description"
 placeholder="Tell students about your property or service..."
 required></textarea>
 
@@ -2098,12 +2508,25 @@ Availability
 <span class="required">*</span>
 </label>
 
-<select id="availability" required>
+<select
+id="availability"
+required>
 
-<option value="">Select</option>
-<option>Available Immediately</option>
-<option>Limited Availability</option>
-<option>Available From Selected Date</option>
+<option value="">
+Select
+</option>
+
+<option value="Available">
+Available
+</option>
+
+<option value="Currently Occupied">
+Currently Occupied
+</option>
+
+<option value="Available Soon">
+Available Soon
+</option>
 
 </select>
 
@@ -2112,7 +2535,9 @@ Availability
 
 <div class="form-group">
 
-<label>Available From</label>
+<label>
+Available From
+</label>
 
 <input
 id="availableFrom"
@@ -2120,12 +2545,15 @@ type="date">
 
 </div>
 
-</div>
 
 </div>
 
+</div>
 
-<!-- LOCATION -->
+
+<!-- =====================================================
+     3. LOCATION
+===================================================== -->
 
 <div class="form-section">
 
@@ -2144,40 +2572,106 @@ Area
 <span class="required">*</span>
 </label>
 
+
 <select
 id="area"
 required>
 
-<option value="">Select Area</option>
+<option value="">
+Select Area
+</option>
 
-<option value="Dari">Dari</option>
-<option value="Sidhpur">Sidhpur</option>
-<option value="Sidhbari">Sidhbari</option>
-<option value="Rakkar">Rakkar</option>
-<option value="Ram Nagar">Ram Nagar</option>
-<option value="Kotwali Bazar">Kotwali Bazar</option>
-<option value="Kacheri / Kacheri Adda">Kacheri / Kacheri Adda</option>
-<option value="Civil Lines">Civil Lines</option>
-<option value="Jawahar Nagar">Jawahar Nagar</option>
-<option value="Sakoh">Sakoh</option>
-<option value="Shamnagar">Shamnagar</option>
-<option value="Darnu">Darnu</option>
-<option value="Sheela / Sheela Chowk">Sheela / Sheela Chowk</option>
-<option value="Sudher">Sudher</option>
-<option value="Chilgari">Chilgari</option>
-<option value="McLeod Ganj">McLeod Ganj</option>
-<option value="Bhagsunag / Bhagsu">Bhagsunag / Bhagsu</option>
-<option value="Dharamkot">Dharamkot</option>
-<option value="Naddi">Naddi</option>
-<option value="Forsyth Ganj">Forsyth Ganj</option>
-<option value="Jogiwara">Jogiwara</option>
-<option value="Dal Lake Area">Dal Lake Area</option>
-<option value="Khanyara">Khanyara</option>
-<option value="Tang Narwana">Tang Narwana</option>
-<option value="Yol">Yol</option>
-<option value="Sokni Da Kot">Sokni Da Kot</option>
-<option value="Narwana">Narwana</option>
-<option value="Shahpur">Shahpur</option>
+<option value="Kotwali Bazar">
+Kotwali Bazar
+</option>
+
+<option value="Kacheri / Kacheri Adda">
+Kacheri / Kacheri Adda
+</option>
+
+<option value="Civil Lines">
+Civil Lines
+</option>
+
+<option value="Jawahar Nagar">
+Jawahar Nagar
+</option>
+
+<option value="Sakoh">
+Sakoh
+</option>
+
+<option value="Shamnagar">
+Shamnagar
+</option>
+
+<option value="Darnu">
+Darnu
+</option>
+
+<option value="Sheela / Sheela Chowk">
+Sheela / Sheela Chowk
+</option>
+
+<option value="Sudher">
+Sudher
+</option>
+
+<option value="Chilgari">
+Chilgari
+</option>
+
+<option value="McLeod Ganj">
+McLeod Ganj
+</option>
+
+<option value="Bhagsunag / Bhagsu">
+Bhagsunag / Bhagsu
+</option>
+
+<option value="Dharamkot">
+Dharamkot
+</option>
+
+<option value="Naddi">
+Naddi
+</option>
+
+<option value="Forsyth Ganj">
+Forsyth Ganj
+</option>
+
+<option value="Jogiwara">
+Jogiwara
+</option>
+
+<option value="Dal Lake Area">
+Dal Lake Area
+</option>
+
+<option value="Khanyara">
+Khanyara
+</option>
+
+<option value="Tang Narwana">
+Tang Narwana
+</option>
+
+<option value="Yol">
+Yol
+</option>
+
+<option value="Sokni Da Kot">
+Sokni Da Kot
+</option>
+
+<option value="Narwana">
+Narwana
+</option>
+
+<option value="Shahpur">
+Shahpur
+</option>
 
 </select>
 
@@ -2202,21 +2696,26 @@ required>
 
 <div class="form-group full">
 
+
 <div class="location-box">
+
 
 <div class="location-box-title">
 📍 Property Location on Map
 </div>
 
+
 <div class="location-box-description">
 
-Student ko property tak pahunchne ke liye
-Google Maps location provide karein.
+Sharing your exact Google Maps location is
+<strong>optional</strong>. You can submit your property
+without providing your current location.
 
 </div>
 
 
 <div class="location-buttons">
+
 
 <button
 type="button"
@@ -2239,12 +2738,16 @@ disabled>
 
 </button>
 
+
 </div>
 
 
 <div
 class="location-status"
 id="locationStatus">
+
+Location sharing is optional.
+
 </div>
 
 
@@ -2253,20 +2756,32 @@ class="coordinates"
 id="coordinatesBox"
 style="display:none;">
 
-<div class="coordinate-box">
-
-<small>LATITUDE</small>
-
-<strong id="latitudeText">-</strong>
-
-</div>
-
 
 <div class="coordinate-box">
 
-<small>LONGITUDE</small>
+<small>
+LATITUDE
+</small>
 
-<strong id="longitudeText">-</strong>
+<strong id="latitudeText">
+-
+</strong>
+
+</div>
+
+
+<div class="coordinate-box">
+
+<small>
+LONGITUDE
+</small>
+
+<strong id="longitudeText">
+-
+</strong>
+
+</div>
+
 
 </div>
 
@@ -2278,10 +2793,10 @@ style="display:none;">
 
 </div>
 
-</div>
 
-
-<!-- PRICING -->
+<!-- =====================================================
+     4. PRICING
+===================================================== -->
 
 <div class="form-section">
 
@@ -2311,7 +2826,9 @@ required>
 
 <div class="form-group">
 
-<label>Security Deposit</label>
+<label>
+Security Deposit
+</label>
 
 <input
 id="deposit"
@@ -2323,13 +2840,23 @@ placeholder="Example: 5000">
 
 <div class="form-group">
 
-<label>Electricity</label>
+<label>
+Electricity
+</label>
 
 <select id="electricity">
 
-<option>Included</option>
-<option>Separate</option>
-<option>According to Usage</option>
+<option value="Included">
+Included
+</option>
+
+<option value="Separate">
+Separate
+</option>
+
+<option value="According to Usage">
+According to Usage
+</option>
 
 </select>
 
@@ -2338,23 +2865,33 @@ placeholder="Example: 5000">
 
 <div class="form-group">
 
-<label>Water Charges</label>
+<label>
+Water Charges
+</label>
 
 <select id="water">
 
-<option>Included</option>
-<option>Separate</option>
+<option value="Included">
+Included
+</option>
+
+<option value="Separate">
+Separate
+</option>
 
 </select>
 
 </div>
 
-</div>
 
 </div>
 
+</div>
 
-<!-- FEATURES -->
+
+<!-- =====================================================
+     5. PROPERTY FEATURES
+===================================================== -->
 
 <div class="form-section">
 
@@ -2368,13 +2905,23 @@ placeholder="Example: 5000">
 
 <div class="form-group">
 
-<label>Furnishing</label>
+<label>
+Furnishing
+</label>
 
 <select id="furnishing">
 
-<option>Fully Furnished</option>
-<option>Semi Furnished</option>
-<option>Unfurnished</option>
+<option value="Fully Furnished">
+Fully Furnished
+</option>
+
+<option value="Semi Furnished">
+Semi Furnished
+</option>
+
+<option value="Unfurnished">
+Unfurnished
+</option>
 
 </select>
 
@@ -2383,12 +2930,19 @@ placeholder="Example: 5000">
 
 <div class="form-group">
 
-<label>Bathroom</label>
+<label>
+Bathroom
+</label>
 
 <select id="bathroom">
 
-<option>Attached Bathroom</option>
-<option>Shared Bathroom</option>
+<option value="Attached Bathroom">
+Attached Bathroom
+</option>
+
+<option value="Shared Bathroom">
+Shared Bathroom
+</option>
 
 </select>
 
@@ -2397,13 +2951,23 @@ placeholder="Example: 5000">
 
 <div class="form-group">
 
-<label>Kitchen</label>
+<label>
+Kitchen
+</label>
 
 <select id="kitchen">
 
-<option>Attached Kitchen</option>
-<option>Common Kitchen</option>
-<option>No Kitchen</option>
+<option value="Attached Kitchen">
+Attached Kitchen
+</option>
+
+<option value="Common Kitchen">
+Common Kitchen
+</option>
+
+<option value="No Kitchen">
+No Kitchen
+</option>
 
 </select>
 
@@ -2412,14 +2976,27 @@ placeholder="Example: 5000">
 
 <div class="form-group">
 
-<label>Suitable For</label>
+<label>
+Suitable For
+</label>
 
 <select id="suitableFor">
 
-<option>Students</option>
-<option>Male Students</option>
-<option>Female Students</option>
-<option>Anyone</option>
+<option value="Students">
+Students
+</option>
+
+<option value="Male Students">
+Male Students
+</option>
+
+<option value="Female Students">
+Female Students
+</option>
+
+<option value="Anyone">
+Anyone
+</option>
 
 </select>
 
@@ -2428,7 +3005,9 @@ placeholder="Example: 5000">
 
 <div class="form-group full">
 
-<label>Available Facilities</label>
+<label>
+Available Facilities
+</label>
 
 
 <div class="checkbox-grid">
@@ -2436,73 +3015,73 @@ placeholder="Example: 5000">
 
 <label class="checkbox-item">
 <input type="checkbox" value="Wi-Fi">
-<span>Wi-Fi</span>
+Wi-Fi
 </label>
 
 
 <label class="checkbox-item">
 <input type="checkbox" value="Bed">
-<span>Bed</span>
+Bed
 </label>
 
 
 <label class="checkbox-item">
 <input type="checkbox" value="Mattress">
-<span>Mattress</span>
+Mattress
 </label>
 
 
 <label class="checkbox-item">
 <input type="checkbox" value="Wardrobe">
-<span>Wardrobe</span>
+Wardrobe
 </label>
 
 
 <label class="checkbox-item">
 <input type="checkbox" value="Study Table">
-<span>Study Table</span>
+Study Table
 </label>
 
 
 <label class="checkbox-item">
 <input type="checkbox" value="Chair">
-<span>Chair</span>
+Chair
 </label>
 
 
 <label class="checkbox-item">
 <input type="checkbox" value="Geyser">
-<span>Geyser</span>
+Geyser
 </label>
 
 
 <label class="checkbox-item">
 <input type="checkbox" value="Washing Machine">
-<span>Washing Machine</span>
+Washing Machine
 </label>
 
 
 <label class="checkbox-item">
 <input type="checkbox" value="Refrigerator">
-<span>Refrigerator</span>
+Refrigerator
 </label>
 
 
 <label class="checkbox-item">
 <input type="checkbox" value="Parking">
-<span>Parking</span>
+Parking
 </label>
 
 
 <label class="checkbox-item">
 <input type="checkbox" value="Balcony">
-<span>Balcony</span>
+Balcony
 </label>
 
 
 <label class="checkbox-item">
 <input type="checkbox" value="CCTV">
-<span>CCTV</span>
+CCTV
 </label>
 
 
@@ -2515,7 +3094,9 @@ placeholder="Example: 5000">
 </div>
 
 
-<!-- FOOD -->
+<!-- =====================================================
+     6. FOOD DETAILS
+===================================================== -->
 
 <div class="form-section">
 
@@ -2524,73 +3105,83 @@ placeholder="Example: 5000">
 </div>
 
 
-<div class="form-grid">
-
-<div class="form-group full">
+<div class="form-group">
 
 <label>
 Food Available?
 <span class="required">*</span>
 </label>
 
+
 <select
-id="foodAvailability"
-onchange="toggleFoodOptions()"
-required>
+id="foodAvailable"
+required
+onchange="toggleFoodDetails()">
 
-<option value="">Select</option>
-<option value="yes">Yes</option>
-<option value="no">No</option>
+<option value="">
+Select
+</option>
 
-</select>
+<option value="Yes">
+Yes
+</option>
 
-</div>
-
-
-<div id="foodOptions">
-
-
-<div class="form-group">
-
-<label>Meal Type</label>
-
-<select id="mealType">
-
-<option value="">Select Meal Type</option>
-<option>Breakfast</option>
-<option>Lunch</option>
-<option>Dinner</option>
-<option>Breakfast + Dinner</option>
-<option>Full Day Meals</option>
+<option value="No">
+No
+</option>
 
 </select>
 
 </div>
 
 
+<div
+class="food-extra"
+id="foodExtra">
+
+
+<div class="form-grid">
+
+
 <div class="form-group">
 
-<label>Food Price</label>
+<label>
+Food Type
+</label>
+
+<select id="foodType">
+
+<option value="Mess">
+Mess
+</option>
+
+<option value="Tiffin">
+Tiffin
+</option>
+
+<option value="Home Cooked Food">
+Home Cooked Food
+</option>
+
+<option value="Mess + Tiffin">
+Mess + Tiffin
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Monthly Food Price
+</label>
 
 <input
 id="foodPrice"
 type="number"
-placeholder="Monthly food price">
-
-</div>
-
-
-<div class="form-group">
-
-<label>Food Preference</label>
-
-<select id="foodPreference">
-
-<option value="">Select Food Preference</option>
-<option>Vegetarian</option>
-<option>Veg & Non-Veg</option>
-
-</select>
+placeholder="Example: 2500">
 
 </div>
 
@@ -2602,7 +3193,9 @@ placeholder="Monthly food price">
 </div>
 
 
-<!-- PHOTOS -->
+<!-- =====================================================
+     7. PROPERTY PHOTOS
+===================================================== -->
 
 <div class="form-section">
 
@@ -2611,38 +3204,40 @@ placeholder="Monthly food price">
 </div>
 
 
-<div
-class="photo-upload"
-onclick="document.getElementById('propertyPhotos').click()">
+<div class="photo-upload">
 
-<div class="photo-upload-icon">📸</div>
 
-<strong>Upload Property Photos</strong>
+<div class="photo-upload-icon">
+📷
+</div>
 
-<span>
+
+<div class="photo-upload-title">
+Upload Property Photos
+</div>
+
+
+<div class="photo-upload-subtitle">
 Add up to 8 clear photos of the property.
-</span>
+</div>
+
 
 <input
+id="photos"
+class="file-input"
 type="file"
-id="propertyPhotos"
 accept="image/*"
 multiple
-style="display:none;"
-onchange="previewPhotos(event)">
+required>
 
-</div>
-
-
-<div
-class="photo-preview"
-id="photoPreview">
 </div>
 
 </div>
 
 
-<!-- CONTACT -->
+<!-- =====================================================
+     8. CONTACT DETAILS
+===================================================== -->
 
 <div class="form-section">
 
@@ -2681,7 +3276,6 @@ Phone Number
 id="ownerPhone"
 type="tel"
 placeholder="10-digit mobile number"
-maxlength="10"
 required>
 
 </div>
@@ -2689,123 +3283,2728 @@ required>
 
 <div class="form-group">
 
-<label>WhatsApp Number</label>
+<label>
+WhatsApp Number
+</label>
 
 <input
 id="whatsapp"
 type="tel"
-placeholder="10-digit WhatsApp number"
-maxlength="10">
+placeholder="10-digit WhatsApp number">
 
 </div>
 
 
 <div class="form-group">
 
-<label>Preferred Contact</label>
+<label>
+Preferred Contact
+</label>
 
 <select id="preferredContact">
 
-<option>Call & WhatsApp</option>
-<option>Call</option>
-<option>WhatsApp</option>
+<option value="Call & WhatsApp">
+Call & WhatsApp
+</option>
+
+<option value="Call">
+Call
+</option>
+
+<option value="WhatsApp">
+WhatsApp
+</option>
 
 </select>
 
 </div>
 
-</div>
 
 </div>
 
+</div>
 
-<!-- DECLARATION -->
+
+<!-- =====================================================
+     CONFIRMATION
+===================================================== -->
 
 <div class="form-section">
 
-<div class="declaration">
+
+<div class="confirmation-box">
+
 
 <input
-id="declaration"
+id="confirmation"
 type="checkbox"
 required>
 
-<label>
 
-I confirm that the information provided in this
-listing is accurate and that the property/service
-is currently available. I understand that RoomUps
-will review this listing before publishing it.
+<label for="confirmation">
+
+I confirm that the information provided in this listing
+is accurate and that the property/service is currently
+available. I understand that RoomUps will review this
+listing before publishing it.
 
 </label>
 
-</div>
 
 </div>
 
+</div>
 
-<div class="form-actions">
 
-<button
-type="button"
-class="cancel-btn"
-onclick="closePropertyModal()">
-
-Cancel
-
-</button>
-
+<!-- =====================================================
+     SUBMIT
+===================================================== -->
 
 <button
-type="submit"
 class="submit-property-btn"
-id="submitPropertyButton">
+id="submitPropertyBtn"
+type="submit">
 
 Submit for Verification →
 
 </button>
 
-</div>
-
 
 </form>
 
-
-<div
-class="success-message"
-id="successMessage">
-
-<div class="success-icon">✓</div>
-
-<h2>Request Submitted!</h2>
-
-<p>
-
-Your listing has been successfully submitted.
-
-<br><br>
-
-It is currently <strong>under verification</strong>.
-Your property will become visible on RoomUps
-only after approval.
-
-</p>
-
-
-<button
-class="success-close-btn"
-onclick="closePropertyModal()">
-
-Done
-
-</button>
-
-</div>
-
-
 </div>
 
 </div>
+
+
+<script>
+
+
+/* =========================================================
+   CONFIG
+========================================================= */
+
+const ROOMUPS_WEB_APP_URL =
+"https://script.google.com/macros/s/AKfycbwOIVLGinX_wA6KLS3IoMnv5JhWtJv0SpjZIyvoUo5TZnL59G7gbZqLUMTeL5Y6tYi1/exec";
+
+
+let approvedListings = [];
+let adminToken = sessionStorage.getItem("roomupsAdminToken") || "";
+
+let currentLatitude = "";
+
+let currentLongitude = "";
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+function openPropertyModal(){
+
+    document
+        .getElementById("propertyModal")
+        .classList.add("active");
+
+    document.body.classList.add("modal-open");
+
+}
+
+
+function closePropertyModal(){
+
+    document
+        .getElementById("propertyModal")
+        .classList.remove("active");
+
+    document.body.classList.remove("modal-open");
+
+}
+
+
+function closeModalOutside(event){
+
+    if(
+        event.target.id === "propertyModal"
+    ){
+
+        closePropertyModal();
+
+    }
+
+}
+
+
+/* =========================================================
+   FOOD DETAILS
+========================================================= */
+
+function toggleFoodDetails(){
+
+    const food =
+        document.getElementById(
+            "foodAvailable"
+        ).value;
+
+    const extra =
+        document.getElementById(
+            "foodExtra"
+        );
+
+    if(food === "Yes"){
+
+        extra.classList.add("active");
+
+    }else{
+
+        extra.classList.remove("active");
+
+    }
+
+}
+
+
+/* =========================================================
+   LOCATION
+   IMPORTANT:
+   LOCATION IS OPTIONAL
+========================================================= */
+
+function getCurrentLocation(){
+
+    const status =
+        document.getElementById(
+            "locationStatus"
+        );
+
+
+    if(!navigator.geolocation){
+
+        status.textContent =
+            "Location is unavailable in this browser. You can continue without it.";
+
+        return;
+
+    }
+
+
+    status.textContent =
+        "Getting your current location...";
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position){
+
+            currentLatitude =
+                position.coords.latitude;
+
+            currentLongitude =
+                position.coords.longitude;
+
+
+            document.getElementById(
+                "latitudeText"
+            ).textContent =
+                currentLatitude.toFixed(6);
+
+
+            document.getElementById(
+                "longitudeText"
+            ).textContent =
+                currentLongitude.toFixed(6);
+
+
+            document.getElementById(
+                "coordinatesBox"
+            ).style.display =
+                "grid";
+
+
+            document.getElementById(
+                "openMapsButton"
+            ).disabled =
+                false;
+
+
+            status.textContent =
+                "✓ Location added. You can still change or remove it before submitting.";
+
+        },
+
+
+        function(){
+
+            currentLatitude = "";
+
+            currentLongitude = "";
+
+
+            document.getElementById(
+                "coordinatesBox"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "openMapsButton"
+            ).disabled =
+                true;
+
+
+            status.textContent =
+                "Unable to get location. That's okay — location is optional and you can continue.";
+
+        },
+
+
+        {
+            enableHighAccuracy:true,
+            timeout:10000,
+            maximumAge:0
+        }
+
+    );
+
+}
+
+
+function openSelectedLocation(){
+
+    if(
+        currentLatitude === "" ||
+        currentLongitude === ""
+    ){
+
+        return;
+
+    }
+
+
+    const url =
+        "https://www.google.com/maps/search/?api=1&query=" +
+        encodeURIComponent(
+            currentLatitude +
+            "," +
+            currentLongitude
+        );
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* =========================================================
+   FILE TO BASE64
+========================================================= */
+
+function fileToBase64(file){
+
+    return new Promise(
+        function(resolve,reject){
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function(){
+
+                    const result =
+                        String(
+                            reader.result || ""
+                        );
+
+
+                    const comma =
+                        result.indexOf(",");
+
+
+                    resolve(
+                        comma >= 0
+                        ? result.substring(
+                            comma + 1
+                        )
+                        : result
+                    );
+
+                };
+
+
+            reader.onerror =
+                reject;
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SUBMIT PROPERTY
+========================================================= */
+
+async function submitProperty(event){
+
+    event.preventDefault();
+
+
+    const submitButton =
+        document.getElementById(
+            "submitPropertyBtn"
+        );
+
+
+    submitButton.disabled =
+        true;
+
+
+    submitButton.textContent =
+        "Submitting...";
+
+
+    try{
+
+
+        const files =
+            document.getElementById(
+                "photos"
+            ).files;
+
+
+        if(!files.length){
+
+            throw new Error(
+                "Please upload at least one property photo."
+            );
+
+        }
+
+
+        if(files.length > 8){
+
+            throw new Error(
+                "You can upload a maximum of 8 photos."
+            );
+
+        }
+
+
+        const photoData = [];
+
+
+        for(
+            let i = 0;
+            i < files.length;
+            i++
+        ){
+
+            const file =
+                files[i];
+
+
+            const base64 =
+                await fileToBase64(
+                    file
+                );
+
+
+            photoData.push({
+
+                name:file.name,
+
+                type:file.type,
+
+                data:base64
+
+            });
+
+        }
+
+
+        const facilities =
+            Array.from(
+                document.querySelectorAll(
+                    ".checkbox-item input:checked"
+                )
+            ).map(
+                function(input){
+
+                    return input.value;
+
+                }
+            );
+
+
+        /*
+         * IMPORTANT:
+         * latitude and longitude are NOT required.
+         * Empty strings are sent if owner does not
+         * share location.
+         */
+
+
+        const payload = {
+
+            action:
+                "submitListing",
+
+
+            propertyType:
+                document.getElementById(
+                    "propertyType"
+                ).value,
+
+
+            propertyName:
+                document.getElementById(
+                    "propertyName"
+                ).value,
+
+
+            description:
+                document.getElementById(
+                    "description"
+                ).value,
+
+
+            availability:
+                document.getElementById(
+                    "availability"
+                ).value,
+
+
+            availableFrom:
+                document.getElementById(
+                    "availableFrom"
+                ).value,
+
+
+            area:
+                document.getElementById(
+                    "area"
+                ).value,
+
+
+            address:
+                document.getElementById(
+                    "address"
+                ).value,
+
+
+            rent:
+                document.getElementById(
+                    "price"
+                ).value,
+
+
+            deposit:
+                document.getElementById(
+                    "deposit"
+                ).value,
+
+
+            electricity:
+                document.getElementById(
+                    "electricity"
+                ).value,
+
+
+            water:
+                document.getElementById(
+                    "water"
+                ).value,
+
+
+            furnishing:
+                document.getElementById(
+                    "furnishing"
+                ).value,
+
+
+            bathroom:
+                document.getElementById(
+                    "bathroom"
+                ).value,
+
+
+            kitchen:
+                document.getElementById(
+                    "kitchen"
+                ).value,
+
+
+            suitableFor:
+                document.getElementById(
+                    "suitableFor"
+                ).value,
+
+
+            facilities:
+                facilities,
+
+
+            foodAvailable:
+                document.getElementById(
+                    "foodAvailable"
+                ).value,
+
+
+            foodType:
+                document.getElementById(
+                    "foodType"
+                ).value,
+
+
+            foodPrice:
+                document.getElementById(
+                    "foodPrice"
+                ).value,
+
+
+            ownerName:
+                document.getElementById(
+                    "ownerName"
+                ).value,
+
+
+            ownerPhone:
+                document.getElementById(
+                    "ownerPhone"
+                ).value,
+
+
+            whatsapp:
+                document.getElementById(
+                    "whatsapp"
+                ).value,
+
+
+            preferredContact:
+                document.getElementById(
+                    "preferredContact"
+                ).value,
+
+
+            photoData:
+                photoData
+
+        };
+
+
+        const response =
+            await fetch(
+                ROOMUPS_WEB_APP_URL,
+                {
+                    method:"POST",
+                    body:JSON.stringify(
+                        payload
+                    )
+                }
+            );
+
+
+        const text =
+            await response.text();
+
+
+        let result;
+
+
+        try{
+
+            result =
+                JSON.parse(text);
+
+        }catch(error){
+
+            throw new Error(
+                "Server returned an invalid response."
+            );
+
+        }
+
+
+        if(
+            !result ||
+            !result.success
+        ){
+
+            throw new Error(
+                result &&
+                result.message
+                ? result.message
+                : "Unable to submit listing."
+            );
+
+        }
+
+
+        alert(
+            result.message ||
+            "Your property has been submitted successfully for verification."
+        );
+
+
+        document
+            .getElementById(
+                "propertyForm"
+            )
+            .reset();
+
+
+        currentLatitude = "";
+
+        currentLongitude = "";
+
+
+        document.getElementById(
+            "coordinatesBox"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "openMapsButton"
+        ).disabled =
+            true;
+
+
+        document.getElementById(
+            "locationStatus"
+        ).textContent =
+            "Location sharing is optional.";
+
+
+        document.getElementById(
+            "foodExtra"
+        ).classList.remove(
+            "active"
+        );
+
+
+        closePropertyModal();
+
+
+    }catch(error){
+
+        console.error(error);
+
+
+        alert(
+            "Unable to submit property.\n\n" +
+            (
+                error.message ||
+                "Please try again."
+            )
+        );
+
+
+    }finally{
+
+        submitButton.disabled =
+            false;
+
+
+        submitButton.textContent =
+            "Submit for Verification →";
+
+    }
+
+}
+
+
+/* =========================================================
+   GET APPROVED LISTINGS
+========================================================= */
+
+async function loadApprovedListings(){
+
+    const container =
+        document.getElementById(
+            "listingContainer"
+        );
+
+
+    try{
+
+        const response =
+            await fetch(
+                ROOMUPS_WEB_APP_URL +
+                "?action=getApprovedListings"
+            );
+
+
+        const result =
+            await response.json();
+
+
+        if(
+            !result ||
+            !result.success
+        ){
+
+            throw new Error(
+                "Unable to load listings."
+            );
+
+        }
+
+
+        approvedListings =
+            Array.isArray(
+                result.listings
+            )
+            ? result.listings
+            : [];
+
+
+        renderListings(
+            approvedListings
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+
+        container.innerHTML =
+            `
+            <div class="listing-message">
+                Unable to load listings right now.
+            </div>
+            `;
+
+    }
+
+}
+
+
+/* =========================================================
+   RENDER LISTINGS
+========================================================= */
+
+function renderListings(listings){
+
+    const container =
+        document.getElementById(
+            "listingContainer"
+        );
+
+
+    container.innerHTML = "";
+
+
+    if(!listings.length){
+
+        container.innerHTML =
+            `
+            <div class="listing-message">
+                No matching listings found.
+            </div>
+            `;
+
+        return;
+
+    }
+
+
+    listings.forEach(
+        function(data){
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "listing-card";
+
+
+            let image =
+                "🏠";
+
+
+            if(
+                Array.isArray(
+                    data.photoLinks
+                ) &&
+                data.photoLinks.length
+            ){
+
+                image =
+                    `
+                    <img
+                        src="${escapeHtml(
+                            data.photoLinks[0]
+                        )}"
+                        alt="Property"
+                        loading="lazy">
+                    `;
+
+            }
+
+
+            let tags = "";
+
+
+            if(
+                Array.isArray(
+                    data.facilities
+                )
+            ){
+
+                data.facilities
+                    .slice(0,4)
+                    .forEach(
+                        function(item){
+
+                            tags +=
+                                `
+                                <span class="tag">
+                                    ${escapeHtml(item)}
+                                </span>
+                                `;
+
+                        }
+                    );
+
+            }
+
+
+            if(
+                data.foodAvailable ===
+                "Yes"
+            ){
+
+                tags +=
+                    `
+                    <span class="tag">
+                        🍱 Food Available
+                    </span>
+                    `;
+
+            }
+
+
+            card.innerHTML =
+                `
+
+                <div class="listing-image">
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                    ${image}
+
+                </div>
+
+
+                <div class="listing-content">
+
+                    <div class="listing-type">
+                        ${escapeHtml(
+                            data.propertyType ||
+                            "Property"
+                        )}
+                    </div>
+
+
+                    <h3>
+                        ${escapeHtml(
+                            data.propertyName ||
+                            "RoomUps Listing"
+                        )}
+                    </h3>
+
+
+                    <div class="location">
+                        📍 ${escapeHtml(
+                            data.area || ""
+                        )}
+                    </div>
+
+
+                    <div class="listing-info">
+                        ${tags}
+                    </div>
+
+
+                    <div class="listing-bottom">
+
+                        <div class="price">
+
+                            ₹${Number(
+                                data.rent || 0
+                            ).toLocaleString(
+                                "en-IN"
+                            )}
+
+                            <span>
+                                /month
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="view-btn"
+                            type="button">
+
+                            View
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                `;
+
+
+            card
+                .querySelector(
+                    ".view-btn"
+                )
+                .addEventListener(
+                    "click",
+                    function(){
+
+                        viewListing(
+                            data
+                        );
+
+                    }
+                );
+
+
+            container.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SEARCH
+   UPDATED:
+   - Waits for listings to load before filtering.
+   - Refreshes listings when Search is clicked.
+   - Supports type + area + budget together.
+   - Handles area naming variations.
+========================================================= */
+
+function normalizeSearchText(value){
+
+    return String(
+        value == null
+        ? ""
+        : value
+    )
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g," ");
+
+}
+
+
+function normalizeSearchArea(value){
+
+    return normalizeSearchText(value)
+        .replace(/\s*\/\s*/g,"/")
+        .replace(/\s*-\s*/g,"-");
+
+}
+
+
+function areaMatches(selectedArea, listingArea){
+
+    const selected =
+        normalizeSearchArea(
+            selectedArea
+        );
+
+    const listing =
+        normalizeSearchArea(
+            listingArea
+        );
+
+    if(!selected){
+        return true;
+    }
+
+    if(!listing){
+        return false;
+    }
+
+    if(selected === listing){
+        return true;
+    }
+
+    /*
+     * This also allows a listing stored as
+     * "Kacheri Adda" to match the combined
+     * search option "Kacheri / Kacheri Adda".
+     */
+
+    const selectedParts =
+        selected
+        .split("/")
+        .map(
+            function(part){
+                return part.trim();
+            }
+        )
+        .filter(Boolean);
+
+    const listingParts =
+        listing
+        .split("/")
+        .map(
+            function(part){
+                return part.trim();
+            }
+        )
+        .filter(Boolean);
+
+    return selectedParts.some(
+        function(part){
+
+            return (
+                listing === part ||
+                listingParts.includes(part) ||
+                listing.includes(part) ||
+                part.includes(listing)
+            );
+
+        }
+    );
+
+}
+
+
+async function refreshListingsForSearch(){
+
+    try{
+
+        const response =
+            await fetch(
+                ROOMUPS_WEB_APP_URL +
+                "?action=getApprovedListings&_=" +
+                Date.now(),
+                {
+                    method:"GET",
+                    cache:"no-store"
+                }
+            );
+
+        if(!response.ok){
+
+            throw new Error(
+                "Unable to connect to listings server."
+            );
+
+        }
+
+        const result =
+            await response.json();
+
+        if(
+            result &&
+            result.success &&
+            Array.isArray(
+                result.listings
+            )
+        ){
+
+            approvedListings =
+                result.listings;
+
+            return true;
+
+        }
+
+    }catch(error){
+
+        console.warn(
+            "RoomUps search refresh failed:",
+            error
+        );
+
+    }
+
+    return false;
+
+}
+
+
+async function searchListings(){
+
+    const searchButton =
+        document.querySelector(
+            ".search-btn"
+        );
+
+
+    const originalText =
+        searchButton
+        ? searchButton.textContent.trim()
+        : "Search";
+
+
+    const typeElement =
+        document.getElementById(
+            "searchType"
+        );
+
+    const areaElement =
+        document.getElementById(
+            "searchArea"
+        );
+
+    const budgetElement =
+        document.getElementById(
+            "searchBudget"
+        );
+
+
+    if(!typeElement || !areaElement || !budgetElement){
+
+        console.error(
+            "RoomUps Search: search fields were not found."
+        );
+
+        return;
+
+    }
+
+
+    const type =
+        normalizeSearchText(
+            typeElement.value
+        );
+
+
+    const area =
+        normalizeSearchArea(
+            areaElement.value
+        );
+
+
+    const budget =
+        budgetElement.value;
+
+
+    /*
+     * Show loading state.
+     */
+
+    if(searchButton){
+
+        searchButton.disabled = true;
+
+        searchButton.textContent =
+            "Searching...";
+
+    }
+
+
+    try{
+
+        /*
+         * If listings have not loaded yet, fetch them first.
+         * Also refresh every time Search is clicked so newly
+         * approved properties can appear without a full reload.
+         */
+
+        const refreshed =
+            await refreshListingsForSearch();
+
+
+        /*
+         * If refresh failed but we already have listings,
+         * continue using the existing data.
+         */
+
+        if(
+            !refreshed &&
+            !Array.isArray(
+                approvedListings
+            )
+        ){
+
+            approvedListings = [];
+
+        }
+
+
+        const filtered =
+            approvedListings.filter(
+                function(data){
+
+                    const listingType =
+                        normalizeSearchText(
+                            data.propertyType
+                        );
+
+
+                    const listingArea =
+                        normalizeSearchArea(
+                            data.area
+                        );
+
+
+                    const rent =
+                        Number(
+                            String(
+                                data.rent ||
+                                data.price ||
+                                0
+                            ).replace(
+                                /[^0-9.]/g,
+                                ""
+                            )
+                        );
+
+
+                    let typeMatch =
+                        true;
+
+                    let areaMatch =
+                        true;
+
+                    let budgetMatch =
+                        true;
+
+
+                    /*
+                     * TYPE
+                     */
+
+                    if(type){
+
+                        typeMatch =
+                            listingType ===
+                                type ||
+                            listingType.includes(
+                                type
+                            ) ||
+                            type.includes(
+                                listingType
+                            );
+
+                    }
+
+
+                    /*
+                     * AREA
+                     */
+
+                    if(area){
+
+                        areaMatch =
+                            areaMatches(
+                                area,
+                                listingArea
+                            );
+
+                    }
+
+
+                    /*
+                     * BUDGET
+                     */
+
+                    if(budget){
+
+                        const parts =
+                            budget.split("-");
+
+
+                        const min =
+                            Number(
+                                parts[0]
+                            );
+
+
+                        const max =
+                            Number(
+                                parts[1]
+                            );
+
+
+                        budgetMatch =
+                            !isNaN(rent) &&
+                            rent >= min &&
+                            rent <= max;
+
+                    }
+
+
+                    return (
+                        typeMatch &&
+                        areaMatch &&
+                        budgetMatch
+                    );
+
+                }
+            );
+
+
+        /*
+         * Render only the matching listings.
+         */
+
+        renderListings(
+            filtered
+        );
+
+
+        /*
+         * Update result bar.
+         */
+
+        const resultBar =
+            document.getElementById(
+                "searchResultBar"
+            );
+
+
+        const resultText =
+            document.getElementById(
+                "searchResultText"
+            );
+
+
+        if(resultBar){
+
+            resultBar.style.display =
+                "block";
+
+        }
+
+
+        if(resultText){
+
+            if(roomUpsLanguage === "hi") {
+                resultText.textContent =
+                    filtered.length +
+                    (filtered.length === 1
+                        ? " लिस्टिंग मिली"
+                        : " लिस्टिंग मिलीं");
+            } else {
+                resultText.textContent =
+                    filtered.length +
+                    (filtered.length === 1
+                        ? " listing found"
+                        : " listings found");
+            }
+
+        }
+
+
+        /*
+         * Move the user to the results.
+         */
+
+        const properties =
+            document.getElementById(
+                "properties"
+            );
+
+
+        if(properties){
+
+            properties.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        }
+
+    }catch(error){
+
+        console.error(
+            "RoomUps search error:",
+            error
+        );
+
+
+        const container =
+            document.getElementById(
+                "listingContainer"
+            );
+
+
+        if(container){
+
+            container.innerHTML =
+                `
+                <div class="listing-message">
+                    Unable to search listings right now.
+                    <br>
+                    Please try again.
+                </div>
+                `;
+
+        }
+
+    }finally{
+
+        if(searchButton){
+
+            searchButton.disabled =
+                false;
+
+            searchButton.textContent =
+                originalText;
+
+        }
+
+    }
+
+}
+
+
+function clearSearch(){
+
+    const type =
+        document.getElementById(
+            "searchType"
+        );
+
+    const area =
+        document.getElementById(
+            "searchArea"
+        );
+
+    const budget =
+        document.getElementById(
+            "searchBudget"
+        );
+
+
+    if(type){
+        type.value = "";
+    }
+
+    if(area){
+        area.value = "";
+    }
+
+    if(budget){
+        budget.value = "";
+    }
+
+
+    const resultBar =
+        document.getElementById(
+            "searchResultBar"
+        );
+
+
+    if(resultBar){
+
+        resultBar.style.display =
+            "none";
+
+    }
+
+
+    renderListings(
+        approvedListings
+    );
+
+}
+
+
+/* =========================================================
+   AREA CLICK
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        /*
+         * Search button
+         */
+
+        const searchButton =
+            document.getElementById(
+                "searchButton"
+            );
+
+
+        if(searchButton){
+
+            searchButton.addEventListener(
+                "click",
+                function(event){
+
+                    event.preventDefault();
+
+                    searchListings();
+
+                }
+            );
+
+        }
+
+
+        /*
+         * Area cards
+         */
+
+        document
+            .querySelectorAll(
+                ".area-card"
+            )
+            .forEach(
+                function(card){
+
+                    card.addEventListener(
+                        "click",
+                        function(){
+
+                            const area =
+                                card.dataset.area;
+
+
+                            document.getElementById(
+                                "searchArea"
+                            ).value =
+                                area;
+
+
+                            document.getElementById(
+                                "searchType"
+                            ).value =
+                                "";
+
+
+                            document.getElementById(
+                                "searchBudget"
+                            ).value =
+                                "";
+
+
+                            searchListings();
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /*
+         * Load approved listings when page opens.
+         */
+
+        loadApprovedListings();
+
+        if (adminToken) {
+            const adminLoginBox = document.getElementById("adminLogin");
+            const adminDashboard = document.getElementById("adminDashboard");
+            if (adminLoginBox && adminDashboard) {
+                adminLoginBox.style.display = "none";
+                adminDashboard.style.display = "block";
+                loadPendingListings();
+            }
+        }
+
+    }
+);
+
+
+/* =========================================================
+   VIEW LISTING
+========================================================= */
+
+function viewListing(data){
+
+    let photos = "";
+
+
+    if(
+        Array.isArray(
+            data.photoLinks
+        ) &&
+        data.photoLinks.length
+    ){
+
+        photos =
+            `
+            <div style="
+                display:grid;
+                grid-template-columns:repeat(2,1fr);
+                gap:10px;
+                margin-bottom:20px;
+            ">
+
+            ${
+                data.photoLinks
+                .map(
+                    function(photo){
+
+                        return `
+                        <img
+                            src="${escapeHtml(photo)}"
+                            style="
+                                width:100%;
+                                height:200px;
+                                object-fit:cover;
+                                border-radius:10px;
+                            "
+                            alt="Property">
+                        `;
+
+                    }
+                )
+                .join("")
+            }
+
+            </div>
+            `;
+
+    }
+
+
+    let mapButton = "";
+
+
+    if(
+        data.latitude &&
+        data.longitude
+    ){
+
+        const mapUrl =
+            "https://www.google.com/maps/search/?api=1&query=" +
+            encodeURIComponent(
+                data.latitude +
+                "," +
+                data.longitude
+            );
+
+
+        mapButton =
+            `
+            <a
+                href="${mapUrl}"
+                target="_blank"
+                style="
+                    display:inline-block;
+                    padding:12px 16px;
+                    border-radius:9px;
+                    background:#E8EDF2;
+                    color:#1E3A5F;
+                    font-weight:800;
+                    font-size:12px;
+                ">
+
+                🗺️ Open in Google Maps
+
+            </a>
+            `;
+
+    }
+
+
+    const modal =
+        document.createElement(
+            "div"
+        );
+
+
+    modal.className =
+        "modal-overlay active";
+
+
+    modal.innerHTML =
+        `
+
+        <div
+            class="property-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Property Details
+                    </h2>
+
+                    <p>
+                        Verified RoomUps listing
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-modal"
+                    type="button">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <div
+                style="
+                    padding:25px;
+                ">
+
+                ${photos}
+
+
+                <h2 style="
+                    color:#1E3A5F;
+                    margin-bottom:8px;
+                ">
+
+                    ${escapeHtml(
+                        data.propertyName ||
+                        "RoomUps Listing"
+                    )}
+
+                </h2>
+
+
+                <p style="
+                    color:#7B8797;
+                    font-size:13px;
+                    margin-bottom:20px;
+                ">
+
+                    ${escapeHtml(
+                        data.propertyType ||
+                        ""
+                    )}
+                    •
+                    📍
+                    ${escapeHtml(
+                        data.area ||
+                        ""
+                    )}
+
+                </p>
+
+
+                <div style="
+                    display:grid;
+                    grid-template-columns:repeat(2,1fr);
+                    gap:10px;
+                    margin-bottom:20px;
+                ">
+
+
+                    <div class="tag">
+                        Rent:
+                        ₹${Number(
+                            data.rent || 0
+                        ).toLocaleString(
+                            "en-IN"
+                        )}
+                        /month
+                    </div>
+
+
+                    <div class="tag">
+                        Availability:
+                        ${escapeHtml(
+                            data.availability ||
+                            "-"
+                        )}
+                    </div>
+
+
+                    <div class="tag">
+                        Furnishing:
+                        ${escapeHtml(
+                            data.furnishing ||
+                            "-"
+                        )}
+                    </div>
+
+
+                    <div class="tag">
+                        Bathroom:
+                        ${escapeHtml(
+                            data.bathroom ||
+                            "-"
+                        )}
+                    </div>
+
+
+                    <div class="tag">
+                        Kitchen:
+                        ${escapeHtml(
+                            data.kitchen ||
+                            "-"
+                        )}
+                    </div>
+
+
+                    <div class="tag">
+                        Suitable For:
+                        ${escapeHtml(
+                            data.suitableFor ||
+                            "-"
+                        )}
+                    </div>
+
+
+                </div>
+
+
+                <p style="
+                    color:#526174;
+                    font-size:13px;
+                    line-height:1.7;
+                    margin-bottom:20px;
+                ">
+
+                    ${escapeHtml(
+                        data.description ||
+                        ""
+                    )}
+
+                </p>
+
+
+                <div style="
+                    display:flex;
+                    flex-wrap:wrap;
+                    gap:10px;
+                ">
+
+
+                    ${
+                        data.ownerPhone
+                        ? `
+                        <a
+                            href="tel:${escapeHtml(
+                                data.ownerPhone
+                            )}"
+                            style="
+                                padding:12px 16px;
+                                border-radius:9px;
+                                background:#2D7A42;
+                                color:#fff;
+                                font-weight:800;
+                                font-size:12px;
+                            ">
+
+                            📞 Call Owner
+
+                        </a>
+                        `
+                        : ""
+                    }
+
+
+                    ${
+                        data.whatsapp
+                        ? `
+                        <a
+                            href="https://wa.me/${String(
+                                data.whatsapp
+                            ).replace(
+                                /\D/g,
+                                ""
+                            )}"
+                            target="_blank"
+                            style="
+                                padding:12px 16px;
+                                border-radius:9px;
+                                background:#20A65A;
+                                color:#fff;
+                                font-weight:800;
+                                font-size:12px;
+                            ">
+
+                            💬 WhatsApp
+
+                        </a>
+                        `
+                        : ""
+                    }
+
+
+                    ${mapButton}
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+
+    modal
+        .querySelector(
+            ".close-modal"
+        )
+        .addEventListener(
+            "click",
+            function(){
+
+                modal.remove();
+
+                document.body.classList.remove(
+                    "modal-open"
+                );
+
+            }
+        );
+
+
+    modal.addEventListener(
+        "click",
+        function(event){
+
+            if(
+                event.target ===
+                modal
+            ){
+
+                modal.remove();
+
+                document.body.classList.remove(
+                    "modal-open"
+                );
+
+            }
+
+        }
+    );
+
+
+    document.body.appendChild(
+        modal
+    );
+
+    /* Re-apply the currently selected language to the dynamic modal. */
+    if(roomUpsLanguage === "hi") {
+        applyLanguage("hi");
+    }
+
+    document.body.classList.add(
+        "modal-open"
+    );
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+
+
+// ============================================================
+// ADMIN BACKEND REQUEST HELPER
+// ============================================================
+
+async function postToRoomUps(payload) {
+    const response = await fetch(ROOMUPS_WEB_APP_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(payload)
+    });
+
+    const text = await response.text();
+    let data;
+
+    try {
+        data = JSON.parse(text);
+    } catch (error) {
+        throw new Error("Backend returned an unexpected response.");
+    }
+
+    if (!data || !data.success) {
+        throw new Error(data && data.message ? data.message : "Backend request failed.");
+    }
+
+    return data;
+}
+
+// ============================================================
+// ADMIN PANEL - APPS SCRIPT
+// ============================================================
+
+window.openAdminPanel = function() {
+  document.getElementById("adminModal").classList.add("active");
+  document.body.classList.add("modal-open");
+};
+
+window.closeAdminPanel = function() {
+  document.getElementById("adminModal").classList.remove("active");
+  document.body.classList.remove("modal-open");
+};
+
+window.closeAdminOutside = function(event) {
+  if (event.target.id === "adminModal") closeAdminPanel();
+};
+
+window.adminLogin = async function() {
+  const token = document.getElementById("adminPassword").value.trim();
+  const errorBox = document.getElementById("loginError");
+
+  errorBox.style.display = "none";
+
+  if (!token) {
+    errorBox.textContent = "Please enter the admin access key.";
+    errorBox.style.display = "block";
+    return;
+  }
+
+  try {
+    const result = await postToRoomUps({
+      action: "getPendingListings",
+      adminToken: token
+    });
+
+    adminToken = token;
+    sessionStorage.setItem("roomupsAdminToken", token);
+
+    document.getElementById("adminLogin").style.display = "none";
+    document.getElementById("adminDashboard").style.display = "block";
+
+    renderPendingListings(result.listings || []);
+  } catch (error) {
+    console.error(error);
+    errorBox.textContent = "Login failed. Please check the admin access key.";
+    errorBox.style.display = "block";
+  }
+};
+
+window.adminLogout = function() {
+  adminToken = "";
+  sessionStorage.removeItem("roomupsAdminToken");
+  document.getElementById("adminPassword").value = "";
+  document.getElementById("adminLogin").style.display = "block";
+  document.getElementById("adminDashboard").style.display = "none";
+};
+
+async function loadPendingListings() {
+  if (!adminToken) return;
+
+  try {
+    const result = await postToRoomUps({
+      action: "getPendingListings",
+      adminToken: adminToken
+    });
+
+    renderPendingListings(result.listings || []);
+  } catch (error) {
+    console.error(error);
+    alert("Unable to load admin requests. Your admin session may have expired.");
+    adminLogout();
+  }
+}
+
+function renderPendingListings(listings) {
+  const container = document.getElementById("adminList");
+  container.innerHTML = "";
+
+  document.getElementById("pendingCount").textContent =
+    "Pending Listings: " + listings.length;
+
+  if (!listings.length) {
+    container.innerHTML = '<div class="listing-message">No pending listing requests.</div>';
+    return;
+  }
+
+  listings.forEach(function(data) {
+    createAdminCard(data);
+  });
+}
+
+function createAdminCard(data) {
+  const container = document.getElementById("adminList");
+  const card = document.createElement("div");
+  card.className = "admin-card";
+
+  const mapsButton =
+    data.latitude !== "" && data.longitude !== ""
+      ? '<button class="maps-admin-btn" type="button">🗺️ Open Map</button>'
+      : "";
+
+  const facilities = Array.isArray(data.facilities) && data.facilities.length
+    ? data.facilities.join(", ")
+    : "None";
+
+  const photoPreview = Array.isArray(data.photoLinks) && data.photoLinks.length
+    ? '<div class="admin-image-row">' + data.photoLinks.map(function(link) {
+        return '<img src="' + escapeHtml(link) + '" alt="Property photo" loading="lazy">';
+      }).join("") + '</div>'
+    : "";
+
+  card.innerHTML = `
+    <div class="admin-card-top">
+      <div>
+        <h3>${escapeHtml(data.propertyName || "Unnamed Property")}</h3>
+        <small>${escapeHtml(data.propertyType || "")}</small>
+      </div>
+      <div class="pending-badge">PENDING</div>
+    </div>
+
+    <div class="admin-details">
+      <div class="admin-detail"><small>LISTING ID</small><strong>${escapeHtml(data.listingId || "")}</strong></div>
+      <div class="admin-detail"><small>OWNER</small><strong>${escapeHtml(data.ownerName || "")}</strong></div>
+      <div class="admin-detail"><small>PHONE</small><strong>${escapeHtml(data.ownerPhone || "")}</strong></div>
+      <div class="admin-detail"><small>AREA</small><strong>${escapeHtml(data.area || "")}</strong></div>
+      <div class="admin-detail"><small>RENT</small><strong>₹${Number(data.rent || 0).toLocaleString("en-IN")}</strong></div>
+      <div class="admin-detail"><small>FOOD</small><strong>${escapeHtml(data.foodAvailable || "No")}</strong></div>
+      <div class="admin-detail"><small>WHATSAPP</small><strong>${escapeHtml(data.whatsapp || "-")}</strong></div>
+      <div class="admin-detail"><small>CONTACT</small><strong>${escapeHtml(data.preferredContact || "-")}</strong></div>
+      <div class="admin-detail"><small>SUBMITTED</small><strong>${escapeHtml(data.submittedAt || "-")}</strong></div>
+    </div>
+
+    <p style="color:#526174;font-size:12px;line-height:1.6;margin-bottom:10px;">
+      ${escapeHtml(data.description || "")}
+    </p>
+
+    <p style="color:#526174;font-size:12px;line-height:1.6;margin-bottom:10px;">
+      <strong>Address:</strong> ${escapeHtml(data.address || "-")}<br>
+      <strong>Facilities:</strong> ${escapeHtml(facilities)}
+    </p>
+
+    ${photoPreview}
+
+    <div class="admin-actions">
+      ${mapsButton}
+      <button class="approve-btn" type="button">✓ Approve</button>
+      <button class="reject-btn" type="button">✕ Reject</button>
+    </div>
+  `;
+
+  if (mapsButton) {
+    card.querySelector(".maps-admin-btn").addEventListener("click", function() {
+      openAdminMap(data.latitude, data.longitude);
+    });
+  }
+
+  card.querySelector(".approve-btn").addEventListener("click", function() {
+    approveListing(data.listingId);
+  });
+
+  card.querySelector(".reject-btn").addEventListener("click", function() {
+    rejectListing(data.listingId);
+  });
+
+  container.appendChild(card);
+}
+
+window.approveListing = async function(id) {
+  if (!confirm("Are you sure you want to approve this listing?")) return;
+
+  try {
+    const result = await postToRoomUps({
+      action: "approveListing",
+      listingId: id,
+      adminToken: adminToken
+    });
+
+    alert(result.message);
+    await loadPendingListings();
+    loadApprovedListings();
+  } catch (error) {
+    console.error(error);
+    alert("Unable to approve listing. " + error.message);
+  }
+};
+
+window.rejectListing = async function(id) {
+  const reason = prompt("Optional: Enter rejection reason.") || "";
+
+  try {
+    const result = await postToRoomUps({
+      action: "rejectListing",
+      listingId: id,
+      reason: reason,
+      adminToken: adminToken
+    });
+
+    alert(result.message);
+    await loadPendingListings();
+  } catch (error) {
+    console.error(error);
+    alert("Unable to reject listing. " + error.message);
+  }
+};
+
+window.openAdminMap = function(lat, lng) {
+  const url =
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent(lat + "," + lng);
+  window.open(url, "_blank");
+};
+
+
+
+
+function escapeHtml(value){
+
+    return String(
+        value == null
+        ? ""
+        : value
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Escape"
+        ){
+
+            closePropertyModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   LANGUAGE SWITCHER
+========================================================= */
+
+const ROOMUPS_TRANSLATIONS = {
+    hi: {
+        "RoomUps.in | Student Accommodation in Dharamshala": "RoomUps.in | धर्मशाला में छात्रों के लिए आवास",
+        "English": "English",
+        "हिन्दी": "हिन्दी",
+        "List Your Property": "अपनी प्रॉपर्टी लिस्ट करें",
+        "🎓 Built for students in Dharamshala": "🎓 धर्मशाला के छात्रों के लिए बनाया गया",
+        "Find your": "पाएं अपना",
+        "Room, PG & Stay": "रूम, PG और स्टे",
+        "easily.": "आसानी से।",
+        "Search verified rooms, PGs, flats and student-friendly accommodation across Dharamshala — all in one place.": "धर्मशाला में सत्यापित रूम, PG, फ्लैट और छात्रों के लिए उपयुक्त आवास — सब एक ही जगह खोजें।",
+        "Looking For": "क्या चाहिए",
+        "Any Type": "कोई भी प्रकार",
+        "Room": "रूम",
+        "PG": "PG",
+        "1BHK": "1BHK",
+        "Flat": "फ्लैट",
+        "Hostel": "हॉस्टल",
+        "Shared Room": "शेयर्ड रूम",
+        "Location": "स्थान",
+        "Any Area": "कोई भी क्षेत्र",
+        "Budget": "बजट",
+        "Any Budget": "कोई भी बजट",
+        "Under ₹4,000": "₹4,000 से कम",
+        "₹4,000 – ₹6,000": "₹4,000 – ₹6,000",
+        "₹6,000 – ₹8,000": "₹6,000 – ₹8,000",
+        "Above ₹8,000": "₹8,000 से अधिक",
+        "Search": "खोजें",
+        "Clear Search": "सर्च साफ करें",
+        "What are you looking for?": "आप क्या ढूंढ रहे हैं?",
+        "Choose the type of accommodation that suits you.": "अपने लिए सही आवास का प्रकार चुनें।",
+        "Rooms": "रूम",
+        "Single & private rooms": "सिंगल और प्राइवेट रूम",
+        "PGs": "PGs",
+        "Student-friendly PGs": "छात्रों के लिए उपयुक्त PGs",
+        "Flats": "फ्लैट्स",
+        "1BHK & shared flats": "1BHK और शेयर्ड फ्लैट्स",
+        "Hostels": "हॉस्टल्स",
+        "Affordable student stays": "किफायती छात्र आवास",
+        "Food": "खाना",
+        "Mess & tiffin services": "मेस और टिफिन सेवाएं",
+        "Explore areas": "क्षेत्र देखें",
+        "Find accommodation in popular areas around Dharamshala.": "धर्मशाला के लोकप्रिय क्षेत्रों में आवास खोजें।",
+        "Click an area to see available listings.": "उपलब्ध लिस्टिंग देखने के लिए किसी क्षेत्र पर क्लिक करें।",
+        "Explore listings": "लिस्टिंग देखें",
+        "Available accommodation": "उपलब्ध आवास",
+        "Only approved RoomUps listings are displayed here.": "यहां केवल स्वीकृत RoomUps लिस्टिंग दिखाई जाती हैं।",
+        "Loading approved listings...": "स्वीकृत लिस्टिंग लोड हो रही हैं...",
+        "Unable to load listings right now.": "अभी लिस्टिंग लोड नहीं हो पा रही हैं।",
+        "No matching listings found.": "कोई मिलती-जुलती लिस्टिंग नहीं मिली।",
+        "How RoomUps works": "RoomUps कैसे काम करता है",
+        "Finding a place should be simple.": "अपनी जगह ढूंढना आसान होना चाहिए।",
+        "Search": "खोजें",
+        "Compare": "तुलना करें",
+        "Contact": "संपर्क करें",
+        "Choose your budget, location, room type and requirements.": "अपना बजट, स्थान, रूम का प्रकार और जरूरतें चुनें।",
+        "Compare rent, amenities, location and availability.": "किराया, सुविधाएं, स्थान और उपलब्धता की तुलना करें।",
+        "Contact the owner directly through call or WhatsApp.": "कॉल या WhatsApp के जरिए सीधे मालिक से संपर्क करें।",
+        "Have a room or PG?": "क्या आपके पास रूम या PG है?",
+        "List your property for free on RoomUps.": "RoomUps पर अपनी प्रॉपर्टी मुफ्त में लिस्ट करें।",
+        "Your listing will be reviewed before it appears on the website.": "वेबसाइट पर दिखने से पहले आपकी लिस्टिंग की समीक्षा की जाएगी।",
+        "List Your Property →": "अपनी प्रॉपर्टी लिस्ट करें →",
+        "Explore": "एक्सप्लोर करें",
+        "Rooms & PGs": "रूम और PGs",
+        "Areas": "क्षेत्र",
+        "For Owners": "मालिकों के लिए",
+        "List Property": "प्रॉपर्टी लिस्ट करें",
+        "RoomUps is a student-focused platform helping students find rooms, PGs, flats, shared accommodation and food services in Dharamshala.": "RoomUps एक छात्र-केंद्रित प्लेटफॉर्म है जो धर्मशाला में रूम, PG, फ्लैट, शेयर्ड आवास और भोजन सेवाएं खोजने में छात्रों की मदद करता है।",
+        "List Your Property": "अपनी प्रॉपर्टी लिस्ट करें",
+        "Submit your property for verification.": "अपनी प्रॉपर्टी को सत्यापन के लिए सबमिट करें।",
+        "Property Details": "प्रॉपर्टी की जानकारी",
+        "Verified RoomUps listing": "सत्यापित RoomUps लिस्टिंग",
+        "Call Owner": "मालिक को कॉल करें",
+        "WhatsApp": "WhatsApp",
+        "Open in Google Maps": "Google Maps में खोलें",
+        "Property / Service Type": "प्रॉपर्टी / सेवा का प्रकार",
+        "Select Type": "प्रकार चुनें",
+        "Single Room": "सिंगल रूम",
+        "Basic Information": "मूल जानकारी",
+        "Property / Service Name": "प्रॉपर्टी / सेवा का नाम",
+        "Description": "विवरण",
+        "Availability": "उपलब्धता",
+        "Select": "चुनें",
+        "Available": "उपलब्ध",
+        "Currently Occupied": "अभी उपलब्ध नहीं",
+        "Available Soon": "जल्द उपलब्ध होगा",
+        "Available From": "उपलब्ध होने की तारीख",
+        "Location": "स्थान",
+        "Select Area": "क्षेत्र चुनें",
+        "Address / Nearby Landmark": "पता / नजदीकी स्थान",
+        "📍 Property Location on Map": "📍 मैप पर प्रॉपर्टी का स्थान",
+        "Sharing your exact Google Maps location is optional. You can submit your property without providing your current location.": "अपना सटीक Google Maps स्थान शेयर करना वैकल्पिक है। आप अपनी वर्तमान लोकेशन दिए बिना भी प्रॉपर्टी सबमिट कर सकते हैं।",
+        "📍 Use My Current Location": "📍 मेरी वर्तमान लोकेशन इस्तेमाल करें",
+        "🗺️ Open in Google Maps": "🗺️ Google Maps में खोलें",
+        "Location sharing is optional.": "लोकेशन शेयर करना वैकल्पिक है।",
+        "LATITUDE": "अक्षांश",
+        "LONGITUDE": "देशांतर",
+        "Pricing": "कीमत",
+        "Monthly Rent / Price": "मासिक किराया / कीमत",
+        "Security Deposit": "सिक्योरिटी डिपॉजिट",
+        "Electricity": "बिजली",
+        "Water Charges": "पानी के शुल्क",
+        "Included": "शामिल",
+        "Separate": "अलग",
+        "According to Usage": "उपयोग के अनुसार",
+        "Property Features": "प्रॉपर्टी की सुविधाएं",
+        "Furnishing": "फर्निशिंग",
+        "Fully Furnished": "पूरी तरह फर्निश्ड",
+        "Semi Furnished": "सेमी फर्निश्ड",
+        "Unfurnished": "अनफर्निश्ड",
+        "Bathroom": "बाथरूम",
+        "Attached Bathroom": "अटैच्ड बाथरूम",
+        "Shared Bathroom": "शेयर्ड बाथरूम",
+        "Kitchen": "किचन",
+        "Attached Kitchen": "अटैच्ड किचन",
+        "Common Kitchen": "कॉमन किचन",
+        "No Kitchen": "किचन नहीं",
+        "Suitable For": "किसके लिए उपयुक्त",
+        "Students": "छात्र",
+        "Male Students": "छात्र (पुरुष)",
+        "Female Students": "छात्राएं",
+        "Anyone": "कोई भी",
+        "Available Facilities": "उपलब्ध सुविधाएं",
+        "Food Details": "खाने की जानकारी",
+        "Food Available?": "खाना उपलब्ध है?",
+        "Food Type": "खाने का प्रकार",
+        "Tiffin": "टिफिन",
+        "Home Cooked Food": "घर का बना खाना",
+        "Mess + Tiffin": "मेस + टिफिन",
+        "Monthly Food Price": "मासिक खाने की कीमत",
+        "Photos": "फोटो",
+        "Confirmation": "पुष्टि",
+        "Submit for Verification →": "सत्यापन के लिए सबमिट करें →",
+        "✓ Verified": "✓ सत्यापित",
+        "🍱 Food Available": "🍱 खाना उपलब्ध",
+        "/month": "/माह",
+        "View": "देखें",
+        "listing found": "लिस्टिंग मिली",
+        "listings found": "लिस्टिंग मिलीं",
+        "Rent:": "किराया:",
+        "Availability:": "उपलब्धता:",
+        "Furnishing:": "फर्निशिंग:",
+        "Bathroom:": "बाथरूम:",
+        "Kitchen:": "किचन:",
+        "Suitable For:": "किसके लिए:",
+        "Property / Service Details": "प्रॉपर्टी / सर्विस की जानकारी",
+        "Security Deposit:": "सिक्योरिटी डिपॉजिट:",
+        "Electricity:": "बिजली:",
+        "Water Charges:": "पानी के शुल्क:",
+        "Facilities:": "सुविधाएं:",
+        "Food:": "खाना:",
+        "Food Price:": "खाने की कीमत:",
+        "Owner:": "मालिक:",
+        "Call Owner": "मालिक को कॉल करें",
+        "Verified RoomUps listing": "सत्यापित RoomUps लिस्टिंग",
+
+        "1. What are you listing?": "1. आप क्या लिस्ट कर रहे हैं?",
+        "2. Basic Information": "2. मूल जानकारी",
+        "3. Location": "3. स्थान",
+        "4. Pricing": "4. कीमत",
+        "5. Property Features": "5. प्रॉपर्टी की सुविधाएं",
+        "6. Food Details": "6. खाने की जानकारी",
+        "7. Property Photos": "7. प्रॉपर्टी की फोटो",
+        "8. Contact Details": "8. संपर्क जानकारी",
+        "Your Name": "आपका नाम",
+        "Phone Number": "फोन नंबर",
+        "WhatsApp Number": "WhatsApp नंबर",
+        "Preferred Contact": "पसंदीदा संपर्क माध्यम",
+        "Upload Property Photos": "प्रॉपर्टी की फोटो अपलोड करें",
+        "Add up to 8 clear photos of the property.": "प्रॉपर्टी की अधिकतम 8 साफ फोटो अपलोड करें।",
+        "Confirmation": "पुष्टि",
+        "I confirm that the information provided in this listing is accurate and that the property/service is currently available. I understand that RoomUps will review this listing before publishing it.": "मैं पुष्टि करता/करती हूं कि इस लिस्टिंग में दी गई जानकारी सही है और प्रॉपर्टी/सेवा वर्तमान में उपलब्ध है। मैं समझता/समझती हूं कि RoomUps इस लिस्टिंग को वेबसाइट पर प्रकाशित करने से पहले इसकी समीक्षा करेगा।",
+        "Mess": "मेस",
+        "Tiffin Service": "टिफिन सेवा",
+        "Yes": "हां",
+        "No": "नहीं",
+        "Call & WhatsApp": "कॉल और WhatsApp",
+        "Call": "कॉल",
+        "Getting your current location...": "आपकी वर्तमान लोकेशन प्राप्त की जा रही है...",
+        "Location is unavailable in this browser. You can continue without it.": "इस ब्राउज़र में लोकेशन उपलब्ध नहीं है। आप इसके बिना भी आगे बढ़ सकते हैं।",
+        "✓ Location added. You can still change or remove it before submitting.": "✓ लोकेशन जोड़ दी गई है। सबमिट करने से पहले आप इसे बदल या हटा सकते हैं।",
+        "Unable to get location. That's okay — location is optional and you can continue.": "लोकेशन प्राप्त नहीं हो सकी। कोई बात नहीं — लोकेशन वैकल्पिक है और आप आगे बढ़ सकते हैं।",
+        "Submitting...": "सबमिट किया जा रहा है...",
+        "Searching...": "खोजा जा रहा है...",
+        "Unable to search listings right now.": "अभी लिस्टिंग खोजी नहीं जा सकती।",
+        "Please try again.": "कृपया फिर से कोशिश करें।",
+        "Unable to submit property.": "प्रॉपर्टी सबमिट नहीं हो सकी।",
+        "Your property has been submitted successfully for verification.": "आपकी प्रॉपर्टी सत्यापन के लिए सफलतापूर्वक सबमिट हो गई है।",
+        "Please upload at least one property photo.": "कृपया कम से कम एक प्रॉपर्टी फोटो अपलोड करें।"
+
+    }
+};
+
+let roomUpsLanguage = localStorage.getItem("roomupsLanguage") || "en";
+
+/*
+ * IMPORTANT:
+ * Text nodes do not have getAttribute()/setAttribute().
+ * The old language switcher tried to call those methods on Text nodes,
+ * which caused a JavaScript error and stopped Hindi translation completely.
+ *
+ * We store each original text node value in a WeakMap instead.
+ */
+const ROOMUPS_ORIGINAL_TEXT = new WeakMap();
+
+function getOriginalText(node){
+    if(ROOMUPS_ORIGINAL_TEXT.has(node)){
+        return ROOMUPS_ORIGINAL_TEXT.get(node);
+    }
+
+    const original = node.nodeValue || "";
+    ROOMUPS_ORIGINAL_TEXT.set(node, original);
+    return original;
+}
+
+function translateTextNode(node, language){
+    if(!node || node.nodeType !== Node.TEXT_NODE){
+        return;
+    }
+
+    const original = getOriginalText(node);
+
+    if(language === "hi"){
+        const key = original.trim();
+        const translated = ROOMUPS_TRANSLATIONS.hi[key];
+
+        if(translated){
+            const leading = original.match(/^\s*/)?.[0] || "";
+            const trailing = original.match(/\s*$/)?.[0] || "";
+            node.nodeValue = leading + translated + trailing;
+        }else{
+            /*
+             * Keep text unchanged when there is no dictionary entry.
+             * This is useful for proper names, user-entered property names,
+             * area names, phone numbers, etc.
+             */
+            node.nodeValue = original;
+        }
+    }else{
+        node.nodeValue = original;
+    }
+}
+
+function translateAttributes(language){
+    /*
+     * Translate common user-facing attributes too.
+     * This does not touch form values or backend data.
+     */
+    const attributeMap = {
+        "Example: Sharma Student PG": "उदाहरण: शर्मा स्टूडेंट PG",
+        "Tell students about your property or service...": "छात्रों को अपनी प्रॉपर्टी या सेवा के बारे में बताएं...",
+        "Example: Near Degree College": "उदाहरण: डिग्री कॉलेज के पास",
+        "Example: 5500": "उदाहरण: 5500",
+        "Example: 5000": "उदाहरण: 5000",
+        "Example: 2500": "उदाहरण: 2500",
+        "Full Name": "पूरा नाम",
+        "10-digit mobile number": "10 अंकों का मोबाइल नंबर",
+        "10-digit WhatsApp number": "10 अंकों का WhatsApp नंबर"
+    };
+
+    document.querySelectorAll("input, textarea").forEach(function(element){
+        ["placeholder"].forEach(function(attribute){
+            const current = element.getAttribute(attribute);
+
+            if(!current){
+                return;
+            }
+
+            if(!element.dataset.roomupsOriginalPlaceholder){
+                element.dataset.roomupsOriginalPlaceholder = current;
+            }
+
+            const original = element.dataset.roomupsOriginalPlaceholder;
+
+            if(language === "hi"){
+                element.setAttribute(
+                    attribute,
+                    attributeMap[original] || original
+                );
+            }else{
+                element.setAttribute(attribute, original);
+            }
+        });
+    });
+}
+
+function applyLanguage(language){
+    roomUpsLanguage = language === "hi" ? "hi" : "en";
+    localStorage.setItem("roomupsLanguage", roomUpsLanguage);
+
+    document.documentElement.lang = roomUpsLanguage;
+
+    const selector = document.getElementById("languageSelect");
+    if(selector){
+        selector.value = roomUpsLanguage;
+    }
+
+    /*
+     * Translate every visible text node.
+     * OPTION elements are intentionally included, so the search and
+     * property-form dropdowns also change to Hindi.
+     */
+    const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT,
+        {
+            acceptNode(node){
+                if(!node.nodeValue || !node.nodeValue.trim()){
+                    return NodeFilter.FILTER_REJECT;
+                }
+
+                const parent = node.parentElement;
+
+                if(!parent){
+                    return NodeFilter.FILTER_REJECT;
+                }
+
+                if(["SCRIPT", "STYLE"].includes(parent.tagName)){
+                    return NodeFilter.FILTER_REJECT;
+                }
+
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        }
+    );
+
+    const nodes = [];
+    let node;
+
+    while((node = walker.nextNode())){
+        nodes.push(node);
+    }
+
+    nodes.forEach(function(textNode){
+        translateTextNode(textNode, roomUpsLanguage);
+    });
+
+    translateAttributes(roomUpsLanguage);
+
+    if(roomUpsLanguage === "hi"){
+        document.title =
+            ROOMUPS_TRANSLATIONS.hi[
+                "RoomUps.in | Student Accommodation in Dharamshala"
+            ] ||
+            "RoomUps.in | धर्मशाला में छात्रों के लिए आवास";
+    }else{
+        document.title =
+            "RoomUps.in | Student Accommodation in Dharamshala";
+    }
+}
+
+function changeLanguage(language){
+    applyLanguage(language);
+}
+
+/*
+ * renderListings() creates new HTML dynamically.
+ * Re-apply the selected language after every fresh render.
+ */
+const roomUpsOriginalRenderListings = window.renderListings;
+
+if(typeof roomUpsOriginalRenderListings === "function"){
+    window.renderListings = function(listings){
+        roomUpsOriginalRenderListings(listings);
+
+        if(roomUpsLanguage === "hi"){
+            applyLanguage("hi");
+        }
+    };
+}
+
+/*
+ * Property details modal is also created dynamically.
+ * applyLanguage() is already called from viewListing(), but this observer
+ * also handles any future dynamically-created visible content safely.
+ */
+window.addEventListener("DOMContentLoaded", function(){
+    setTimeout(function(){
+        applyLanguage(roomUpsLanguage);
+    }, 0);
+});
+
+
+</script>
 
 
 <!-- =========================================================
@@ -2864,10 +6063,6 @@ placeholder="Admin access key">
 Login
 </button>
 
-<p style="font-size:12px;color:#6b7280;margin-top:10px;">
-  Passkey is required every time the Admin Panel is opened.
-</p>
-
 
 <p
 id="loginError"
@@ -2882,23 +6077,33 @@ id="adminDashboard"
 style="display:none;">
 
 <div class="admin-toolbar">
-<div class="admin-count" id="pendingCount">Pending Listings: 0</div>
-<button class="logout-btn" onclick="adminLogout()">Logout</button>
-</div>
 
-<div class="admin-section">
-  <div class="admin-section-header"><div class="admin-section-title">Pending Listings</div></div>
-  <div class="admin-list" id="adminList"><div class="listing-message">Loading pending requests...</div></div>
-</div>
+<div
+class="admin-count"
+id="pendingCount">
 
-<div class="admin-section">
-  <div class="admin-section-header"><div class="admin-section-title">Approved Listings</div><div class="admin-count" id="approvedCount">Approved Listings: 0</div></div>
-  <div class="admin-list" id="approvedAdminList"><div class="listing-message">Loading approved listings...</div></div>
-</div>
+Pending Listings: 0
 
 </div>
 
 
+<button
+class="logout-btn"
+onclick="adminLogout()">
+
+Logout
+
+</button>
+
+</div>
+
+
+<div
+class="admin-list"
+id="adminList">
+
+<div class="listing-message">
+Loading requests...
 </div>
 
 </div>
@@ -2906,1658 +6111,12 @@ style="display:none;">
 </div>
 
 
-<!-- =========================================================
-     APPS SCRIPT + APP JAVASCRIPT
-========================================================= -->
+</div>
 
-<script>
-// ============================================================
-// ROOMUPS FRONTEND - GOOGLE SHEETS / APPS SCRIPT VERSION
-// ============================================================
+</div>
 
-const ROOMUPS_API_URL = "https://script.google.com/macros/s/AKfycbwOIVLGinX_wA6KLS3IoMnv5JhWtJv0SpjZIyvoUo5TZnL59G7gbZqLUMTeL5Y6tYi1/exec";
+</div>
 
-let selectedLatitude = null;
-let selectedLongitude = null;
-let selectedPhotoFiles = [];
-let currentLanguage = localStorage.getItem("roomupsLanguage") || "en";
-let adminToken = "";
-
-
-// ============================================================
-// LANGUAGE
-// ============================================================
-
-const translations = {
-  en: {
-    listProperty: "+ List Your Property",
-    heroBadge: "Made for Students in Dharamshala",
-    heroTitle: 'Find your next <span>destination</span> in Dharamshala.',
-    heroDescription: "Find student-friendly rooms, PGs, flats, shared accommodation and food services in one place."
-  },
-  hi: {
-    listProperty: "+ अपनी प्रॉपर्टी लिस्ट करें",
-    heroBadge: "धर्मशाला के छात्रों के लिए बनाया गया",
-    heroTitle: 'अपनी अगली <span>डेस्टिनेशन</span> धर्मशाला में खोजें।',
-    heroDescription: "छात्रों के लिए कमरे, PG, फ्लैट, शेयरिंग रूम और खाने की सेवाएं एक ही जगह खोजें।"
-  },
-  hinglish: {
-    listProperty: "+ Apni Property List Karein",
-    heroBadge: "Dharamshala ke Students ke liye banaya gaya",
-    heroTitle: 'Apni next <span>destination</span> Dharamshala mein khojein.',
-    heroDescription: "Student-friendly rooms, PGs, flats, shared accommodation aur food services ek hi jagah par khojein."
-  }
-};
-
-window.changeLanguage = function(language) {
-  currentLanguage = language;
-  localStorage.setItem("roomupsLanguage", language);
-  applyLanguage();
-};
-
-function applyLanguage() {
-  const lang = translations[currentLanguage] || translations.en;
-  document.getElementById("listPropertyButton").textContent = lang.listProperty;
-  document.getElementById("heroBadge").textContent = lang.heroBadge;
-  document.getElementById("heroTitle").innerHTML = lang.heroTitle;
-  document.getElementById("heroDescription").textContent = lang.heroDescription;
-  document.getElementById("languageSelector").value = currentLanguage;
-}
-
-
-// ============================================================
-// PROPERTY MODAL
-// ============================================================
-
-window.openPropertyModal = function() {
-  document.getElementById("propertyModal").classList.add("active");
-  document.body.classList.add("modal-open");
-};
-
-window.closePropertyModal = function() {
-  document.getElementById("propertyModal").classList.remove("active");
-  document.body.classList.remove("modal-open");
-};
-
-window.closeModalOutside = function(event) {
-  if (event.target.id === "propertyModal") closePropertyModal();
-};
-
-
-// ============================================================
-// FOOD
-// ============================================================
-
-window.toggleFoodOptions = function() {
-  const value = document.getElementById("foodAvailability").value;
-  const options = document.getElementById("foodOptions");
-
-  options.style.display = value === "yes" ? "grid" : "none";
-
-  // When Food = No, clear all food-specific fields.
-  if (value !== "yes") {
-    document.getElementById("mealType").value = "";
-    document.getElementById("foodPrice").value = "";
-    document.getElementById("foodPreference").value = "";
-  }
-};
-
-
-// ============================================================
-// LOCATION
-// ============================================================
-
-window.getCurrentLocation = function() {
-  const status = document.getElementById("locationStatus");
-
-  if (!navigator.geolocation) {
-    status.className = "location-status error";
-    status.textContent = "Location is not supported by this browser.";
-    return;
-  }
-
-  status.className = "location-status success";
-  status.textContent = "📍 Getting your current location...";
-
-  navigator.geolocation.getCurrentPosition(
-    function(position) {
-      selectedLatitude = position.coords.latitude;
-      selectedLongitude = position.coords.longitude;
-
-      document.getElementById("latitudeText").textContent = selectedLatitude.toFixed(6);
-      document.getElementById("longitudeText").textContent = selectedLongitude.toFixed(6);
-      document.getElementById("coordinatesBox").style.display = "grid";
-      document.getElementById("openMapsButton").disabled = false;
-
-      status.className = "location-status success";
-      status.textContent = "✓ Location captured successfully.";
-    },
-    function() {
-      status.className = "location-status error";
-      status.textContent = "Location permission denied or unavailable.";
-    },
-    {
-      enableHighAccuracy: true,
-      timeout: 15000,
-      maximumAge: 0
-    }
-  );
-};
-
-window.openSelectedLocation = function() {
-  if (selectedLatitude === null || selectedLongitude === null) {
-    alert("Please select the property location first.");
-    return;
-  }
-
-  const url =
-    "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent(selectedLatitude + "," + selectedLongitude);
-
-  window.open(url, "_blank");
-};
-
-
-// ============================================================
-// PHOTO PREVIEW + COMPRESSION
-// ============================================================
-
-window.previewPhotos = function(event) {
-  const files = Array.from(event.target.files || []);
-
-  if (files.length > 8) {
-    alert("Maximum 8 photos can be selected.");
-    event.target.value = "";
-    selectedPhotoFiles = [];
-    document.getElementById("photoPreview").innerHTML = "";
-    return;
-  }
-
-  selectedPhotoFiles = files;
-  const preview = document.getElementById("photoPreview");
-  preview.innerHTML = "";
-
-  files.forEach(function(file) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const img = document.createElement("img");
-      img.src = e.target.result;
-      img.alt = "Property photo preview";
-      preview.appendChild(img);
-    };
-    reader.readAsDataURL(file);
-  });
-};
-
-function compressImage(file) {
-  return new Promise(function(resolve, reject) {
-    const reader = new FileReader();
-
-    reader.onerror = function() {
-      reject(new Error("Unable to read one of the selected photos."));
-    };
-
-    reader.onload = function(event) {
-      const img = new Image();
-
-      img.onerror = function() {
-        reject(new Error("One of the selected files is not a valid image."));
-      };
-
-      img.onload = function() {
-        const maxSize = 1200;
-        const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
-        const canvas = document.createElement("canvas");
-
-        canvas.width = Math.max(1, Math.round(img.width * scale));
-        canvas.height = Math.max(1, Math.round(img.height * scale));
-
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-        resolve(canvas.toDataURL("image/jpeg", 0.68));
-      };
-
-      img.src = event.target.result;
-    };
-
-    reader.readAsDataURL(file);
-  });
-}
-
-
-// ============================================================
-// FACILITIES
-// ============================================================
-
-function getFacilities() {
-  return Array.from(document.querySelectorAll(".checkbox-item input:checked"))
-    .map(function(input) { return input.value; });
-}
-
-
-// ============================================================
-// API HELPERS
-// ============================================================
-
-function ensureApiConfigured() {
-  if (!ROOMUPS_API_URL || ROOMUPS_API_URL.indexOf("PASTE_YOUR_") !== -1) {
-    throw new Error("Apps Script Web App URL is not configured in website.html.");
-  }
-}
-
-async function postToRoomUps(payload) {
-  ensureApiConfigured();
-
-  const response = await fetch(ROOMUPS_API_URL, {
-    method: "POST",
-    redirect: "follow",
-    headers: {
-      // text/plain avoids a CORS preflight for Apps Script web apps.
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify(payload)
-  });
-
-  const text = await response.text();
-
-  let data;
-  try {
-    data = JSON.parse(text);
-  } catch (error) {
-    throw new Error("Backend returned an unexpected response.");
-  }
-
-  if (!data.success) {
-    throw new Error(data.message || "Backend request failed.");
-  }
-
-  return data;
-}
-
-
-// ============================================================
-// SUBMIT PROPERTY
-// ============================================================
-
-window.submitProperty = async function(event) {
-  event.preventDefault();
-
-  const form = document.getElementById("propertyForm");
-  const button = document.getElementById("submitPropertyButton");
-  const foodAvailable = document.getElementById("foodAvailability").value;
-
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-
-  if (foodAvailable === "") {
-    alert("Please select Yes or No for Food Available.");
-    return;
-  }
-
-  if (selectedLatitude === null || selectedLongitude === null) {
-    alert("Please use 'Use My Current Location' and select the property location before submitting.");
-    return;
-  }
-
-  button.disabled = true;
-  button.textContent = "Submitting...";
-
-  try {
-    const photos = [];
-
-    // Compress photos before sending them to Apps Script.
-    for (let i = 0; i < selectedPhotoFiles.length; i++) {
-      const dataUrl = await compressImage(selectedPhotoFiles[i]);
-
-      // Rough client-side safety check.
-      if (dataUrl.length > 2.8 * 1024 * 1024) {
-        throw new Error("One photo is still too large. Please choose a smaller photo.");
-      }
-
-      photos.push({
-        name: selectedPhotoFiles[i].name,
-        dataUrl: dataUrl
-      });
-    }
-
-    const listing = {
-      action: "submitListing",
-
-      propertyType: document.getElementById("propertyType").value,
-      propertyName: document.getElementById("propertyName").value.trim(),
-      description: document.getElementById("propertyDescription").value.trim(),
-      availability: document.getElementById("availability").value,
-      availableFrom: document.getElementById("availableFrom").value,
-
-      area: document.getElementById("area").value,
-      address: document.getElementById("address").value.trim(),
-      latitude: selectedLatitude,
-      longitude: selectedLongitude,
-
-      rent: Number(document.getElementById("price").value),
-      securityDeposit: Number(document.getElementById("deposit").value || 0),
-      electricity: document.getElementById("electricity").value,
-      water: document.getElementById("water").value,
-
-      furnishing: document.getElementById("furnishing").value,
-      bathroom: document.getElementById("bathroom").value,
-      kitchen: document.getElementById("kitchen").value,
-      suitableFor: document.getElementById("suitableFor").value,
-      facilities: getFacilities(),
-
-      foodAvailable: foodAvailable === "yes" ? "Yes" : "No",
-      mealType: foodAvailable === "yes" ? document.getElementById("mealType").value : "",
-      foodPrice: foodAvailable === "yes" ? Number(document.getElementById("foodPrice").value || 0) : "",
-      foodPreference: foodAvailable === "yes" ? document.getElementById("foodPreference").value : "",
-
-      ownerName: document.getElementById("ownerName").value.trim(),
-      ownerPhone: document.getElementById("ownerPhone").value.trim(),
-      whatsapp: document.getElementById("whatsapp").value.trim(),
-      preferredContact: document.getElementById("preferredContact").value,
-
-      photos: photos
-    };
-
-    const result = await postToRoomUps(listing);
-
-    form.style.display = "none";
-    document.getElementById("successMessage").style.display = "block";
-    document.getElementById("successMessage").querySelector("p").innerHTML =
-      "Your listing has been successfully submitted.<br><br>" +
-      "Listing ID: <strong>" + escapeHtml(result.listingId) + "</strong><br><br>" +
-      "It is currently <strong>under verification</strong>. Your property will become visible on RoomUps only after approval.";
-
-    resetPropertyForm();
-
-  } catch (error) {
-    console.error(error);
-    alert("Unable to submit listing. " + error.message);
-  } finally {
-    button.disabled = false;
-    button.textContent = "Submit for Verification →";
-  }
-};
-
-function resetPropertyForm() {
-  document.getElementById("propertyForm").reset();
-  selectedLatitude = null;
-  selectedLongitude = null;
-  selectedPhotoFiles = [];
-
-  document.getElementById("photoPreview").innerHTML = "";
-  document.getElementById("coordinatesBox").style.display = "none";
-  document.getElementById("openMapsButton").disabled = true;
-  document.getElementById("foodOptions").style.display = "none";
-  document.getElementById("locationStatus").className = "location-status";
-  document.getElementById("locationStatus").textContent = "";
-};
-
-
-// ============================================================
-// PUBLIC LISTINGS - JSONP
-// ============================================================
-
-window.RoomUpsAPI = window.RoomUpsAPI || {};
-
-function loadApprovedListings() {
-  const container = document.getElementById("listingContainer");
-  container.innerHTML = '<div class="listing-message">Loading approved listings...</div>';
-
-  try {
-    ensureApiConfigured();
-  } catch (error) {
-    container.innerHTML = '<div class="listing-message">Backend URL is not configured yet.</div>';
-    return;
-  }
-
-  const callbackName = "roomUpsListingsCallback_" + Date.now();
-
-  window.RoomUpsAPI[callbackName] = function(result) {
-    cleanupJsonp(callbackName, script);
-
-    if (!result || !result.success) {
-      container.innerHTML = '<div class="listing-message">Unable to load listings right now.</div>';
-      return;
-    }
-
-    renderApprovedListings(result.listings || []);
-  };
-
-  const script = document.createElement("script");
-  script.src =
-    ROOMUPS_API_URL +
-    "?action=listings&prefix=RoomUpsAPI." +
-    encodeURIComponent(callbackName) +
-    "&t=" + Date.now();
-
-  script.onerror = function() {
-    cleanupJsonp(callbackName, script);
-    container.innerHTML = '<div class="listing-message">Unable to connect to RoomUps backend.</div>';
-  };
-
-  document.body.appendChild(script);
-};
-
-function cleanupJsonp(callbackName, script) {
-  try {
-    delete window.RoomUpsAPI[callbackName];
-  } catch (e) {}
-
-  if (script && script.parentNode) {
-    script.parentNode.removeChild(script);
-  }
-}
-
-function renderApprovedListings(listings) {
-  const container = document.getElementById("listingContainer");
-  container.innerHTML = "";
-
-  if (!listings.length) {
-    container.innerHTML = `
-      <div class="listing-message">
-        No verified listings are available yet.
-        <br><br>
-        Be the first owner to list your property.
-      </div>
-    `;
-    return;
-  }
-
-  listings.forEach(function(listing) {
-    createListingCard(listing);
-  });
-};
-
-function createListingCard(data) {
-  const container = document.getElementById("listingContainer");
-  const card = document.createElement("div");
-  card.className = "listing-card";
-  card.dataset.type = String(data.propertyType || "").toLowerCase();
-  card.dataset.area = String(data.area || "").toLowerCase();
-  card.dataset.price = Number(data.rent || 0);
-
-  const firstPhoto = Array.isArray(data.photoLinks) && data.photoLinks.length
-    ? '<img src="' + escapeHtml(data.photoLinks[0]) + '" alt="' + escapeHtml(data.propertyName || "RoomUps listing") + '" loading="lazy">'
-    : "🏠";
-
-  const facilities = Array.isArray(data.facilities) ? data.facilities.slice(0, 4) : [];
-  let tags = "";
-
-  facilities.forEach(function(item) {
-    tags += '<span class="tag">' + escapeHtml(item) + '</span>';
-  });
-
-  if (data.foodAvailable === "Yes") {
-    tags += '<span class="tag">🍱 Food Available</span>';
-  }
-
-  card.innerHTML = `
-    <div class="listing-image">
-      <span class="verified">✓ Verified</span>
-      ${firstPhoto}
-    </div>
-
-    <div class="listing-content">
-      <div class="listing-type">${escapeHtml(data.propertyType || "Property")}</div>
-      <h3>${escapeHtml(data.propertyName || "Room / PG")}</h3>
-      <div class="location">📍 ${escapeHtml(data.area || "")}</div>
-
-      <div class="listing-info">
-        ${tags}
-      </div>
-
-      <div class="listing-bottom">
-        <div class="price">
-          ₹${Number(data.rent || 0).toLocaleString("en-IN")}
-          <span>/month</span>
-        </div>
-
-        <button class="view-btn" type="button">View</button>
-      </div>
-    </div>
-  `;
-
-  card.querySelector(".view-btn").addEventListener("click", function() {
-    viewListing(data);
-  });
-
-  container.appendChild(card);
-}
-
-
-// ============================================================
-// VIEW LISTING
-// ============================================================
-
-window.viewListing = function(data) {
-
-  const photos = Array.isArray(data.photoLinks)
-    ? data.photoLinks.filter(Boolean)
-    : [];
-
-  const safePhotos = photos.map(function(link) {
-    return escapeHtml(link);
-  });
-
-  const mapUrl =
-    data.latitude !== "" && data.longitude !== ""
-      ? "https://www.google.com/maps/search/?api=1&query=" +
-        encodeURIComponent(data.latitude + "," + data.longitude)
-      : "";
-
-  const modal = document.createElement("div");
-
-  modal.className = "modal-overlay active";
-  modal.style.zIndex = "2500";
-
-  modal.innerHTML = `
-    <div class="property-modal"
-         style="max-width:850px;padding:25px;">
-
-      <!-- HEADER -->
-      <div style="
-        display:flex;
-        justify-content:space-between;
-        align-items:flex-start;
-        gap:15px;
-      ">
-
-        <div>
-
-          <div style="
-            color:var(--gold-dark);
-            font-size:11px;
-            font-weight:800;
-            text-transform:uppercase;
-            margin-bottom:8px;
-          ">
-            ${escapeHtml(data.propertyType || "Property")}
-          </div>
-
-          <h2 style="
-            color:var(--navy);
-            margin-bottom:8px;
-          ">
-            ${escapeHtml(data.propertyName || "RoomUps Listing")}
-          </h2>
-
-          <p style="
-            color:var(--text-light);
-            font-size:13px;
-          ">
-            📍 ${escapeHtml(data.area || "")}
-          </p>
-
-        </div>
-
-        <button
-          class="close-modal"
-          type="button">
-          ×
-        </button>
-
-      </div>
-
-
-      <!-- PHOTO GALLERY -->
-      ${
-        photos.length
-          ? `
-            <div style="
-              margin-top:22px;
-            ">
-
-              <div style="
-                position:relative;
-                width:100%;
-                height:360px;
-                border-radius:14px;
-                overflow:hidden;
-                background:#E8E1D4;
-                border:1px solid var(--border);
-              ">
-
-                <img
-                  id="roomUpsMainPhoto"
-                  src="${safePhotos[0]}"
-                  alt="${escapeHtml(data.propertyName || "Property photo")}"
-                  style="
-                    width:100%;
-                    height:100%;
-                    object-fit:cover;
-                    display:block;
-                  "
-                >
-
-                ${
-                  photos.length > 1
-                    ? `
-                      <button
-                        type="button"
-                        id="roomUpsPrevPhoto"
-                        style="
-                          position:absolute;
-                          left:12px;
-                          top:50%;
-                          transform:translateY(-50%);
-                          width:42px;
-                          height:42px;
-                          border:none;
-                          border-radius:50%;
-                          background:rgba(0,0,0,.55);
-                          color:white;
-                          font-size:22px;
-                          cursor:pointer;
-                        ">
-                        ‹
-                      </button>
-
-                      <button
-                        type="button"
-                        id="roomUpsNextPhoto"
-                        style="
-                          position:absolute;
-                          right:12px;
-                          top:50%;
-                          transform:translateY(-50%);
-                          width:42px;
-                          height:42px;
-                          border:none;
-                          border-radius:50%;
-                          background:rgba(0,0,0,.55);
-                          color:white;
-                          font-size:22px;
-                          cursor:pointer;
-                        ">
-                        ›
-                      </button>
-
-                      <div
-                        id="roomUpsPhotoCounter"
-                        style="
-                          position:absolute;
-                          bottom:12px;
-                          left:50%;
-                          transform:translateX(-50%);
-                          padding:6px 12px;
-                          border-radius:20px;
-                          background:rgba(0,0,0,.60);
-                          color:white;
-                          font-size:12px;
-                          font-weight:700;
-                        ">
-                        1 / ${photos.length}
-                      </div>
-                    `
-                    : ""
-                }
-
-              </div>
-
-
-              ${
-                photos.length > 1
-                  ? `
-                    <div
-                      id="roomUpsThumbnails"
-                      style="
-                        display:flex;
-                        gap:8px;
-                        margin-top:10px;
-                        overflow-x:auto;
-                        padding-bottom:4px;
-                      ">
-
-                      ${safePhotos.map(function(link, index) {
-                        return `
-                          <img
-                            src="${link}"
-                            data-photo-index="${index}"
-                            alt="Property photo ${index + 1}"
-                            style="
-                              width:75px;
-                              height:60px;
-                              object-fit:cover;
-                              border-radius:8px;
-                              cursor:pointer;
-                              border:2px solid ${
-                                index === 0
-                                  ? "var(--gold-dark)"
-                                  : "transparent"
-                              };
-                              flex-shrink:0;
-                            "
-                          >
-                        `;
-                      }).join("")}
-
-                    </div>
-                  `
-                  : ""
-              }
-
-            </div>
-          `
-          : `
-            <div style="
-              margin-top:20px;
-              height:250px;
-              display:flex;
-              align-items:center;
-              justify-content:center;
-              border-radius:14px;
-              background:radial-gradient(
-                circle at center,
-                #E8E1D4,
-                #DCD5C8
-              );
-              font-size:70px;
-            ">
-              🏠
-            </div>
-          `
-      }
-
-
-      <!-- DETAILS -->
-      <div style="
-        margin-top:22px;
-        display:grid;
-        gap:12px;
-      ">
-
-        ${
-          data.description
-            ? `
-              <p style="
-                color:var(--text-light);
-                line-height:1.7;
-                font-size:13px;
-              ">
-                ${escapeHtml(data.description)}
-              </p>
-            `
-            : ""
-        }
-
-
-        <!-- RENT -->
-        <div style="
-          padding:14px;
-          border-radius:10px;
-          background:#FAF8F4;
-          border:1px solid var(--border);
-        ">
-
-          <strong style="
-            color:var(--navy);
-            font-size:20px;
-          ">
-            ₹${Number(data.rent || 0).toLocaleString("en-IN")}
-          </strong>
-
-          <span style="
-            color:var(--muted);
-            font-size:12px;
-          ">
-            / month
-          </span>
-
-        </div>
-
-
-        <!-- BASIC DETAILS -->
-        <div style="
-          display:grid;
-          grid-template-columns:1fr 1fr;
-          gap:10px;
-        ">
-
-          <div class="admin-detail">
-            <small>ADDRESS</small>
-            <strong>
-              ${escapeHtml(data.address || "-")}
-            </strong>
-          </div>
-
-          <div class="admin-detail">
-            <small>AVAILABILITY</small>
-            <strong>
-              ${escapeHtml(data.availability || "-")}
-            </strong>
-          </div>
-
-          <div class="admin-detail">
-            <small>BATHROOM</small>
-            <strong>
-              ${escapeHtml(data.bathroom || "-")}
-            </strong>
-          </div>
-
-          <div class="admin-detail">
-            <small>KITCHEN</small>
-            <strong>
-              ${escapeHtml(data.kitchen || "-")}
-            </strong>
-          </div>
-
-          <div class="admin-detail">
-            <small>FURNISHING</small>
-            <strong>
-              ${escapeHtml(data.furnishing || "-")}
-            </strong>
-          </div>
-
-          <div class="admin-detail">
-            <small>SUITABLE FOR</small>
-            <strong>
-              ${escapeHtml(data.suitableFor || "-")}
-            </strong>
-          </div>
-
-        </div>
-
-
-        <!-- OWNER CONTACT -->
-        ${
-          (data.ownerName || data.ownerPhone || data.whatsapp)
-            ? `
-              <div style="
-                margin-top:4px;
-                padding:18px;
-                border-radius:12px;
-                background:linear-gradient(145deg,#F8F4EC,#F1ECE3);
-                border:1px solid var(--border);
-              ">
-                <div style="
-                  color:var(--navy);
-                  font-size:16px;
-                  font-weight:800;
-                  margin-bottom:12px;
-                ">
-                  👤 Contact Owner
-                </div>
-
-                ${
-                  data.ownerName
-                    ? `<div style="margin-bottom:8px;color:var(--text-light);font-size:13px;">
-                         <strong style="color:var(--navy);">Owner:</strong> ${escapeHtml(data.ownerName)}
-                       </div>`
-                    : ""
-                }
-
-                ${
-                  data.preferredContact
-                    ? `<div style="margin-bottom:14px;color:var(--text-light);font-size:12px;">
-                         Preferred contact: <strong>${escapeHtml(data.preferredContact)}</strong>
-                       </div>`
-                    : ""
-                }
-
-                <div style="display:flex;gap:10px;flex-wrap:wrap;">
-                  ${
-                    data.ownerPhone
-                      ? `<a
-                          href="tel:${escapeHtml(data.ownerPhone)}"
-                          style="
-                            flex:1;
-                            min-width:150px;
-                            text-align:center;
-                            padding:12px 14px;
-                            border-radius:8px;
-                            color:#fff;
-                            background:linear-gradient(135deg,var(--navy),var(--navy-dark));
-                            font-size:12px;
-                            font-weight:800;
-                            text-decoration:none;
-                          ">
-                          📞 Call Owner
-                        </a>`
-                      : ""
-                  }
-
-                  ${
-                    (data.whatsapp || data.ownerPhone)
-                      ? `<a
-                          href="https://wa.me/91${String(data.whatsapp || data.ownerPhone).replace(/\D/g, '')}"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style="
-                            flex:1;
-                            min-width:150px;
-                            text-align:center;
-                            padding:12px 14px;
-                            border-radius:8px;
-                            color:#24703A;
-                            background:#E7F4EA;
-                            border:1px solid #CBE6D1;
-                            font-size:12px;
-                            font-weight:800;
-                            text-decoration:none;
-                          ">
-                          💬 WhatsApp Owner
-                        </a>`
-                      : ""
-                  }
-                </div>
-              </div>
-            `
-            : ""
-        }
-
-        <!-- MAP -->
-        ${
-          mapUrl
-            ? `
-              <button
-                type="button"
-                class="maps-admin-btn"
-                style="
-                  border:none;
-                  padding:12px;
-                  border-radius:8px;
-                  font-weight:800;
-                  cursor:pointer;
-                  width:100%;
-                ">
-                🗺️ Open Location in Google Maps
-              </button>
-            `
-            : ""
-        }
-
-      </div>
-
-    </div>
-  `;
-
-
-  // ============================================================
-  // PHOTO GALLERY LOGIC
-  // ============================================================
-
-  if (photos.length > 1) {
-
-    let currentPhoto = 0;
-
-    const mainPhoto =
-      modal.querySelector("#roomUpsMainPhoto");
-
-    const counter =
-      modal.querySelector("#roomUpsPhotoCounter");
-
-    const thumbnails =
-      modal.querySelectorAll("#roomUpsThumbnails img");
-
-
-    function showPhoto(index) {
-
-      if (index < 0) {
-        index = photos.length - 1;
-      }
-
-      if (index >= photos.length) {
-        index = 0;
-      }
-
-      currentPhoto = index;
-
-      mainPhoto.src = photos[currentPhoto];
-
-      if (counter) {
-        counter.textContent =
-          (currentPhoto + 1) + " / " + photos.length;
-      }
-
-      thumbnails.forEach(function(thumb, i) {
-
-        thumb.style.border =
-          i === currentPhoto
-            ? "2px solid var(--gold-dark)"
-            : "2px solid transparent";
-
-      });
-
-    }
-
-
-    modal
-      .querySelector("#roomUpsPrevPhoto")
-      .addEventListener("click", function() {
-
-        showPhoto(currentPhoto - 1);
-
-      });
-
-
-    modal
-      .querySelector("#roomUpsNextPhoto")
-      .addEventListener("click", function() {
-
-        showPhoto(currentPhoto + 1);
-
-      });
-
-
-    thumbnails.forEach(function(thumb) {
-
-      thumb.addEventListener("click", function() {
-
-        showPhoto(
-          Number(thumb.dataset.photoIndex)
-        );
-
-      });
-
-    });
-
-  }
-
-
-  // ============================================================
-  // CLOSE MODAL
-  // ============================================================
-
-  modal
-    .querySelector(".close-modal")
-    .addEventListener("click", function() {
-
-      modal.remove();
-
-    });
-
-
-  // ============================================================
-  // GOOGLE MAPS
-  // ============================================================
-
-  if (mapUrl) {
-
-    modal
-      .querySelector(".maps-admin-btn")
-      .addEventListener("click", function() {
-
-        window.open(mapUrl, "_blank");
-
-      });
-
-  }
-
-
-  // ============================================================
-  // CLOSE WHEN CLICKING OUTSIDE
-  // ============================================================
-
-  modal.addEventListener("click", function(event) {
-
-    if (event.target === modal) {
-      modal.remove();
-    }
-
-  });
-
-
-  document.body.appendChild(modal);
-
-};
-
-
-
-// ============================================================
-// ADMIN PANEL - GOOGLE SHEETS / APPS SCRIPT
-// ============================================================
-
-window.openAdminPanel = function() {
-  const modal = document.getElementById("adminModal");
-  const login = document.getElementById("adminLogin");
-  const dashboard = document.getElementById("adminDashboard");
-  const password = document.getElementById("adminPassword");
-  const errorBox = document.getElementById("loginError");
-
-  if (!modal) return;
-
-  modal.classList.add("active");
-  document.body.classList.add("modal-open");
-
-  // SECURITY: never auto-open the dashboard.
-  // Every time the Admin Panel is opened, require the passkey.
-  adminToken = "";
-  sessionStorage.removeItem("roomupsAdminToken");
-  if (login) login.style.display = "block";
-  if (dashboard) dashboard.style.display = "none";
-  if (password) {
-    password.value = "";
-    setTimeout(function() {
-      password.focus();
-    }, 100);
-  }
-  if (errorBox) {
-    errorBox.style.display = "none";
-    errorBox.textContent = "";
-  }
-};
-
-window.closeAdminPanel = function() {
-  const modal = document.getElementById("adminModal");
-  if (!modal) return;
-
-  modal.classList.remove("active");
-  document.body.classList.remove("modal-open");
-};
-
-window.closeAdminOutside = function(event) {
-  if (event.target && event.target.id === "adminModal") {
-    closeAdminPanel();
-  }
-};
-
-
-// ============================================================
-// ADMIN LOGIN
-// ============================================================
-
-window.adminLogin = async function() {
-  const passwordInput = document.getElementById("adminPassword");
-  const errorBox = document.getElementById("loginError");
-
-  const password = passwordInput ? passwordInput.value.trim() : "";
-
-  if (errorBox) {
-    errorBox.style.display = "none";
-    errorBox.textContent = "";
-  }
-
-  if (!password) {
-    if (errorBox) {
-      errorBox.textContent = "Please enter the admin access key.";
-      errorBox.style.display = "block";
-    }
-    return;
-  }
-
-  const loginButton = document.querySelector("#adminLogin button");
-  if (loginButton) {
-    loginButton.disabled = true;
-    loginButton.textContent = "Checking...";
-  }
-
-  try {
-    // The Apps Script backend uses the adminToken as the private access key.
-    const result = await postToRoomUps({
-      action: "getPendingListings",
-      adminToken: password
-    });
-
-    if (!result || !result.success) {
-      throw new Error(result && result.message ? result.message : "Invalid admin access key.");
-    }
-
-    adminToken = password;
-    document.getElementById("adminLogin").style.display = "none";
-    document.getElementById("adminDashboard").style.display = "block";
-
-    renderPendingListings(result.listings || []);
-    await loadApprovedAdminListings();
-  } catch (error) {
-    console.error(error);
-  sessionStorage.removeItem("roomupsAdminToken");
-    adminToken = "";
-
-    if (errorBox) {
-      errorBox.textContent =
-        error.message === "Failed to fetch"
-          ? "Unable to connect to the RoomUps backend."
-          : "Login failed. " + error.message;
-      errorBox.style.display = "block";
-    }
-  } finally {
-    if (loginButton) {
-      loginButton.disabled = false;
-      loginButton.textContent = "Login";
-    }
-  }
-};
-
-
-// ============================================================
-// ADMIN LOGOUT
-// ============================================================
-
-window.adminLogout = function() {
-  adminToken = "";
-  sessionStorage.removeItem("roomupsAdminToken");
-  const login = document.getElementById("adminLogin");
-  const dashboard = document.getElementById("adminDashboard");
-  const password = document.getElementById("adminPassword");
-  const errorBox = document.getElementById("loginError");
-
-  if (login) login.style.display = "block";
-  if (dashboard) dashboard.style.display = "none";
-  if (password) password.value = "";
-
-  if (errorBox) {
-    errorBox.style.display = "none";
-    errorBox.textContent = "";
-  }
-};
-
-
-// ============================================================
-// LOAD PENDING LISTINGS
-// ============================================================
-
-window.loadPendingListings = async function() {
-  const container = document.getElementById("adminList");
-  const count = document.getElementById("pendingCount");
-
-  if (!container) return;
-
-  container.innerHTML =
-    '<div class="listing-message">Loading pending requests...</div>';
-
-  try {
-    const result = await postToRoomUps({
-      action: "getPendingListings",
-      adminToken: adminToken
-    });
-
-    if (!result || !result.success) {
-      throw new Error(
-        result && result.message
-          ? result.message
-          : "Unable to load pending listings."
-      );
-    }
-
-    renderPendingListings(result.listings || []);
-  } catch (error) {
-    console.error(error);
-
-    if (count) {
-      count.textContent = "Pending Listings: —";
-    }
-
-    container.innerHTML =
-      '<div class="listing-message">Unable to load admin requests.<br><br>' +
-      escapeHtml(error.message || "Unknown error.") +
-      "</div>";
-  }
-};
-
-
-// ============================================================
-// LOAD APPROVED LISTINGS FOR ADMIN
-// ============================================================
-window.loadApprovedAdminListings = async function() {
-  const container = document.getElementById("approvedAdminList");
-  const count = document.getElementById("approvedCount");
-  if (!container) return;
-  container.innerHTML = '<div class="listing-message">Loading approved listings...</div>';
-  try {
-    const result = await postToRoomUps({action:"getApprovedAdminListings",adminToken:adminToken});
-    if (!result || !result.success) throw new Error(result && result.message ? result.message : "Unable to load approved listings.");
-    renderApprovedAdminListings(result.listings || []);
-  } catch(error) {
-    console.error(error);
-    if (count) count.textContent="Approved Listings: —";
-    container.innerHTML='<div class="listing-message">Unable to load approved listings.<br><br>'+escapeHtml(error.message||"Unknown error.")+'</div>';
-  }
-};
-function renderApprovedAdminListings(listings) {
-  const container=document.getElementById("approvedAdminList"), count=document.getElementById("approvedCount");
-  if(!container) return;
-  if(count) count.textContent="Approved Listings: "+listings.length;
-  container.innerHTML="";
-  if(!listings.length){container.innerHTML='<div class="listing-message">No approved listings.</div>';return;}
-  listings.forEach(createApprovedAdminCard);
-}
-function createApprovedAdminCard(data) {
-  const container=document.getElementById("approvedAdminList"); if(!container)return;
-  const card=document.createElement("div"); card.className="admin-card";
-  const photos=Array.isArray(data.photoLinks)?data.photoLinks.filter(Boolean):[];
-  const facilities=Array.isArray(data.facilities)?data.facilities.join(", "):"None";
-  const safeId=String(data.listingId||"");
-  const photoHtml=photos.length?'<div class="admin-image-row">'+photos.map(function(photo,index){return '<img src="'+escapeHtml(photo)+'" alt="Property photo '+(index+1)+'" loading="lazy">';}).join("")+'</div>':"";
-  card.innerHTML=`<div class="admin-card-top"><div><h3>${escapeHtml(data.propertyName||"RoomUps Listing")}</h3><small>${escapeHtml(data.propertyType||"Property")}</small></div><div class="approved-badge">APPROVED</div></div>${photoHtml}<div class="admin-details"><div class="admin-detail"><small>LISTING ID</small><strong>${escapeHtml(safeId)}</strong></div><div class="admin-detail"><small>OWNER</small><strong>${escapeHtml(data.ownerName||"-")}</strong></div><div class="admin-detail"><small>PHONE</small><strong>${escapeHtml(data.ownerPhone||"-")}</strong></div><div class="admin-detail"><small>AREA</small><strong>${escapeHtml(data.area||"-")}</strong></div><div class="admin-detail"><small>RENT</small><strong>₹${Number(data.rent||0).toLocaleString("en-IN")}</strong></div><div class="admin-detail"><small>FACILITIES</small><strong>${escapeHtml(facilities)}</strong></div></div><p style="color:#526174;font-size:12px;line-height:1.6;margin-bottom:15px;">${escapeHtml(data.description||"")}</p><div class="admin-actions"><button class="remove-btn" type="button">✕ Remove from Website</button></div>`;
-  card.querySelector(".remove-btn").addEventListener("click",function(){removeApprovedListing(safeId);});
-  container.appendChild(card);
-}
-
-
-// ============================================================
-// RENDER PENDING LISTINGS
-// ============================================================
-
-function renderPendingListings(listings) {
-  const container = document.getElementById("adminList");
-  const count = document.getElementById("pendingCount");
-
-  if (!container) return;
-
-  if (count) {
-    count.textContent = "Pending Listings: " + listings.length;
-  }
-
-  container.innerHTML = "";
-
-  if (!listings.length) {
-    container.innerHTML =
-      '<div class="listing-message">No pending listing requests.</div>';
-    return;
-  }
-
-  listings.forEach(function(data) {
-    createAdminCard(data);
-  });
-}
-
-
-// ============================================================
-// ADMIN CARD
-// ============================================================
-
-function createAdminCard(data) {
-  const container = document.getElementById("adminList");
-  if (!container) return;
-
-  const card = document.createElement("div");
-  card.className = "admin-card";
-
-  const photos = Array.isArray(data.photoLinks)
-    ? data.photoLinks.filter(Boolean)
-    : [];
-
-  const facilities = Array.isArray(data.facilities)
-    ? data.facilities.join(", ")
-    : "None";
-
-  const mapButton =
-    data.latitude !== "" &&
-    data.latitude !== null &&
-    data.latitude !== undefined &&
-    data.longitude !== "" &&
-    data.longitude !== null &&
-    data.longitude !== undefined
-      ? '<button class="maps-admin-btn" type="button">🗺️ Open Map</button>'
-      : "";
-
-  const safeId = String(data.listingId || "");
-
-  let photoHtml = "";
-
-  if (photos.length) {
-    photoHtml =
-      '<div class="admin-image-row">' +
-      photos
-        .map(function(photo, index) {
-          return (
-            '<img src="' +
-            escapeHtml(photo) +
-            '" alt="Property photo ' +
-            (index + 1) +
-            '" loading="lazy">'
-          );
-        })
-        .join("") +
-      "</div>";
-  }
-
-  card.innerHTML = `
-    <div class="admin-card-top">
-      <div>
-        <h3>${escapeHtml(data.propertyName || "RoomUps Listing")}</h3>
-        <small>${escapeHtml(data.propertyType || "Property")}</small>
-      </div>
-      <div class="pending-badge">PENDING</div>
-    </div>
-
-    ${photoHtml}
-
-    <div class="admin-details">
-      <div class="admin-detail">
-        <small>LISTING ID</small>
-        <strong>${escapeHtml(safeId)}</strong>
-      </div>
-
-      <div class="admin-detail">
-        <small>OWNER</small>
-        <strong>${escapeHtml(data.ownerName || "-")}</strong>
-      </div>
-
-      <div class="admin-detail">
-        <small>PHONE</small>
-        <strong>${escapeHtml(data.ownerPhone || "-")}</strong>
-      </div>
-
-      <div class="admin-detail">
-        <small>WHATSAPP</small>
-        <strong>${escapeHtml(data.whatsapp || "-")}</strong>
-      </div>
-
-      <div class="admin-detail">
-        <small>AREA</small>
-        <strong>${escapeHtml(data.area || "-")}</strong>
-      </div>
-
-      <div class="admin-detail">
-        <small>RENT</small>
-        <strong>₹${Number(data.rent || 0).toLocaleString("en-IN")}</strong>
-      </div>
-
-      <div class="admin-detail">
-        <small>FOOD</small>
-        <strong>${escapeHtml(data.foodAvailable || "-")}</strong>
-      </div>
-
-      <div class="admin-detail">
-        <small>FACILITIES</small>
-        <strong>${escapeHtml(facilities)}</strong>
-      </div>
-
-      <div class="admin-detail">
-        <small>SUBMITTED</small>
-        <strong>${escapeHtml(data.submittedAt || "-")}</strong>
-      </div>
-    </div>
-
-    <p style="
-      color:#526174;
-      font-size:12px;
-      line-height:1.6;
-      margin-bottom:15px;
-    ">
-      ${escapeHtml(data.description || "")}
-    </p>
-
-    <div class="admin-actions">
-      ${mapButton}
-
-      <button class="approve-btn" type="button">
-        ✓ Approve
-      </button>
-
-      <button class="reject-btn" type="button">
-        ✕ Reject
-      </button>
-    </div>
-  `;
-
-  if (mapButton) {
-    card.querySelector(".maps-admin-btn").addEventListener("click", function() {
-      openAdminMap(data.latitude, data.longitude);
-    });
-  }
-
-  card.querySelector(".approve-btn").addEventListener("click", function() {
-    approveListing(safeId);
-  });
-
-  card.querySelector(".reject-btn").addEventListener("click", function() {
-    rejectListing(safeId);
-  });
-
-  container.appendChild(card);
-}
-
-
-// ============================================================
-// APPROVE
-// ============================================================
-
-window.approveListing = async function(id) {
-  if (!id) {
-    alert("Listing ID is missing.");
-    return;
-  }
-
-  if (!confirm("Are you sure you want to approve this listing?")) {
-    return;
-  }
-
-  try {
-    const result = await postToRoomUps({
-      action: "approveListing",
-      listingId: id,
-      adminToken: adminToken
-    });
-
-    if (!result || !result.success) {
-      throw new Error(
-        result && result.message
-          ? result.message
-          : "Unable to approve listing."
-      );
-    }
-
-    alert(result.message || "Listing approved successfully.");
-
-    await loadPendingListings();
-    await loadApprovedAdminListings();
-    loadApprovedListings();
-  } catch (error) {
-    console.error(error);
-    alert("Unable to approve listing. " + (error.message || ""));
-  }
-};
-
-
-// ============================================================
-// REJECT
-// ============================================================
-
-window.rejectListing = async function(id) {
-  if (!id) {
-    alert("Listing ID is missing.");
-    return;
-  }
-
-  const reason = prompt("Optional: Enter rejection reason.") || "";
-
-  try {
-    const result = await postToRoomUps({
-      action: "rejectListing",
-      listingId: id,
-      reason: reason,
-      adminToken: adminToken
-    });
-
-    if (!result || !result.success) {
-      throw new Error(
-        result && result.message
-          ? result.message
-          : "Unable to reject listing."
-      );
-    }
-
-    alert(result.message || "Listing rejected.");
-
-    await loadPendingListings();
-  } catch (error) {
-    console.error(error);
-    alert("Unable to reject listing. " + (error.message || ""));
-  }
-};
-
-
-// ============================================================
-// ============================================================
-// REMOVE APPROVED LISTING FROM WEBSITE
-// ============================================================
-window.removeApprovedListing = async function(id) {
-  if(!id){alert("Listing ID is missing.");return;}
-  if(!confirm("Remove this approved listing from the public website?\n\nThe listing will remain in the database but will no longer be shown publicly.")) return;
-  try{
-    const result=await postToRoomUps({action:"removeApprovedListing",listingId:id,adminToken:adminToken});
-    if(!result||!result.success) throw new Error(result&&result.message?result.message:"Unable to remove listing.");
-    alert(result.message||"Listing removed from the website.");
-    await loadApprovedAdminListings();
-    loadApprovedListings();
-  }catch(error){console.error(error);alert("Unable to remove listing. "+(error.message||""));}
-};
-
-
-// ADMIN GOOGLE MAPS
-// ============================================================
-
-window.openAdminMap = function(lat, lng) {
-  if (lat === "" || lng === "" || lat == null || lng == null) {
-    alert("Location is not available for this listing.");
-    return;
-  }
-
-  const url =
-    "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent(lat + "," + lng);
-
-  window.open(url, "_blank");
-};
-
-
-// ============================================================
-// ESC + INITIALIZATION
-// ============================================================
-
-document.addEventListener("DOMContentLoaded", function() {
-  applyLanguage();
-  toggleFoodOptions();
-  loadApprovedListings();
-
-  // SECURITY: Admin dashboard is never restored automatically.
-  // The administrator must enter the passkey each time the panel is opened.
-  adminToken = "";
-  sessionStorage.removeItem("roomupsAdminToken");
-  const login = document.getElementById("adminLogin");
-  const dashboard = document.getElementById("adminDashboard");
-
-  if (login) login.style.display = "block";
-  if (dashboard) dashboard.style.display = "none";
-});
-
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closePropertyModal();
-    closeAdminPanel();
-  }
-});
-
-
-// ============================================================
-// HTML ESCAPE
-// ============================================================
-
-function escapeHtml(value) {
-  return String(value == null ? "" : value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-
-</script>
 
 
 </body>
