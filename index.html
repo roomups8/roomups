@@ -498,7 +498,6 @@ header{
 .owner-section{
     padding:80px 20px;
 }
-
 .owner-box{
     max-width:1100px;
     margin:auto;
@@ -1001,7 +1000,7 @@ footer{
 @media(max-width:900px){
 
     .hero h1{
-        font-size:43px;
+        font-size:42px;
     }
 
     .search-box{
@@ -1022,32 +1021,42 @@ footer{
 
 }
 
-@media(max-width:650px){
+@media(max-width:600px){
 
     .navbar{
-        height:68px;
-        padding:0 14px;
+        height:auto;
+        min-height:65px;
+        padding:12px 15px;
+        gap:7px;
     }
 
     .logo{
-        font-size:22px;
+        font-size:20px;
     }
 
     .language-select{
-        display:none;
+        min-width:75px;
+        height:38px;
+        font-size:10px;
+        padding-left:7px;
     }
 
     .list-property-btn{
-        padding:10px 12px;
-        font-size:11px;
+        padding:9px 10px;
+        font-size:10px;
     }
 
     .hero{
-        padding:70px 15px 75px;
+        padding:65px 15px;
     }
 
     .hero h1{
-        font-size:36px;
+        font-size:34px;
+        letter-spacing:-1px;
+    }
+
+    .hero p{
+        font-size:14px;
     }
 
     .search-box{
@@ -1057,6 +1066,10 @@ footer{
     .search-field{
         border-right:none;
         border-bottom:1px solid rgba(30,58,95,.08);
+    }
+
+    .search-btn{
+        min-height:48px;
     }
 
     .categories{
@@ -1105,6 +1118,7 @@ footer{
     }
 
 }
+
 
 /* =========================================================
    ADMIN
@@ -1399,903 +1413,1197 @@ footer{
     }
 
     .areas{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2,1fr);
     }
 
     .listings{
         grid-template-columns:1fr;
     }
 
-    .steps{
-        grid-template-columns:1fr;
-    }
-
-    .footer-container{
-        grid-template-columns:1fr;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .form-group.full{
-        grid-column:auto;
-    }
-
-    .checkbox-grid{
-        grid-template-columns:1fr;
-    }
-
-    #foodOptions{
-        grid-template-columns:1fr;
-    }
-
-    .coordinates{
-        grid-template-columns:1fr;
-    }
-
-    .photo-preview{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .owner-box{
-        flex-direction:column;
-        align-items:flex-start;
-        padding:35px 25px;
-    }
-
-    .owner-btn{
-        width:100%;
-    }
-
-    .form-actions{
-        flex-direction:column-reverse;
-    }
-
-    .cancel-btn,
-    .submit-property-btn{
-        width:100%;
-    }
-
-    .admin-details{
-        grid-template-columns:1fr;
-    }
-
-    .admin-card-top{
-        flex-direction:column;
-    }
-
 }
+    </div>
 
 
+    <!-- =========================================================
+         PROPERTY MODAL
+    ========================================================= -->
 
-</style>
+    <div
+        class="modal-overlay"
+        id="propertyModal">
 
-</head>
+        <div class="property-modal">
 
+            <div class="modal-header">
 
-<body>
+                <div>
 
+                    <h2>
+                        List Your Property
+                    </h2>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+                    <p>
+                        Submit your property for review.
+                    </p>
 
-<header>
+                </div>
 
-<div class="navbar">
 
-<div class="logo">
-Room<span>Ups</span>
-</div>
+                <button
+                    class="close-modal"
+                    type="button"
+                    onclick="closePropertyModal()">
 
-<div class="nav-actions">
+                    ×
 
-<select
-class="language-select"
-id="languageSelect"
-onchange="changeLanguage(this.value)">
+                </button>
 
-<option value="en">
-English
-</option>
+            </div>
 
-<option value="hi">
-हिन्दी
-</option>
 
-</select>
+            <form
+                class="property-form"
+                id="propertyForm">
 
 
-<button
-class="list-property-btn"
-type="button"
-onclick="openPropertyModal()">
+                <!-- ================= BASIC DETAILS ================= -->
 
-List Your Property
+                <div class="form-section">
 
-</button>
+                    <div class="form-section-title">
+                        Basic Property Details
+                    </div>
 
-</div>
 
-</div>
+                    <div class="form-grid">
 
-</header>
 
+                        <div class="form-group">
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+                            <label>
+                                Property Type
+                                <span class="required">*</span>
+                            </label>
 
-<section class="hero">
+                            <select
+                                id="propertyType"
+                                required>
 
-<div class="hero-container">
+                                <option value="">
+                                    Select Type
+                                </option>
 
-<div class="hero-badge">
-🎓 Built for students in Dharamshala
-</div>
+                                <option value="Room">
+                                    Room
+                                </option>
 
-<h1>
-Find your <span>Room, PG & Stay</span> easily.
-</h1>
+                                <option value="PG">
+                                    PG
+                                </option>
 
-<p>
-Search verified rooms, PGs, flats and student-friendly
-accommodation across Dharamshala — all in one place.
-</p>
+                                <option value="1BHK">
+                                    1BHK
+                                </option>
 
+                                <option value="Flat">
+                                    Flat
+                                </option>
 
-<div class="search-box">
+                                <option value="Hostel">
+                                    Hostel
+                                </option>
 
+                                <option value="Shared Room">
+                                    Shared Room
+                                </option>
 
-<div class="search-field">
+                            </select>
 
-<label>
-Looking For
-</label>
+                        </div>
 
-<select id="searchType">
 
-<option value="">
-Any Type
-</option>
+                        <div class="form-group">
 
-<option value="Room">
-Room
-</option>
+                            <label>
+                                Property Name
+                                <span class="required">*</span>
+                            </label>
 
-<option value="PG">
-PG
-</option>
+                            <input
+                                type="text"
+                                id="propertyName"
+                                placeholder="e.g. Gupta PG"
+                                required>
 
-<option value="1BHK">
-1BHK
-</option>
+                        </div>
 
-<option value="Flat">
-Flat
-</option>
 
-<option value="Hostel">
-Hostel
-</option>
+                        <div class="form-group full">
 
-<option value="Shared Room">
-Shared Room
-</option>
+                            <label>
+                                Description
+                                <span class="required">*</span>
+                            </label>
 
-</select>
+                            <textarea
+                                id="description"
+                                placeholder="Describe your property..."
+                                required></textarea>
 
-</div>
+                        </div>
 
 
-<div class="search-field">
+                    </div>
 
-<label>
-Location
-</label>
+                </div>
 
-<select id="searchArea">
 
-<option value="">
-Any Area
-</option>
 
-<option value="Kotwali Bazar">
-Kotwali Bazar
-</option>
+                <!-- ================= AVAILABILITY ================= -->
 
-<option value="Kacheri / Kacheri Adda">
-Kacheri / Kacheri Adda
-</option>
+                <div class="form-section">
 
-<option value="Civil Lines">
-Civil Lines
-</option>
+                    <div class="form-section-title">
+                        Availability
+                    </div>
 
-<option value="Jawahar Nagar">
-Jawahar Nagar
-</option>
 
-<option value="Sakoh">
-Sakoh
-</option>
+                    <div class="availability-grid">
 
-<option value="Shamnagar">
-Shamnagar
-</option>
 
-<option value="Darnu">
-Darnu
-</option>
+                        <div class="form-group">
 
-<option value="Sheela / Sheela Chowk">
-Sheela / Sheela Chowk
-</option>
+                            <label>
+                                Availability
+                                <span class="required">*</span>
+                            </label>
 
-<option value="Sudher">
-Sudher
-</option>
+                            <select
+                                id="availability"
+                                required>
 
-<option value="Chilgari">
-Chilgari
-</option>
+                                <option value="">
+                                    Select
+                                </option>
 
-<option value="McLeod Ganj">
-McLeod Ganj
-</option>
+                                <option value="Available Now">
+                                    Available Now
+                                </option>
 
-<option value="Bhagsunag / Bhagsu">
-Bhagsunag / Bhagsu
-</option>
+                                <option value="Available Soon">
+                                    Available Soon
+                                </option>
 
-<option value="Dharamkot">
-Dharamkot
-</option>
+                            </select>
 
-<option value="Naddi">
-Naddi
-</option>
+                        </div>
 
-<option value="Forsyth Ganj">
-Forsyth Ganj
-</option>
 
-<option value="Jogiwara">
-Jogiwara
-</option>
+                        <div class="form-group">
 
-<option value="Dal Lake Area">
-Dal Lake Area
-</option>
+                            <label>
+                                Available From
+                            </label>
 
-<option value="Khanyara">
-Khanyara
-</option>
+                            <input
+                                type="date"
+                                id="availableFrom">
 
-<option value="Tang Narwana">
-Tang Narwana
-</option>
+                        </div>
 
-<option value="Yol">
-Yol
-</option>
 
-<option value="Sokni Da Kot">
-Sokni Da Kot
-</option>
+                    </div>
 
-<option value="Narwana">
-Narwana
-</option>
+                </div>
 
-<option value="Shahpur">
-Shahpur
-</option>
 
-</select>
 
-</div>
+                <!-- ================= LOCATION ================= -->
 
+                <div class="form-section">
 
-<div class="search-field">
+                    <div class="form-section-title">
+                        Location
+                    </div>
 
-<label>
-Budget
-</label>
 
-<select id="searchBudget">
+                    <div class="form-grid">
 
-<option value="">
-Any Budget
-</option>
 
-<option value="0-4000">
-Under ₹4,000
-</option>
+                        <div class="form-group">
 
-<option value="4000-6000">
-₹4,000 – ₹6,000
-</option>
+                            <label>
+                                Area
+                                <span class="required">*</span>
+                            </label>
 
-<option value="6000-8000">
-₹6,000 – ₹8,000
-</option>
+                            <select
+                                id="area"
+                                required>
 
-<option value="8000-99999999">
-Above ₹8,000
-</option>
+                                <option value="">
+                                    Select Area
+                                </option>
 
-</select>
+                                <option value="Kotwali Bazar">
+                                    Kotwali Bazar
+                                </option>
 
-</div>
+                                <option value="Kacheri / Kacheri Adda">
+                                    Kacheri / Kacheri Adda
+                                </option>
 
+                                <option value="Civil Lines">
+                                    Civil Lines
+                                </option>
 
-<button
-class="search-btn"
-type="button"
-id="searchButton">
+                                <option value="Jawahar Nagar">
+                                    Jawahar Nagar
+                                </option>
 
-Search
+                                <option value="Sakoh">
+                                    Sakoh
+                                </option>
 
-</button>
+                                <option value="Shamnagar">
+                                    Shamnagar
+                                </option>
 
+                                <option value="Darnu">
+                                    Darnu
+                                </option>
 
-</div>
+                                <option value="Sheela / Sheela Chowk">
+                                    Sheela / Sheela Chowk
+                                </option>
 
-</div>
+                                <option value="Sudher">
+                                    Sudher
+                                </option>
 
-</section>
+                                <option value="Chilgari">
+                                    Chilgari
+                                </option>
 
+                                <option value="McLeod Ganj">
+                                    McLeod Ganj
+                                </option>
 
-<!-- =========================================================
-     SEARCH RESULT
-========================================================= -->
+                                <option value="Bhagsunag / Bhagsu">
+                                    Bhagsunag / Bhagsu
+                                </option>
 
-<div
-class="search-result-bar"
-id="searchResultBar">
+                                <option value="Dharamkot">
+                                    Dharamkot
+                                </option>
 
-<div class="search-result-inner">
+                                <option value="Naddi">
+                                    Naddi
+                                </option>
 
-<div
-class="search-result-text"
-id="searchResultText">
-</div>
+                                <option value="Forsyth Ganj">
+                                    Forsyth Ganj
+                                </option>
 
-<button
-class="clear-search-btn"
-type="button"
-onclick="clearSearch()">
+                                <option value="Jogiwara">
+                                    Jogiwara
+                                </option>
 
-Clear Search
+                                <option value="Dal Lake Area">
+                                    Dal Lake Area
+                                </option>
 
-</button>
+                                <option value="Khanyara">
+                                    Khanyara
+                                </option>
 
-</div>
+                                <option value="Tang Narwana">
+                                    Tang Narwana
+                                </option>
 
-</div>
+                                <option value="Yol">
+                                    Yol
+                                </option>
 
+                                <option value="Sokni Da Kot">
+                                    Sokni Da Kot
+                                </option>
 
-<!-- =========================================================
-     CATEGORIES
-========================================================= -->
+                                <option value="Narwana">
+                                    Narwana
+                                </option>
 
-<section class="section">
+                                <option value="Shahpur">
+                                    Shahpur
+                                </option>
 
-<div class="section-heading">
+                            </select>
 
-<h2>
-What are you looking for?
-</h2>
+                        </div>
 
-<p>
-Choose the type of accommodation that suits you.
-</p>
 
-</div>
+                        <div class="form-group full">
 
+                            <label>
+                                Full Address
+                                <span class="required">*</span>
+                            </label>
 
-<div class="categories">
+                            <textarea
+                                id="address"
+                                placeholder="Enter complete property address..."
+                                required></textarea>
 
+                        </div>
 
-<div class="category-card">
 
-<div class="category-icon">
-🏠
-</div>
+                    </div>
 
-<h3>
-Rooms
-</h3>
 
-<p>
-Single & private rooms
-</p>
+                    <div class="location-box">
 
-</div>
+                        <div class="location-box-title">
+                            📍 Add Property Location
+                        </div>
 
 
-<div class="category-card">
+                        <div class="location-box-description">
 
-<div class="category-icon">
-🏢
-</div>
+                            Location is optional. You can use your current
+                            location to help students find the property
+                            more easily.
 
-<h3>
-PGs
-</h3>
+                        </div>
 
-<p>
-Student-friendly PGs
-</p>
 
-</div>
+                        <div class="location-buttons">
 
+                            <button
+                                type="button"
+                                class="location-btn current-location-btn"
+                                onclick="getCurrentLocation()">
 
-<div class="category-card">
+                                📍 Use My Current Location
 
-<div class="category-icon">
-🏡
-</div>
+                            </button>
 
-<h3>
-Flats
-</h3>
 
-<p>
-1BHK & shared flats
-</p>
+                            <button
+                                type="button"
+                                class="location-btn maps-btn"
+                                id="openLocationMapBtn"
+                                onclick="openSelectedLocation()"
+                                disabled>
 
-</div>
+                                🗺️ Open in Google Maps
 
+                            </button>
 
-<div class="category-card">
+                        </div>
 
-<div class="category-icon">
-🛏️
-</div>
 
-<h3>
-Hostels
-</h3>
+                        <div
+                            class="location-status"
+                            id="locationStatus">
 
-<p>
-Affordable student stays
-</p>
+                            Location not selected.
 
-</div>
+                        </div>
 
 
-<div class="category-card">
+                        <div
+                            class="coordinates"
+                            id="coordinatesBox"
+                            style="display:none;">
 
-<div class="category-icon">
-🍱
-</div>
 
-<h3>
-Food
-</h3>
+                            <div class="coordinate-box">
 
-<p>
-Mess & tiffin services
-</p>
+                                <small>
+                                    Latitude
+                                </small>
 
-</div>
+                                <strong id="latitudeDisplay">
+                                    —
+                                </strong>
 
+                            </div>
 
-</div>
 
-</section>
+                            <div class="coordinate-box">
 
+                                <small>
+                                    Longitude
+                                </small>
 
-<!-- =========================================================
-     AREAS
-========================================================= -->
+                                <strong id="longitudeDisplay">
+                                    —
+                                </strong>
 
-<section class="section">
+                            </div>
 
-<div class="section-heading">
 
-<h2>
-Explore areas
-</h2>
+                        </div>
 
-<p>
-Find accommodation in popular areas around Dharamshala.
-Click an area to see available listings.
-</p>
+                    </div>
 
-</div>
+                </div>
 
 
-<div class="areas">
 
+                <!-- ================= RENT ================= -->
 
-<div class="area-card" data-area="Kotwali Bazar">
-<h3>Kotwali Bazar</h3>
-<p>Explore listings</p>
-</div>
+                <div class="form-section">
 
+                    <div class="form-section-title">
+                        Rent & Charges
+                    </div>
 
-<div class="area-card" data-area="Kacheri / Kacheri Adda">
-<h3>Kacheri / Kacheri Adda</h3>
-<p>Explore listings</p>
-</div>
 
+                    <div class="form-grid">
 
-<div class="area-card" data-area="Civil Lines">
-<h3>Civil Lines</h3>
-<p>Explore listings</p>
-</div>
 
+                        <div class="form-group">
 
-<div class="area-card" data-area="Jawahar Nagar">
-<h3>Jawahar Nagar</h3>
-<p>Explore listings</p>
-</div>
+                            <label>
+                                Monthly Rent
+                                <span class="required">*</span>
+                            </label>
 
+                            <input
+                                type="number"
+                                id="rent"
+                                min="0"
+                                placeholder="e.g. 5000"
+                                required>
 
-<div class="area-card" data-area="Sakoh">
-<h3>Sakoh</h3>
-<p>Explore listings</p>
-</div>
+                        </div>
 
 
-<div class="area-card" data-area="Shamnagar">
-<h3>Shamnagar</h3>
-<p>Explore listings</p>
-</div>
+                        <div class="form-group">
 
+                            <label>
+                                Security Deposit
+                            </label>
 
-<div class="area-card" data-area="Darnu">
-<h3>Darnu</h3>
-<p>Explore listings</p>
-</div>
+                            <input
+                                type="number"
+                                id="securityDeposit"
+                                min="0"
+                                placeholder="e.g. 5000">
 
+                        </div>
 
-<div class="area-card" data-area="Sheela / Sheela Chowk">
-<h3>Sheela / Sheela Chowk</h3>
-<p>Explore listings</p>
-</div>
 
+                        <div class="form-group">
 
-<div class="area-card" data-area="Sudher">
-<h3>Sudher</h3>
-<p>Explore listings</p>
-</div>
+                            <label>
+                                Electricity
+                            </label>
 
+                            <select id="electricity">
 
-<div class="area-card" data-area="Chilgari">
-<h3>Chilgari</h3>
-<p>Explore listings</p>
-</div>
+                                <option value="">
+                                    Select
+                                </option>
 
+                                <option value="Included">
+                                    Included
+                                </option>
 
-<div class="area-card" data-area="McLeod Ganj">
-<h3>McLeod Ganj</h3>
-<p>Explore listings</p>
-</div>
+                                <option value="Separate">
+                                    Separate
+                                </option>
 
+                                <option value="As per usage">
+                                    As per usage
+                                </option>
 
-<div class="area-card" data-area="Bhagsunag / Bhagsu">
-<h3>Bhagsunag / Bhagsu</h3>
-<p>Explore listings</p>
-</div>
+                            </select>
 
+                        </div>
 
-<div class="area-card" data-area="Dharamkot">
-<h3>Dharamkot</h3>
-<p>Explore listings</p>
-</div>
 
+                        <div class="form-group">
 
-<div class="area-card" data-area="Naddi">
-<h3>Naddi</h3>
-<p>Explore listings</p>
-</div>
+                            <label>
+                                Water
+                            </label>
 
+                            <select id="water">
 
-<div class="area-card" data-area="Forsyth Ganj">
-<h3>Forsyth Ganj</h3>
-<p>Explore listings</p>
-</div>
+                                <option value="">
+                                    Select
+                                </option>
 
+                                <option value="Included">
+                                    Included
+                                </option>
 
-<div class="area-card" data-area="Jogiwara">
-<h3>Jogiwara</h3>
-<p>Explore listings</p>
-</div>
+                                <option value="Separate">
+                                    Separate
+                                </option>
 
+                                <option value="As per usage">
+                                    As per usage
+                                </option>
 
-<div class="area-card" data-area="Dal Lake Area">
-<h3>Dal Lake Area</h3>
-<p>Explore listings</p>
-</div>
+                            </select>
 
+                        </div>
 
-<div class="area-card" data-area="Khanyara">
-<h3>Khanyara</h3>
-<p>Explore listings</p>
-</div>
 
+                    </div>
 
-<div class="area-card" data-area="Tang Narwana">
-<h3>Tang Narwana</h3>
-<p>Explore listings</p>
-</div>
+                </div>
 
 
-<div class="area-card" data-area="Yol">
-<h3>Yol</h3>
-<p>Explore listings</p>
-</div>
 
+                <!-- ================= PROPERTY FEATURES ================= -->
 
-<div class="area-card" data-area="Sokni Da Kot">
-<h3>Sokni Da Kot</h3>
-<p>Explore listings</p>
-</div>
+                <div class="form-section">
 
+                    <div class="form-section-title">
+                        Property Features
+                    </div>
 
-<div class="area-card" data-area="Narwana">
-<h3>Narwana</h3>
-<p>Explore listings</p>
-</div>
 
+                    <div class="form-grid">
 
-<div class="area-card" data-area="Shahpur">
-<h3>Shahpur</h3>
-<p>Explore listings</p>
-</div>
 
+                        <div class="form-group">
 
-</div>
+                            <label>
+                                Furnishing
+                            </label>
 
-</section>
+                            <select id="furnishing">
 
+                                <option value="">
+                                    Select
+                                </option>
 
-<!-- =========================================================
-     LISTINGS
-========================================================= -->
+                                <option value="Fully Furnished">
+                                    Fully Furnished
+                                </option>
 
-<section
-class="section"
-id="properties">
+                                <option value="Semi Furnished">
+                                    Semi Furnished
+                                </option>
 
-<div class="section-heading">
+                                <option value="Unfurnished">
+                                    Unfurnished
+                                </option>
 
-<h2>
-Available accommodation
-</h2>
+                            </select>
 
-<p>
-Only approved RoomUps listings are displayed here.
-</p>
+                        </div>
 
-</div>
 
+                        <div class="form-group">
 
-<div
-class="listings"
-id="listingContainer">
+                            <label>
+                                Bathroom
+                            </label>
 
-<div class="listing-message">
-Loading approved listings...
-</div>
+                            <select id="bathroom">
 
-</div>
+                                <option value="">
+                                    Select
+                                </option>
 
-</section>
+                                <option value="Attached">
+                                    Attached
+                                </option>
 
+                                <option value="Shared">
+                                    Shared
+                                </option>
 
-<!-- =========================================================
-     HOW IT WORKS
-========================================================= -->
+                            </select>
 
-<section class="how-section">
+                        </div>
 
-<div class="section">
 
-<div class="section-heading">
+                        <div class="form-group">
 
-<h2>
-How RoomUps works
-</h2>
+                            <label>
+                                Kitchen
+                            </label>
 
-<p>
-Finding a place should be simple.
-</p>
+                            <select id="kitchen">
 
-</div>
+                                <option value="">
+                                    Select
+                                </option>
 
+                                <option value="Private">
+                                    Private
+                                </option>
 
-<div class="steps">
+                                <option value="Shared">
+                                    Shared
+                                </option>
 
+                                <option value="Not Available">
+                                    Not Available
+                                </option>
 
-<div class="step">
+                            </select>
 
-<div class="step-number">
-1
-</div>
+                        </div>
 
-<h3>
-Search
-</h3>
 
-<p>
-Choose your budget, location, room type and requirements.
-</p>
+                        <div class="form-group">
 
-</div>
+                            <label>
+                                Suitable For
+                            </label>
 
+                            <select id="suitableFor">
 
-<div class="step">
+                                <option value="">
+                                    Select
+                                </option>
 
-<div class="step-number">
-2
-</div>
+                                <option value="Male Students">
+                                    Male Students
+                                </option>
 
-<h3>
-Compare
-</h3>
+                                <option value="Female Students">
+                                    Female Students
+                                </option>
 
-<p>
-Compare rent, amenities, location and availability.
-</p>
+                                <option value="Students">
+                                    Students
+                                </option>
 
-</div>
+                                <option value="Anyone">
+                                    Anyone
+                                </option>
 
+                            </select>
 
-<div class="step">
+                        </div>
 
-<div class="step-number">
-3
-</div>
 
-<h3>
-Contact
-</h3>
+                    </div>
 
-<p>
-Contact the owner directly through call or WhatsApp.
-</p>
+                </div>
 
-</div>
 
 
-</div>
+                <!-- ================= FACILITIES ================= -->
 
-</div>
+                <div class="form-section">
 
-</section>
+                    <div class="form-section-title">
+                        Facilities
+                    </div>
 
 
-<!-- =========================================================
-     OWNER CTA
-========================================================= -->
+                    <div
+                        class="checkbox-grid"
+                        id="facilitiesGrid">
 
-<section class="owner-section">
 
-<div class="owner-box">
+                        <label class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                value="WiFi">
+                            WiFi
+                        </label>
 
-<div>
 
-<h2>
-Have a room or PG?
-</h2>
+                        <label class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                value="Parking">
+                            Parking
+                        </label>
 
-<p>
-List your property for free on RoomUps.
-Your listing will be reviewed before it appears on the website.
-</p>
 
-</div>
+                        <label class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                value="Hot Water">
+                            Hot Water
+                        </label>
 
 
-<button
-class="owner-btn"
-type="button"
-onclick="openPropertyModal()">
+                        <label class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                value="Washing Machine">
+                            Washing Machine
+                        </label>
 
-List Your Property →
 
-</button>
+                        <label class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                value="CCTV">
+                            CCTV
+                        </label>
 
-</div>
 
-</section>
+                        <label class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                value="Power Backup">
+                            Power Backup
+                        </label>
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+                        <label class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                value="Geyser">
+                            Geyser
+                        </label>
 
-<footer>
 
-<div class="footer-container">
+                        <label class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                value="Kitchen">
+                            Kitchen
+                        </label>
 
 
-<div class="footer-brand">
+                        <label class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                value="Balcony">
+                            Balcony
+                        </label>
 
-<h2>
-RoomUps
-</h2>
 
-<p>
-RoomUps is a student-focused platform helping students
-find rooms, PGs, flats, shared accommodation and food
-services in Dharamshala.
-</p>
+                    </div>
 
-</div>
+                </div>
 
 
-<div class="footer-column">
 
-<h3>
-Explore
-</h3>
+                <!-- ================= FOOD ================= -->
 
-<a href="#properties">
-Rooms & PGs
-</a>
+                <div class="form-section">
 
-<a href="#properties">
-Areas
-</a>
+                    <div class="form-section-title">
+                        Food Availability
+                    </div>
 
-<a href="#properties">
-Food
-</a>
 
-</div>
+                    <div class="form-group">
 
+                        <label>
+                            Food Available?
+                        </label>
 
-<div class="footer-column">
+                        <select
+                            id="foodAvailable">
 
-<h3>
-Co-Founders
-</h3>
+                            <option value="">
+                                Select
+                            </option>
 
-<div class="footer-founders">
+                            <option value="Yes">
+                                Yes
+                            </option>
 
-<div class="footer-founder-name">
-Dhiraj Kumar Gupta
-</div>
+                            <option value="No">
+                                No
+                            </option>
 
-<div class="footer-founder-name">
-Harsh Thakur
-</div>
+                        </select>
 
-<div class="footer-founder-name">
-Rishi Kapoor
-</div>
+                    </div>
 
-<div class="footer-founder-name">
-Neeraj Kapoor
-</div>
 
-<div class="footer-founder-name">
-Vipul Verma
-</div>
+                    <div
+                        class="food-extra"
+                        id="foodExtra">
 
-</div>
 
-</div>
+                        <div class="form-grid">
 
 
-<div class="footer-column">
+                            <div class="form-group">
 
-<h3>
-For Owners
-</h3>
+                                <label>
+                                    Meal Type
+                                </label>
 
-<a
-    href="#"
-    onclick="openPropertyModal();return false;">
-    List Property
-</a>
+                                <select id="mealType">
+
+                                    <option value="">
+                                        Select
+                                    </option>
+
+                                    <option value="Breakfast">
+                                        Breakfast
+                                    </option>
+
+                                    <option value="Lunch">
+                                        Lunch
+                                    </option>
+
+                                    <option value="Dinner">
+                                        Dinner
+                                    </option>
+
+                                    <option value="Breakfast + Lunch + Dinner">
+                                        Breakfast + Lunch + Dinner
+                                    </option>
+
+                                    <option value="Lunch + Dinner">
+                                        Lunch + Dinner
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Food Price
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="foodPrice"
+                                    min="0"
+                                    placeholder="e.g. 2500">
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label>
+                                    Food Preference
+                                </label>
+
+                                <select id="foodPreference">
+
+                                    <option value="">
+                                        Select
+                                    </option>
+
+                                    <option value="Veg">
+                                        Veg
+                                    </option>
+
+                                    <option value="Non-Veg">
+                                        Non-Veg
+                                    </option>
+
+                                    <option value="Both">
+                                        Both
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= PHOTOS ================= -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        Property Photos
+                    </div>
+
+
+                    <div class="photo-upload">
+
+                        <div class="photo-upload-icon">
+                            📷
+                        </div>
+
+                        <div class="photo-upload-title">
+                            Upload Property Photos
+                        </div>
+
+                        <div class="photo-upload-subtitle">
+                            Add clear photos of the room/property.
+                        </div>
+
+
+                        <input
+                            class="file-input"
+                            type="file"
+                            id="propertyPhotos"
+                            accept="image/*"
+                            multiple>
+
+                    </div>
+
+
+                    <div
+                        class="photo-preview"
+                        id="photoPreview">
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= OWNER DETAILS ================= -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        Owner Contact Details
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Owner Name
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="ownerName"
+                                placeholder="Your name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Owner Phone
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="ownerPhone"
+                                placeholder="10 digit mobile number"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                WhatsApp Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="whatsapp"
+                                placeholder="WhatsApp number">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Preferred Contact
+                            </label>
+
+                            <select id="preferredContact">
+
+                                <option value="Call">
+                                    Call
+                                </option>
+
+                                <option value="WhatsApp">
+                                    WhatsApp
+                                </option>
+
+                                <option value="Both">
+                                    Both
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= CONFIRMATION ================= -->
+
+                <div class="form-section">
+
+                    <div class="confirmation-box">
+
+                        <input
+                            type="checkbox"
+                            id="ownerConfirmation"
+                            required>
+
+
+                        <label for="ownerConfirmation">
+
+                            I confirm that the information provided
+                            is accurate and that I am authorized to
+                            list this property on RoomUps.
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= ACTIONS ================= -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        onclick="closePropertyModal()">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="submit-property-btn"
+                        id="submitPropertyBtn">
+
+                        Submit Property
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         LISTING DETAIL MODAL
+    ========================================================= -->
+
+    <div
+        class="modal-overlay"
+        id="listingModal">
+
+        <div class="property-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="listingModalTitle">
+                        Property Details
+                    </h2>
+
+                    <p id="listingModalSubtitle">
+                        RoomUps Listing
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-modal"
+                    type="button"
+                    onclick="closeListingModal()">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="listing-modal-content"
+                id="listingModalContent">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         ADMIN MODAL
+    ========================================================= -->
+
+    <div
+        class="modal-overlay"
+        id="adminModal">
+
+        <div class="admin-panel">
+
+            <div class="admin-header">
+
+                <div>
+
+                    <h2>
+                        RoomUps Admin
+                    </h2>
+
+                    <p>
+                        Manage submitted property listings.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-modal"
+                    type="button"
+                    onclick="closeAdminModal()">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="admin-content"
+                id="adminContent">
+
+            </div>
+
+        </div>
+
+    </div>
 
 <a
     href="#"
@@ -2341,7 +2649,6 @@ List Property
 </div>
 
 </footer>
-
 
 
 <!-- =========================================================
@@ -2785,9 +3092,11 @@ LONGITUDE
 
 </div>
 
+
 </div>
 
 </div>
+
 
 </div>
 
@@ -3089,6 +3398,7 @@ CCTV
 
 </div>
 
+
 </div>
 
 </div>
@@ -3192,7 +3502,6 @@ placeholder="Example: 2500">
 
 </div>
 
-
 <!-- =====================================================
      7. PROPERTY PHOTOS
 ===================================================== -->
@@ -3205,7 +3514,6 @@ placeholder="Example: 2500">
 
 
 <div class="photo-upload">
-
 
 <div class="photo-upload-icon">
 📷
@@ -3256,6 +3564,7 @@ Your Name
 <span class="required">*</span>
 </label>
 
+
 <input
 id="ownerName"
 type="text"
@@ -3272,6 +3581,7 @@ Phone Number
 <span class="required">*</span>
 </label>
 
+
 <input
 id="ownerPhone"
 type="tel"
@@ -3287,6 +3597,7 @@ required>
 WhatsApp Number
 </label>
 
+
 <input
 id="whatsapp"
 type="tel"
@@ -3300,6 +3611,7 @@ placeholder="10-digit WhatsApp number">
 <label>
 Preferred Contact
 </label>
+
 
 <select id="preferredContact">
 
@@ -3334,7 +3646,6 @@ WhatsApp
 
 <div class="confirmation-box">
 
-
 <input
 id="confirmation"
 type="checkbox"
@@ -3349,7 +3660,6 @@ available. I understand that RoomUps will review this
 listing before publishing it.
 
 </label>
-
 
 </div>
 
@@ -3379,7 +3689,6 @@ Submit for Verification →
 
 <script>
 
-
 /* =========================================================
    CONFIG
 ========================================================= */
@@ -3389,7 +3698,10 @@ const ROOMUPS_WEB_APP_URL =
 
 
 let approvedListings = [];
-let adminToken = sessionStorage.getItem("roomupsAdminToken") || "";
+
+let adminToken =
+sessionStorage.getItem("roomupsAdminToken") || "";
+
 
 let currentLatitude = "";
 
@@ -3446,10 +3758,12 @@ function toggleFoodDetails(){
             "foodAvailable"
         ).value;
 
+
     const extra =
         document.getElementById(
             "foodExtra"
         );
+
 
     if(food === "Yes"){
 
@@ -3498,6 +3812,7 @@ function getCurrentLocation(){
 
             currentLatitude =
                 position.coords.latitude;
+
 
             currentLongitude =
                 position.coords.longitude;
@@ -3605,6 +3920,7 @@ function openSelectedLocation(){
 function fileToBase64(file){
 
     return new Promise(
+
         function(resolve,reject){
 
             const reader =
@@ -3625,11 +3941,15 @@ function fileToBase64(file){
 
 
                     resolve(
+
                         comma >= 0
+
                         ? result.substring(
                             comma + 1
                         )
+
                         : result
+
                     );
 
                 };
@@ -3642,6 +3962,7 @@ function fileToBase64(file){
             reader.readAsDataURL(file);
 
         }
+
     );
 
 }
@@ -3701,9 +4022,13 @@ async function submitProperty(event){
 
 
         for(
+
             let i = 0;
+
             i < files.length;
+
             i++
+
         ){
 
             const file =
@@ -3731,15 +4056,19 @@ async function submitProperty(event){
 
         const facilities =
             Array.from(
+
                 document.querySelectorAll(
                     ".checkbox-item input:checked"
                 )
+
             ).map(
+
                 function(input){
 
                     return input.value;
 
                 }
+
             );
 
 
@@ -3893,6 +4222,15 @@ async function submitProperty(event){
                 ).value,
 
 
+            /* LOCATION FIX */
+            latitude:
+                currentLatitude || "",
+
+
+            longitude:
+                currentLongitude || "",
+
+
             photoData:
                 photoData
 
@@ -3901,13 +4239,19 @@ async function submitProperty(event){
 
         const response =
             await fetch(
+
                 ROOMUPS_WEB_APP_URL,
+
                 {
+
                     method:"POST",
+
                     body:JSON.stringify(
                         payload
                     )
+
                 }
+
             );
 
 
@@ -3938,18 +4282,25 @@ async function submitProperty(event){
         ){
 
             throw new Error(
+
                 result &&
                 result.message
+
                 ? result.message
+
                 : "Unable to submit listing."
+
             );
 
         }
 
 
         alert(
+
             result.message ||
+
             "Your property has been submitted successfully for verification."
+
         );
 
 
@@ -3999,11 +4350,17 @@ async function submitProperty(event){
 
 
         alert(
+
             "Unable to submit property.\n\n" +
+
             (
+
                 error.message ||
+
                 "Please try again."
+
             )
+
         );
 
 
@@ -4037,8 +4394,10 @@ async function loadApprovedListings(){
 
         const response =
             await fetch(
+
                 ROOMUPS_WEB_APP_URL +
                 "?action=getApprovedListings"
+
             );
 
 
@@ -4059,10 +4418,13 @@ async function loadApprovedListings(){
 
 
         approvedListings =
+
             Array.isArray(
                 result.listings
             )
+
             ? result.listings
+
             : [];
 
 
@@ -4118,6 +4480,7 @@ function renderListings(listings){
 
 
     listings.forEach(
+
         function(data){
 
             const card =
@@ -4135,10 +4498,13 @@ function renderListings(listings){
 
 
             if(
+
                 Array.isArray(
                     data.photoLinks
                 ) &&
+
                 data.photoLinks.length
+
             ){
 
                 image =
@@ -4158,14 +4524,17 @@ function renderListings(listings){
 
 
             if(
+
                 Array.isArray(
                     data.facilities
                 )
+
             ){
 
                 data.facilities
                     .slice(0,4)
                     .forEach(
+
                         function(item){
 
                             tags +=
@@ -4176,14 +4545,17 @@ function renderListings(listings){
                                 `;
 
                         }
+
                     );
 
             }
 
 
             if(
+
                 data.foodAvailable ===
                 "Yes"
+
             ){
 
                 tags +=
@@ -4213,30 +4585,38 @@ function renderListings(listings){
                 <div class="listing-content">
 
                     <div class="listing-type">
+
                         ${escapeHtml(
                             data.propertyType ||
                             "Property"
                         )}
+
                     </div>
 
 
                     <h3>
+
                         ${escapeHtml(
                             data.propertyName ||
                             "RoomUps Listing"
                         )}
+
                     </h3>
 
 
                     <div class="location">
+
                         📍 ${escapeHtml(
                             data.area || ""
                         )}
+
                     </div>
 
 
                     <div class="listing-info">
+
                         ${tags}
+
                     </div>
 
 
@@ -4277,7 +4657,9 @@ function renderListings(listings){
                     ".view-btn"
                 )
                 .addEventListener(
+
                     "click",
+
                     function(){
 
                         viewListing(
@@ -4285,6 +4667,7 @@ function renderListings(listings){
                         );
 
                     }
+
                 );
 
 
@@ -4293,6 +4676,7 @@ function renderListings(listings){
             );
 
         }
+
     );
 
 }
@@ -4310,9 +4694,11 @@ function renderListings(listings){
 function normalizeSearchText(value){
 
     return String(
+
         value == null
         ? ""
         : value
+
     )
     .trim()
     .toLowerCase()
@@ -4324,35 +4710,57 @@ function normalizeSearchText(value){
 function normalizeSearchArea(value){
 
     return normalizeSearchText(value)
-        .replace(/\s*\/\s*/g,"/")
-        .replace(/\s*-\s*/g,"-");
+
+        .replace(
+            /\s*\/\s*/g,
+            "/"
+        )
+
+        .replace(
+            /\s*-\s*/g,
+            "-"
+        );
 
 }
 
 
-function areaMatches(selectedArea, listingArea){
+function areaMatches(
+    selectedArea,
+    listingArea
+){
 
     const selected =
         normalizeSearchArea(
             selectedArea
         );
 
+
     const listing =
         normalizeSearchArea(
             listingArea
         );
 
+
     if(!selected){
+
         return true;
+
     }
+
 
     if(!listing){
+
         return false;
+
     }
 
+
     if(selected === listing){
+
         return true;
+
     }
+
 
     /*
      * This also allows a listing stored as
@@ -4360,37 +4768,55 @@ function areaMatches(selectedArea, listingArea){
      * search option "Kacheri / Kacheri Adda".
      */
 
+
     const selectedParts =
         selected
         .split("/")
         .map(
+
             function(part){
+
                 return part.trim();
+
             }
+
         )
         .filter(Boolean);
+
 
     const listingParts =
         listing
         .split("/")
         .map(
+
             function(part){
+
                 return part.trim();
+
             }
+
         )
         .filter(Boolean);
 
+
     return selectedParts.some(
+
         function(part){
 
             return (
+
                 listing === part ||
+
                 listingParts.includes(part) ||
+
                 listing.includes(part) ||
+
                 part.includes(listing)
+
             );
 
         }
+
     );
 
 }
@@ -4411,6 +4837,7 @@ async function refreshListingsForSearch(){
                 }
             );
 
+
         if(!response.ok){
 
             throw new Error(
@@ -4419,8 +4846,10 @@ async function refreshListingsForSearch(){
 
         }
 
+
         const result =
             await response.json();
+
 
         if(
             result &&
@@ -4437,6 +4866,7 @@ async function refreshListingsForSearch(){
 
         }
 
+
     }catch(error){
 
         console.warn(
@@ -4445,6 +4875,7 @@ async function refreshListingsForSearch(){
         );
 
     }
+
 
     return false;
 
@@ -4470,10 +4901,12 @@ async function searchListings(){
             "searchType"
         );
 
+
     const areaElement =
         document.getElementById(
             "searchArea"
         );
+
 
     const budgetElement =
         document.getElementById(
@@ -4481,7 +4914,11 @@ async function searchListings(){
         );
 
 
-    if(!typeElement || !areaElement || !budgetElement){
+    if(
+        !typeElement ||
+        !areaElement ||
+        !budgetElement
+    ){
 
         console.error(
             "RoomUps Search: search fields were not found."
@@ -4514,7 +4951,8 @@ async function searchListings(){
 
     if(searchButton){
 
-        searchButton.disabled = true;
+        searchButton.disabled =
+            true;
 
         searchButton.textContent =
             "Searching...";
@@ -4553,6 +4991,7 @@ async function searchListings(){
 
         const filtered =
             approvedListings.filter(
+
                 function(data){
 
                     const listingType =
@@ -4569,22 +5008,27 @@ async function searchListings(){
 
                     const rent =
                         Number(
+
                             String(
                                 data.rent ||
                                 data.price ||
                                 0
-                            ).replace(
+                            )
+                            .replace(
                                 /[^0-9.]/g,
                                 ""
                             )
+
                         );
 
 
                     let typeMatch =
                         true;
 
+
                     let areaMatch =
                         true;
+
 
                     let budgetMatch =
                         true;
@@ -4599,9 +5043,11 @@ async function searchListings(){
                         typeMatch =
                             listingType ===
                                 type ||
+
                             listingType.includes(
                                 type
                             ) ||
+
                             type.includes(
                                 listingType
                             );
@@ -4661,6 +5107,7 @@ async function searchListings(){
                     );
 
                 }
+
             );
 
 
@@ -4700,17 +5147,27 @@ async function searchListings(){
         if(resultText){
 
             if(roomUpsLanguage === "hi") {
+
                 resultText.textContent =
                     filtered.length +
-                    (filtered.length === 1
+
+                    (
+                        filtered.length === 1
                         ? " लिस्टिंग मिली"
-                        : " लिस्टिंग मिलीं");
+                        : " लिस्टिंग मिलीं"
+                    );
+
             } else {
+
                 resultText.textContent =
                     filtered.length +
-                    (filtered.length === 1
+
+                    (
+                        filtered.length === 1
                         ? " listing found"
-                        : " listings found");
+                        : " listings found"
+                    );
+
             }
 
         }
@@ -4729,11 +5186,15 @@ async function searchListings(){
         if(properties){
 
             properties.scrollIntoView({
+
                 behavior:"smooth",
+
                 block:"start"
+
             });
 
         }
+
 
     }catch(error){
 
@@ -4754,13 +5215,18 @@ async function searchListings(){
             container.innerHTML =
                 `
                 <div class="listing-message">
+
                     Unable to search listings right now.
+
                     <br>
+
                     Please try again.
+
                 </div>
                 `;
 
         }
+
 
     }finally{
 
@@ -4768,6 +5234,7 @@ async function searchListings(){
 
             searchButton.disabled =
                 false;
+
 
             searchButton.textContent =
                 originalText;
@@ -4786,10 +5253,12 @@ function clearSearch(){
             "searchType"
         );
 
+
     const area =
         document.getElementById(
             "searchArea"
         );
+
 
     const budget =
         document.getElementById(
@@ -4798,15 +5267,23 @@ function clearSearch(){
 
 
     if(type){
+
         type.value = "";
+
     }
+
 
     if(area){
+
         area.value = "";
+
     }
 
+
     if(budget){
+
         budget.value = "";
+
     }
 
 
@@ -4836,7 +5313,9 @@ function clearSearch(){
 ========================================================= */
 
 document.addEventListener(
+
     "DOMContentLoaded",
+
     function(){
 
         /*
@@ -4852,7 +5331,9 @@ document.addEventListener(
         if(searchButton){
 
             searchButton.addEventListener(
+
                 "click",
+
                 function(event){
 
                     event.preventDefault();
@@ -4860,6 +5341,7 @@ document.addEventListener(
                     searchListings();
 
                 }
+
             );
 
         }
@@ -4874,10 +5356,13 @@ document.addEventListener(
                 ".area-card"
             )
             .forEach(
+
                 function(card){
 
                     card.addEventListener(
+
                         "click",
+
                         function(){
 
                             const area =
@@ -4905,9 +5390,11 @@ document.addEventListener(
                             searchListings();
 
                         }
+
                     );
 
                 }
+
             );
 
 
@@ -4917,17 +5404,42 @@ document.addEventListener(
 
         loadApprovedListings();
 
+
         if (adminToken) {
-            const adminLoginBox = document.getElementById("adminLogin");
-            const adminDashboard = document.getElementById("adminDashboard");
-            if (adminLoginBox && adminDashboard) {
-                adminLoginBox.style.display = "none";
-                adminDashboard.style.display = "block";
+
+            const adminLoginBox =
+                document.getElementById(
+                    "adminLogin"
+                );
+
+
+            const adminDashboard =
+                document.getElementById(
+                    "adminDashboard"
+                );
+
+
+            if(
+                adminLoginBox &&
+                adminDashboard
+            ){
+
+                adminLoginBox.style.display =
+                    "none";
+
+
+                adminDashboard.style.display =
+                    "block";
+
+
                 loadPendingListings();
+
             }
+
         }
 
     }
+
 );
 
 
@@ -4959,6 +5471,7 @@ function viewListing(data){
             ${
                 data.photoLinks
                 .map(
+
                     function(photo){
 
                         return `
@@ -4974,6 +5487,7 @@ function viewListing(data){
                         `;
 
                     }
+
                 )
                 .join("")
             }
@@ -5006,14 +5520,17 @@ function viewListing(data){
             <a
                 href="${mapUrl}"
                 target="_blank"
+                rel="noopener"
                 style="
                     display:inline-block;
-                    padding:12px 16px;
-                    border-radius:9px;
-                    background:#E8EDF2;
+                    margin-top:15px;
+                    padding:11px 15px;
+                    border-radius:8px;
+                    background:#E7EDF5;
                     color:#1E3A5F;
-                    font-weight:800;
+                    text-decoration:none;
                     font-size:12px;
+                    font-weight:800;
                 ">
 
                 🗺️ Open in Google Maps
@@ -5024,289 +5541,164 @@ function viewListing(data){
     }
 
 
-    const modal =
-        document.createElement(
-            "div"
-        );
+    document.getElementById(
+        "listingModalTitle"
+    ).textContent =
+        data.propertyName ||
+        "RoomUps Listing";
 
 
-    modal.className =
-        "modal-overlay active";
+    document.getElementById(
+        "listingModalSubtitle"
+    ).textContent =
+        data.propertyType ||
+        "Property";
 
 
-    modal.innerHTML =
+    document.getElementById(
+        "listingModalContent"
+    ).innerHTML =
         `
 
-        <div
-            class="property-modal">
-
-            <div class="modal-header">
-
-                <div>
-
-                    <h2>
-                        Property Details
-                    </h2>
-
-                    <p>
-                        Verified RoomUps listing
-                    </p>
-
-                </div>
+        ${photos}
 
 
-                <button
-                    class="close-modal"
-                    type="button">
+        <div style="
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:12px;
+        ">
 
-                    ×
 
-                </button>
+            <div class="admin-detail">
+
+                <small>
+                    Property Type
+                </small>
+
+                <strong>
+                    ${escapeHtml(
+                        data.propertyType || "-"
+                    )}
+                </strong>
 
             </div>
 
 
-            <div
-                style="
-                    padding:25px;
-                ">
+            <div class="admin-detail">
 
-                ${photos}
+                <small>
+                    Area
+                </small>
 
-
-                <h2 style="
-                    color:#1E3A5F;
-                    margin-bottom:8px;
-                ">
-
+                <strong>
                     ${escapeHtml(
-                        data.propertyName ||
-                        "RoomUps Listing"
+                        data.area || "-"
                     )}
-
-                </h2>
-
-
-                <p style="
-                    color:#7B8797;
-                    font-size:13px;
-                    margin-bottom:20px;
-                ">
-
-                    ${escapeHtml(
-                        data.propertyType ||
-                        ""
-                    )}
-                    •
-                    📍
-                    ${escapeHtml(
-                        data.area ||
-                        ""
-                    )}
-
-                </p>
-
-
-                <div style="
-                    display:grid;
-                    grid-template-columns:repeat(2,1fr);
-                    gap:10px;
-                    margin-bottom:20px;
-                ">
-
-
-                    <div class="tag">
-                        Rent:
-                        ₹${Number(
-                            data.rent || 0
-                        ).toLocaleString(
-                            "en-IN"
-                        )}
-                        /month
-                    </div>
-
-
-                    <div class="tag">
-                        Availability:
-                        ${escapeHtml(
-                            data.availability ||
-                            "-"
-                        )}
-                    </div>
-
-
-                    <div class="tag">
-                        Furnishing:
-                        ${escapeHtml(
-                            data.furnishing ||
-                            "-"
-                        )}
-                    </div>
-
-
-                    <div class="tag">
-                        Bathroom:
-                        ${escapeHtml(
-                            data.bathroom ||
-                            "-"
-                        )}
-                    </div>
-
-
-                    <div class="tag">
-                        Kitchen:
-                        ${escapeHtml(
-                            data.kitchen ||
-                            "-"
-                        )}
-                    </div>
-
-
-                    <div class="tag">
-                        Suitable For:
-                        ${escapeHtml(
-                            data.suitableFor ||
-                            "-"
-                        )}
-                    </div>
-
-
-                </div>
-
-
-                <p style="
-                    color:#526174;
-                    font-size:13px;
-                    line-height:1.7;
-                    margin-bottom:20px;
-                ">
-
-                    ${escapeHtml(
-                        data.description ||
-                        ""
-                    )}
-
-                </p>
-
-
-                <div style="
-                    display:flex;
-                    flex-wrap:wrap;
-                    gap:10px;
-                ">
-
-
-                    ${
-                        data.ownerPhone
-                        ? `
-                        <a
-                            href="tel:${escapeHtml(
-                                data.ownerPhone
-                            )}"
-                            style="
-                                padding:12px 16px;
-                                border-radius:9px;
-                                background:#2D7A42;
-                                color:#fff;
-                                font-weight:800;
-                                font-size:12px;
-                            ">
-
-                            📞 Call Owner
-
-                        </a>
-                        `
-                        : ""
-                    }
-
-
-                    ${
-                        data.whatsapp
-                        ? `
-                        <a
-                            href="https://wa.me/${String(
-                                data.whatsapp
-                            ).replace(
-                                /\D/g,
-                                ""
-                            )}"
-                            target="_blank"
-                            style="
-                                padding:12px 16px;
-                                border-radius:9px;
-                                background:#20A65A;
-                                color:#fff;
-                                font-weight:800;
-                                font-size:12px;
-                            ">
-
-                            💬 WhatsApp
-
-                        </a>
-                        `
-                        : ""
-                    }
-
-
-                    ${mapButton}
-
-
-                </div>
+                </strong>
 
             </div>
+
+
+            <div class="admin-detail">
+
+                <small>
+                    Rent
+                </small>
+
+                <strong>
+                    ₹${Number(
+                        data.rent || 0
+                    ).toLocaleString(
+                        "en-IN"
+                    )}
+                    /month
+                </strong>
+
+            </div>
+
+
+            <div class="admin-detail">
+
+                <small>
+                    Security Deposit
+                </small>
+
+                <strong>
+                    ₹${Number(
+                        data.deposit || 0
+                    ).toLocaleString(
+                        "en-IN"
+                    )}
+                </strong>
+
+            </div>
+
 
         </div>
+
+
+        <div style="
+            margin-top:18px;
+            padding:15px;
+            border-radius:10px;
+            background:#F7F4EE;
+        ">
+
+            <strong>
+                Description
+            </strong>
+
+            <p style="
+                margin-top:8px;
+                color:#596575;
+                font-size:13px;
+                line-height:1.7;
+            ">
+
+                ${escapeHtml(
+                    data.description || "-"
+                )}
+
+            </p>
+
+        </div>
+
+
+        <div style="
+            margin-top:15px;
+        ">
+
+            <strong>
+                📍 Address
+            </strong>
+
+            <p style="
+                margin-top:6px;
+                color:#596575;
+                font-size:13px;
+            ">
+
+                ${escapeHtml(
+                    data.address || "-"
+                )}
+
+            </p>
+
+            ${mapButton}
+
+        </div>
+
 
         `;
 
 
-    modal
-        .querySelector(
-            ".close-modal"
+    document
+        .getElementById(
+            "listingModal"
         )
-        .addEventListener(
-            "click",
-            function(){
+        .classList.add("active");
 
-                modal.remove();
-
-                document.body.classList.remove(
-                    "modal-open"
-                );
-
-            }
-        );
-
-
-    modal.addEventListener(
-        "click",
-        function(event){
-
-            if(
-                event.target ===
-                modal
-            ){
-
-                modal.remove();
-
-                document.body.classList.remove(
-                    "modal-open"
-                );
-
-            }
-
-        }
-    );
-
-
-    document.body.appendChild(
-        modal
-    );
-
-    /* Re-apply the currently selected language to the dynamic modal. */
-    if(roomUpsLanguage === "hi") {
-        applyLanguage("hi");
-    }
 
     document.body.classList.add(
         "modal-open"
@@ -5315,287 +5707,20 @@ function viewListing(data){
 }
 
 
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
+function closeListingModal(){
+
+    document
+        .getElementById(
+            "listingModal"
+        )
+        .classList.remove("active");
 
 
-
-// ============================================================
-// ADMIN BACKEND REQUEST HELPER
-// ============================================================
-
-async function postToRoomUps(payload) {
-    const response = await fetch(ROOMUPS_WEB_APP_URL, {
-        method: "POST",
-        headers: {
-            "Content-Type": "text/plain;charset=utf-8"
-        },
-        body: JSON.stringify(payload)
-    });
-
-    const text = await response.text();
-    let data;
-
-    try {
-        data = JSON.parse(text);
-    } catch (error) {
-        throw new Error("Backend returned an unexpected response.");
-    }
-
-    if (!data || !data.success) {
-        throw new Error(data && data.message ? data.message : "Backend request failed.");
-    }
-
-    return data;
-}
-
-// ============================================================
-// ADMIN PANEL - APPS SCRIPT
-// ============================================================
-
-window.openAdminPanel = function() {
-  document.getElementById("adminModal").classList.add("active");
-  document.body.classList.add("modal-open");
-};
-
-window.closeAdminPanel = function() {
-  document.getElementById("adminModal").classList.remove("active");
-  document.body.classList.remove("modal-open");
-};
-
-window.closeAdminOutside = function(event) {
-  if (event.target.id === "adminModal") closeAdminPanel();
-};
-
-window.adminLogin = async function() {
-  const token = document.getElementById("adminPassword").value.trim();
-  const errorBox = document.getElementById("loginError");
-
-  errorBox.style.display = "none";
-
-  if (!token) {
-    errorBox.textContent = "Please enter the admin access key.";
-    errorBox.style.display = "block";
-    return;
-  }
-
-  try {
-    const result = await postToRoomUps({
-      action: "getPendingListings",
-      adminToken: token
-    });
-
-    adminToken = token;
-    sessionStorage.setItem("roomupsAdminToken", token);
-
-    document.getElementById("adminLogin").style.display = "none";
-    document.getElementById("adminDashboard").style.display = "block";
-
-    renderPendingListings(result.listings || []);
-  } catch (error) {
-    console.error(error);
-    errorBox.textContent = "Login failed. Please check the admin access key.";
-    errorBox.style.display = "block";
-  }
-};
-
-window.adminLogout = function() {
-  adminToken = "";
-  sessionStorage.removeItem("roomupsAdminToken");
-  document.getElementById("adminPassword").value = "";
-  document.getElementById("adminLogin").style.display = "block";
-  document.getElementById("adminDashboard").style.display = "none";
-};
-
-async function loadPendingListings() {
-  if (!adminToken) return;
-
-  try {
-    const result = await postToRoomUps({
-      action: "getPendingListings",
-      adminToken: adminToken
-    });
-
-    renderPendingListings(result.listings || []);
-  } catch (error) {
-    console.error(error);
-    alert("Unable to load admin requests. Your admin session may have expired.");
-    adminLogout();
-  }
-}
-
-function renderPendingListings(listings) {
-  const container = document.getElementById("adminList");
-  container.innerHTML = "";
-
-  document.getElementById("pendingCount").textContent =
-    "Pending Listings: " + listings.length;
-
-  if (!listings.length) {
-    container.innerHTML = '<div class="listing-message">No pending listing requests.</div>';
-    return;
-  }
-
-  listings.forEach(function(data) {
-    createAdminCard(data);
-  });
-}
-
-function createAdminCard(data) {
-  const container = document.getElementById("adminList");
-  const card = document.createElement("div");
-  card.className = "admin-card";
-
-  const mapsButton =
-    data.latitude !== "" && data.longitude !== ""
-      ? '<button class="maps-admin-btn" type="button">🗺️ Open Map</button>'
-      : "";
-
-  const facilities = Array.isArray(data.facilities) && data.facilities.length
-    ? data.facilities.join(", ")
-    : "None";
-
-  const photoPreview = Array.isArray(data.photoLinks) && data.photoLinks.length
-    ? '<div class="admin-image-row">' + data.photoLinks.map(function(link) {
-        return '<img src="' + escapeHtml(link) + '" alt="Property photo" loading="lazy">';
-      }).join("") + '</div>'
-    : "";
-
-  card.innerHTML = `
-    <div class="admin-card-top">
-      <div>
-        <h3>${escapeHtml(data.propertyName || "Unnamed Property")}</h3>
-        <small>${escapeHtml(data.propertyType || "")}</small>
-      </div>
-      <div class="pending-badge">PENDING</div>
-    </div>
-
-    <div class="admin-details">
-      <div class="admin-detail"><small>LISTING ID</small><strong>${escapeHtml(data.listingId || "")}</strong></div>
-      <div class="admin-detail"><small>OWNER</small><strong>${escapeHtml(data.ownerName || "")}</strong></div>
-      <div class="admin-detail"><small>PHONE</small><strong>${escapeHtml(data.ownerPhone || "")}</strong></div>
-      <div class="admin-detail"><small>AREA</small><strong>${escapeHtml(data.area || "")}</strong></div>
-      <div class="admin-detail"><small>RENT</small><strong>₹${Number(data.rent || 0).toLocaleString("en-IN")}</strong></div>
-      <div class="admin-detail"><small>FOOD</small><strong>${escapeHtml(data.foodAvailable || "No")}</strong></div>
-      <div class="admin-detail"><small>WHATSAPP</small><strong>${escapeHtml(data.whatsapp || "-")}</strong></div>
-      <div class="admin-detail"><small>CONTACT</small><strong>${escapeHtml(data.preferredContact || "-")}</strong></div>
-      <div class="admin-detail"><small>SUBMITTED</small><strong>${escapeHtml(data.submittedAt || "-")}</strong></div>
-    </div>
-
-    <p style="color:#526174;font-size:12px;line-height:1.6;margin-bottom:10px;">
-      ${escapeHtml(data.description || "")}
-    </p>
-
-    <p style="color:#526174;font-size:12px;line-height:1.6;margin-bottom:10px;">
-      <strong>Address:</strong> ${escapeHtml(data.address || "-")}<br>
-      <strong>Facilities:</strong> ${escapeHtml(facilities)}
-    </p>
-
-    ${photoPreview}
-
-    <div class="admin-actions">
-      ${mapsButton}
-      <button class="approve-btn" type="button">✓ Approve</button>
-      <button class="reject-btn" type="button">✕ Reject</button>
-    </div>
-  `;
-
-  if (mapsButton) {
-    card.querySelector(".maps-admin-btn").addEventListener("click", function() {
-      openAdminMap(data.latitude, data.longitude);
-    });
-  }
-
-  card.querySelector(".approve-btn").addEventListener("click", function() {
-    approveListing(data.listingId);
-  });
-
-  card.querySelector(".reject-btn").addEventListener("click", function() {
-    rejectListing(data.listingId);
-  });
-
-  container.appendChild(card);
-}
-
-window.approveListing = async function(id) {
-  if (!confirm("Are you sure you want to approve this listing?")) return;
-
-  try {
-    const result = await postToRoomUps({
-      action: "approveListing",
-      listingId: id,
-      adminToken: adminToken
-    });
-
-    alert(result.message);
-    await loadPendingListings();
-    loadApprovedListings();
-  } catch (error) {
-    console.error(error);
-    alert("Unable to approve listing. " + error.message);
-  }
-};
-
-window.rejectListing = async function(id) {
-  const reason = prompt("Optional: Enter rejection reason.") || "";
-
-  try {
-    const result = await postToRoomUps({
-      action: "rejectListing",
-      listingId: id,
-      reason: reason,
-      adminToken: adminToken
-    });
-
-    alert(result.message);
-    await loadPendingListings();
-  } catch (error) {
-    console.error(error);
-    alert("Unable to reject listing. " + error.message);
-  }
-};
-
-window.openAdminMap = function(lat, lng) {
-  const url =
-    "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent(lat + "," + lng);
-  window.open(url, "_blank");
-};
-
-
-
-
-function escapeHtml(value){
-
-    return String(
-        value == null
-        ? ""
-        : value
-    )
-    .replace(
-        /&/g,
-        "&amp;"
-    )
-    .replace(
-        /</g,
-        "&lt;"
-    )
-    .replace(
-        />/g,
-        "&gt;"
-    )
-    .replace(
-        /"/g,
-        "&quot;"
-    )
-    .replace(
-        /'/g,
-        "&#039;"
+    document.body.classList.remove(
+        "modal-open"
     );
 
 }
-
 
 /* =========================================================
    ESC KEY
@@ -5622,199 +5747,565 @@ document.addEventListener(
 ========================================================= */
 
 const ROOMUPS_TRANSLATIONS = {
-    hi: {
-        "RoomUps.in | Student Accommodation in Dharamshala": "RoomUps.in | धर्मशाला में छात्रों के लिए आवास",
-        "English": "English",
-        "हिन्दी": "हिन्दी",
-        "List Your Property": "अपनी प्रॉपर्टी लिस्ट करें",
-        "🎓 Built for students in Dharamshala": "🎓 धर्मशाला के छात्रों के लिए बनाया गया",
-        "Find your": "पाएं अपना",
-        "Room, PG & Stay": "रूम, PG और स्टे",
-        "easily.": "आसानी से।",
-        "Search verified rooms, PGs, flats and student-friendly accommodation across Dharamshala — all in one place.": "धर्मशाला में सत्यापित रूम, PG, फ्लैट और छात्रों के लिए उपयुक्त आवास — सब एक ही जगह खोजें।",
-        "Looking For": "क्या चाहिए",
-        "Any Type": "कोई भी प्रकार",
-        "Room": "रूम",
-        "PG": "PG",
-        "1BHK": "1BHK",
-        "Flat": "फ्लैट",
-        "Hostel": "हॉस्टल",
-        "Shared Room": "शेयर्ड रूम",
-        "Location": "स्थान",
-        "Any Area": "कोई भी क्षेत्र",
-        "Budget": "बजट",
-        "Any Budget": "कोई भी बजट",
-        "Under ₹4,000": "₹4,000 से कम",
-        "₹4,000 – ₹6,000": "₹4,000 – ₹6,000",
-        "₹6,000 – ₹8,000": "₹6,000 – ₹8,000",
-        "Above ₹8,000": "₹8,000 से अधिक",
-        "Search": "खोजें",
-        "Clear Search": "सर्च साफ करें",
-        "What are you looking for?": "आप क्या ढूंढ रहे हैं?",
-        "Choose the type of accommodation that suits you.": "अपने लिए सही आवास का प्रकार चुनें।",
-        "Rooms": "रूम",
-        "Single & private rooms": "सिंगल और प्राइवेट रूम",
-        "PGs": "PGs",
-        "Student-friendly PGs": "छात्रों के लिए उपयुक्त PGs",
-        "Flats": "फ्लैट्स",
-        "1BHK & shared flats": "1BHK और शेयर्ड फ्लैट्स",
-        "Hostels": "हॉस्टल्स",
-        "Affordable student stays": "किफायती छात्र आवास",
-        "Food": "खाना",
-        "Mess & tiffin services": "मेस और टिफिन सेवाएं",
-        "Explore areas": "क्षेत्र देखें",
-        "Find accommodation in popular areas around Dharamshala.": "धर्मशाला के लोकप्रिय क्षेत्रों में आवास खोजें।",
-        "Click an area to see available listings.": "उपलब्ध लिस्टिंग देखने के लिए किसी क्षेत्र पर क्लिक करें।",
-        "Explore listings": "लिस्टिंग देखें",
-        "Available accommodation": "उपलब्ध आवास",
-        "Only approved RoomUps listings are displayed here.": "यहां केवल स्वीकृत RoomUps लिस्टिंग दिखाई जाती हैं।",
-        "Loading approved listings...": "स्वीकृत लिस्टिंग लोड हो रही हैं...",
-        "Unable to load listings right now.": "अभी लिस्टिंग लोड नहीं हो पा रही हैं।",
-        "No matching listings found.": "कोई मिलती-जुलती लिस्टिंग नहीं मिली।",
-        "How RoomUps works": "RoomUps कैसे काम करता है",
-        "Finding a place should be simple.": "अपनी जगह ढूंढना आसान होना चाहिए।",
-        "Search": "खोजें",
-        "Compare": "तुलना करें",
-        "Contact": "संपर्क करें",
-        "Choose your budget, location, room type and requirements.": "अपना बजट, स्थान, रूम का प्रकार और जरूरतें चुनें।",
-        "Compare rent, amenities, location and availability.": "किराया, सुविधाएं, स्थान और उपलब्धता की तुलना करें।",
-        "Contact the owner directly through call or WhatsApp.": "कॉल या WhatsApp के जरिए सीधे मालिक से संपर्क करें।",
-        "Have a room or PG?": "क्या आपके पास रूम या PG है?",
-        "List your property for free on RoomUps.": "RoomUps पर अपनी प्रॉपर्टी मुफ्त में लिस्ट करें।",
-        "Your listing will be reviewed before it appears on the website.": "वेबसाइट पर दिखने से पहले आपकी लिस्टिंग की समीक्षा की जाएगी।",
-        "List Your Property →": "अपनी प्रॉपर्टी लिस्ट करें →",
-        "Explore": "एक्सप्लोर करें",
-        "Rooms & PGs": "रूम और PGs",
-        "Areas": "क्षेत्र",
-        "For Owners": "मालिकों के लिए",
-        "List Property": "प्रॉपर्टी लिस्ट करें",
-        "RoomUps is a student-focused platform helping students find rooms, PGs, flats, shared accommodation and food services in Dharamshala.": "RoomUps एक छात्र-केंद्रित प्लेटफॉर्म है जो धर्मशाला में रूम, PG, फ्लैट, शेयर्ड आवास और भोजन सेवाएं खोजने में छात्रों की मदद करता है।",
-        "List Your Property": "अपनी प्रॉपर्टी लिस्ट करें",
-        "Submit your property for verification.": "अपनी प्रॉपर्टी को सत्यापन के लिए सबमिट करें।",
-        "Property Details": "प्रॉपर्टी की जानकारी",
-        "Verified RoomUps listing": "सत्यापित RoomUps लिस्टिंग",
-        "Call Owner": "मालिक को कॉल करें",
-        "WhatsApp": "WhatsApp",
-        "Open in Google Maps": "Google Maps में खोलें",
-        "Property / Service Type": "प्रॉपर्टी / सेवा का प्रकार",
-        "Select Type": "प्रकार चुनें",
-        "Single Room": "सिंगल रूम",
-        "Basic Information": "मूल जानकारी",
-        "Property / Service Name": "प्रॉपर्टी / सेवा का नाम",
-        "Description": "विवरण",
-        "Availability": "उपलब्धता",
-        "Select": "चुनें",
-        "Available": "उपलब्ध",
-        "Currently Occupied": "अभी उपलब्ध नहीं",
-        "Available Soon": "जल्द उपलब्ध होगा",
-        "Available From": "उपलब्ध होने की तारीख",
-        "Location": "स्थान",
-        "Select Area": "क्षेत्र चुनें",
-        "Address / Nearby Landmark": "पता / नजदीकी स्थान",
-        "📍 Property Location on Map": "📍 मैप पर प्रॉपर्टी का स्थान",
-        "Sharing your exact Google Maps location is optional. You can submit your property without providing your current location.": "अपना सटीक Google Maps स्थान शेयर करना वैकल्पिक है। आप अपनी वर्तमान लोकेशन दिए बिना भी प्रॉपर्टी सबमिट कर सकते हैं।",
-        "📍 Use My Current Location": "📍 मेरी वर्तमान लोकेशन इस्तेमाल करें",
-        "🗺️ Open in Google Maps": "🗺️ Google Maps में खोलें",
-        "Location sharing is optional.": "लोकेशन शेयर करना वैकल्पिक है।",
-        "LATITUDE": "अक्षांश",
-        "LONGITUDE": "देशांतर",
-        "Pricing": "कीमत",
-        "Monthly Rent / Price": "मासिक किराया / कीमत",
-        "Security Deposit": "सिक्योरिटी डिपॉजिट",
-        "Electricity": "बिजली",
-        "Water Charges": "पानी के शुल्क",
-        "Included": "शामिल",
-        "Separate": "अलग",
-        "According to Usage": "उपयोग के अनुसार",
-        "Property Features": "प्रॉपर्टी की सुविधाएं",
-        "Furnishing": "फर्निशिंग",
-        "Fully Furnished": "पूरी तरह फर्निश्ड",
-        "Semi Furnished": "सेमी फर्निश्ड",
-        "Unfurnished": "अनफर्निश्ड",
-        "Bathroom": "बाथरूम",
-        "Attached Bathroom": "अटैच्ड बाथरूम",
-        "Shared Bathroom": "शेयर्ड बाथरूम",
-        "Kitchen": "किचन",
-        "Attached Kitchen": "अटैच्ड किचन",
-        "Common Kitchen": "कॉमन किचन",
-        "No Kitchen": "किचन नहीं",
-        "Suitable For": "किसके लिए उपयुक्त",
-        "Students": "छात्र",
-        "Male Students": "छात्र (पुरुष)",
-        "Female Students": "छात्राएं",
-        "Anyone": "कोई भी",
-        "Available Facilities": "उपलब्ध सुविधाएं",
-        "Food Details": "खाने की जानकारी",
-        "Food Available?": "खाना उपलब्ध है?",
-        "Food Type": "खाने का प्रकार",
-        "Tiffin": "टिफिन",
-        "Home Cooked Food": "घर का बना खाना",
-        "Mess + Tiffin": "मेस + टिफिन",
-        "Monthly Food Price": "मासिक खाने की कीमत",
-        "Photos": "फोटो",
-        "Confirmation": "पुष्टि",
-        "Submit for Verification →": "सत्यापन के लिए सबमिट करें →",
-        "✓ Verified": "✓ सत्यापित",
-        "🍱 Food Available": "🍱 खाना उपलब्ध",
-        "/month": "/माह",
-        "View": "देखें",
-        "listing found": "लिस्टिंग मिली",
-        "listings found": "लिस्टिंग मिलीं",
-        "Rent:": "किराया:",
-        "Availability:": "उपलब्धता:",
-        "Furnishing:": "फर्निशिंग:",
-        "Bathroom:": "बाथरूम:",
-        "Kitchen:": "किचन:",
-        "Suitable For:": "किसके लिए:",
-        "Property / Service Details": "प्रॉपर्टी / सर्विस की जानकारी",
-        "Security Deposit:": "सिक्योरिटी डिपॉजिट:",
-        "Electricity:": "बिजली:",
-        "Water Charges:": "पानी के शुल्क:",
-        "Facilities:": "सुविधाएं:",
-        "Food:": "खाना:",
-        "Food Price:": "खाने की कीमत:",
-        "Owner:": "मालिक:",
-        "Call Owner": "मालिक को कॉल करें",
-        "Verified RoomUps listing": "सत्यापित RoomUps लिस्टिंग",
 
-        "1. What are you listing?": "1. आप क्या लिस्ट कर रहे हैं?",
-        "2. Basic Information": "2. मूल जानकारी",
-        "3. Location": "3. स्थान",
-        "4. Pricing": "4. कीमत",
-        "5. Property Features": "5. प्रॉपर्टी की सुविधाएं",
-        "6. Food Details": "6. खाने की जानकारी",
-        "7. Property Photos": "7. प्रॉपर्टी की फोटो",
-        "8. Contact Details": "8. संपर्क जानकारी",
-        "Your Name": "आपका नाम",
-        "Phone Number": "फोन नंबर",
-        "WhatsApp Number": "WhatsApp नंबर",
-        "Preferred Contact": "पसंदीदा संपर्क माध्यम",
-        "Upload Property Photos": "प्रॉपर्टी की फोटो अपलोड करें",
-        "Add up to 8 clear photos of the property.": "प्रॉपर्टी की अधिकतम 8 साफ फोटो अपलोड करें।",
-        "Confirmation": "पुष्टि",
-        "I confirm that the information provided in this listing is accurate and that the property/service is currently available. I understand that RoomUps will review this listing before publishing it.": "मैं पुष्टि करता/करती हूं कि इस लिस्टिंग में दी गई जानकारी सही है और प्रॉपर्टी/सेवा वर्तमान में उपलब्ध है। मैं समझता/समझती हूं कि RoomUps इस लिस्टिंग को वेबसाइट पर प्रकाशित करने से पहले इसकी समीक्षा करेगा।",
-        "Mess": "मेस",
-        "Tiffin Service": "टिफिन सेवा",
-        "Yes": "हां",
-        "No": "नहीं",
-        "Call & WhatsApp": "कॉल और WhatsApp",
-        "Call": "कॉल",
-        "Getting your current location...": "आपकी वर्तमान लोकेशन प्राप्त की जा रही है...",
-        "Location is unavailable in this browser. You can continue without it.": "इस ब्राउज़र में लोकेशन उपलब्ध नहीं है। आप इसके बिना भी आगे बढ़ सकते हैं।",
-        "✓ Location added. You can still change or remove it before submitting.": "✓ लोकेशन जोड़ दी गई है। सबमिट करने से पहले आप इसे बदल या हटा सकते हैं।",
-        "Unable to get location. That's okay — location is optional and you can continue.": "लोकेशन प्राप्त नहीं हो सकी। कोई बात नहीं — लोकेशन वैकल्पिक है और आप आगे बढ़ सकते हैं।",
-        "Submitting...": "सबमिट किया जा रहा है...",
-        "Searching...": "खोजा जा रहा है...",
-        "Unable to search listings right now.": "अभी लिस्टिंग खोजी नहीं जा सकती।",
-        "Please try again.": "कृपया फिर से कोशिश करें।",
-        "Unable to submit property.": "प्रॉपर्टी सबमिट नहीं हो सकी।",
-        "Your property has been submitted successfully for verification.": "आपकी प्रॉपर्टी सत्यापन के लिए सफलतापूर्वक सबमिट हो गई है।",
-        "Please upload at least one property photo.": "कृपया कम से कम एक प्रॉपर्टी फोटो अपलोड करें।"
+    hi: {
+
+        "RoomUps.in | Student Accommodation in Dharamshala":
+            "RoomUps.in | धर्मशाला में छात्रों के लिए आवास",
+
+        "English":
+            "English",
+
+        "हिन्दी":
+            "हिन्दी",
+
+        "List Your Property":
+            "अपनी प्रॉपर्टी लिस्ट करें",
+
+        "🎓 Built for students in Dharamshala":
+            "🎓 धर्मशाला के छात्रों के लिए बनाया गया",
+
+        "Find your":
+            "पाएं अपना",
+
+        "Room, PG & Stay":
+            "रूम, PG और स्टे",
+
+        "easily.":
+            "आसानी से।",
+
+        "Search verified rooms, PGs, flats and student-friendly accommodation across Dharamshala — all in one place.":
+            "धर्मशाला में सत्यापित रूम, PG, फ्लैट और छात्रों के लिए उपयुक्त आवास — सब एक ही जगह खोजें।",
+
+        "Looking For":
+            "क्या चाहिए",
+
+        "Any Type":
+            "कोई भी प्रकार",
+
+        "Room":
+            "रूम",
+
+        "PG":
+            "PG",
+
+        "1BHK":
+            "1BHK",
+
+        "Flat":
+            "फ्लैट",
+
+        "Hostel":
+            "हॉस्टल",
+
+        "Shared Room":
+            "शेयर्ड रूम",
+
+        "Location":
+            "स्थान",
+
+        "Any Area":
+            "कोई भी क्षेत्र",
+
+        "Budget":
+            "बजट",
+
+        "Any Budget":
+            "कोई भी बजट",
+
+        "Under ₹4,000":
+            "₹4,000 से कम",
+
+        "₹4,000 – ₹6,000":
+            "₹4,000 – ₹6,000",
+
+        "₹6,000 – ₹8,000":
+            "₹6,000 – ₹8,000",
+
+        "Above ₹8,000":
+            "₹8,000 से अधिक",
+
+        "Search":
+            "खोजें",
+
+        "Clear Search":
+            "सर्च साफ करें",
+
+        "What are you looking for?":
+            "आप क्या ढूंढ रहे हैं?",
+
+        "Choose the type of accommodation that suits you.":
+            "अपने लिए सही आवास का प्रकार चुनें।",
+
+        "Rooms":
+            "रूम",
+
+        "Single & private rooms":
+            "सिंगल और प्राइवेट रूम",
+
+        "PGs":
+            "PGs",
+
+        "Student-friendly PGs":
+            "छात्रों के लिए उपयुक्त PGs",
+
+        "Flats":
+            "फ्लैट्स",
+
+        "1BHK & shared flats":
+            "1BHK और शेयर्ड फ्लैट्स",
+
+        "Hostels":
+            "हॉस्टल्स",
+
+        "Affordable student stays":
+            "किफायती छात्र आवास",
+
+        "Food":
+            "खाना",
+
+        "Mess & tiffin services":
+            "मेस और टिफिन सेवाएं",
+
+        "Explore areas":
+            "क्षेत्र देखें",
+
+        "Find accommodation in popular areas around Dharamshala.":
+            "धर्मशाला के लोकप्रिय क्षेत्रों में आवास खोजें।",
+
+        "Click an area to see available listings.":
+            "उपलब्ध लिस्टिंग देखने के लिए किसी क्षेत्र पर क्लिक करें।",
+
+        "Explore listings":
+            "लिस्टिंग देखें",
+
+        "Available accommodation":
+            "उपलब्ध आवास",
+
+        "Only approved RoomUps listings are displayed here.":
+            "यहां केवल स्वीकृत RoomUps लिस्टिंग दिखाई जाती हैं।",
+
+        "Loading approved listings...":
+            "स्वीकृत लिस्टिंग लोड हो रही हैं...",
+
+        "Unable to load listings right now.":
+            "अभी लिस्टिंग लोड नहीं हो पा रही हैं।",
+
+        "No matching listings found.":
+            "कोई मिलती-जुलती लिस्टिंग नहीं मिली।",
+
+        "How RoomUps works":
+            "RoomUps कैसे काम करता है",
+
+        "Finding a place should be simple.":
+            "अपनी जगह ढूंढना आसान होना चाहिए।",
+
+        "Compare":
+            "तुलना करें",
+
+        "Contact":
+            "संपर्क करें",
+
+        "Choose your budget, location, room type and requirements.":
+            "अपना बजट, स्थान, रूम का प्रकार और जरूरतें चुनें।",
+
+        "Compare rent, amenities, location and availability.":
+            "किराया, सुविधाओं, स्थान और उपलब्धता की तुलना करें।",
+
+        "Contact the owner directly through call or WhatsApp.":
+            "कॉल या WhatsApp के जरिए सीधे मालिक से संपर्क करें।",
+
+        "Have a room or PG?":
+            "क्या आपके पास रूम या PG है?",
+
+        "List your property for free on RoomUps.":
+            "RoomUps पर अपनी प्रॉपर्टी मुफ्त में लिस्ट करें।",
+
+        "Your listing will be reviewed before it appears on the website.":
+            "वेबसाइट पर दिखने से पहले आपकी लिस्टिंग की समीक्षा की जाएगी।",
+
+        "List Your Property →":
+            "अपनी प्रॉपर्टी लिस्ट करें →",
+
+        "Explore":
+            "एक्सप्लोर करें",
+
+        "Rooms & PGs":
+            "रूम और PGs",
+
+        "Areas":
+            "क्षेत्र",
+
+        "For Owners":
+            "मालिकों के लिए",
+
+        "List Property":
+            "प्रॉपर्टी लिस्ट करें",
+
+        "RoomUps is a student-focused platform helping students find rooms, PGs, flats, shared accommodation and food services in Dharamshala.":
+            "RoomUps एक छात्र-केंद्रित प्लेटफॉर्म है जो धर्मशाला में रूम, PG, फ्लैट, शेयर्ड आवास और भोजन सेवाएं खोजने में छात्रों की मदद करता है।",
+
+        "List Your Property":
+            "अपनी प्रॉपर्टी लिस्ट करें",
+
+        "Submit your property for verification.":
+            "अपनी प्रॉपर्टी को सत्यापन के लिए सबमिट करें।",
+
+        "Property Details":
+            "प्रॉपर्टी की जानकारी",
+
+        "Verified RoomUps listing":
+            "सत्यापित RoomUps लिस्टिंग",
+
+        "Call Owner":
+            "मालिक को कॉल करें",
+
+        "WhatsApp":
+            "WhatsApp",
+
+        "Open in Google Maps":
+            "Google Maps में खोलें",
+
+        "Property / Service Type":
+            "प्रॉपर्टी / सेवा का प्रकार",
+
+        "Select Type":
+            "प्रकार चुनें",
+
+        "Single Room":
+            "सिंगल रूम",
+
+        "Basic Information":
+            "मूल जानकारी",
+
+        "Property / Service Name":
+            "प्रॉपर्टी / सेवा का नाम",
+
+        "Description":
+            "विवरण",
+
+        "Availability":
+            "उपलब्धता",
+
+        "Select":
+            "चुनें",
+
+        "Available":
+            "उपलब्ध",
+
+        "Currently Occupied":
+            "अभी उपलब्ध नहीं",
+
+        "Available Soon":
+            "जल्द उपलब्ध होगा",
+
+        "Available From":
+            "उपलब्ध होने की तारीख",
+
+        "Location":
+            "स्थान",
+
+        "Select Area":
+            "क्षेत्र चुनें",
+
+        "Address / Nearby Landmark":
+            "पता / नजदीकी स्थान",
+
+        "📍 Property Location on Map":
+            "📍 मैप पर प्रॉपर्टी का स्थान",
+
+        "Sharing your exact Google Maps location is optional. You can submit your property without providing your current location.":
+            "अपना सटीक Google Maps स्थान शेयर करना वैकल्पिक है। आप अपनी वर्तमान लोकेशन दिए बिना भी प्रॉपर्टी सबमिट कर सकते हैं।",
+
+        "📍 Use My Current Location":
+            "📍 मेरी वर्तमान लोकेशन इस्तेमाल करें",
+
+        "🗺️ Open in Google Maps":
+            "🗺️ Google Maps में खोलें",
+
+        "Location sharing is optional.":
+            "लोकेशन शेयर करना वैकल्पिक है।",
+
+        "LATITUDE":
+            "अक्षांश",
+
+        "LONGITUDE":
+            "देशांतर",
+
+        "Pricing":
+            "कीमत",
+
+        "Monthly Rent / Price":
+            "मासिक किराया / कीमत",
+
+        "Security Deposit":
+            "सिक्योरिटी डिपॉजिट",
+
+        "Electricity":
+            "बिजली",
+
+        "Water Charges":
+            "पानी के शुल्क",
+
+        "Included":
+            "शामिल",
+
+        "Separate":
+            "अलग",
+
+        "According to Usage":
+            "उपयोग के अनुसार",
+
+        "Property Features":
+            "प्रॉपर्टी की सुविधाएं",
+
+        "Furnishing":
+            "फर्निशिंग",
+
+        "Fully Furnished":
+            "पूरी तरह फर्निश्ड",
+
+        "Semi Furnished":
+            "सेमी फर्निश्ड",
+
+        "Unfurnished":
+            "अनफर्निश्ड",
+
+        "Bathroom":
+            "बाथरूम",
+
+        "Attached Bathroom":
+            "अटैच्ड बाथरूम",
+
+        "Shared Bathroom":
+            "शेयर्ड बाथरूम",
+
+        "Kitchen":
+            "किचन",
+
+        "Attached Kitchen":
+            "अटैच्ड किचन",
+
+        "Common Kitchen":
+            "कॉमन किचन",
+
+        "No Kitchen":
+            "किचन नहीं",
+
+        "Suitable For":
+            "किसके लिए उपयुक्त",
+
+        "Students":
+            "छात्र",
+
+        "Male Students":
+            "छात्र (पुरुष)",
+
+        "Female Students":
+            "छात्राएं",
+
+        "Anyone":
+            "कोई भी",
+
+        "Available Facilities":
+            "उपलब्ध सुविधाएं",
+
+        "Food Details":
+            "खाने की जानकारी",
+
+        "Food Available?":
+            "खाना उपलब्ध है?",
+
+        "Food Type":
+            "खाने का प्रकार",
+
+        "Tiffin":
+            "टिफिन",
+
+        "Home Cooked Food":
+            "घर का बना खाना",
+
+        "Mess + Tiffin":
+            "मेस + टिफिन",
+
+        "Monthly Food Price":
+            "मासिक खाने की कीमत",
+
+        "Photos":
+            "फोटो",
+
+        "Confirmation":
+            "पुष्टि",
+
+        "Submit for Verification →":
+            "सत्यापन के लिए सबमिट करें →",
+
+        "✓ Verified":
+            "✓ सत्यापित",
+
+        "🍱 Food Available":
+            "🍱 खाना उपलब्ध",
+
+        "/month":
+            "/माह",
+
+        "View":
+            "देखें",
+
+        "listing found":
+            "लिस्टिंग मिली",
+
+        "listings found":
+            "लिस्टिंग मिलीं",
+
+        "Rent:":
+            "किराया:",
+
+        "Availability:":
+            "उपलब्धता:",
+
+        "Furnishing:":
+            "फर्निशिंग:",
+
+        "Bathroom:":
+            "बाथरूम:",
+
+        "Kitchen:":
+            "किचन:",
+
+        "Suitable For:":
+            "किसके लिए:",
+
+        "Property / Service Details":
+            "प्रॉपर्टी / सर्विस की जानकारी",
+
+        "Security Deposit:":
+            "सिक्योरिटी डिपॉजिट:",
+
+        "Electricity:":
+            "बिजली:",
+
+        "Water Charges:":
+            "पानी के शुल्क:",
+
+        "Facilities:":
+            "सुविधाएं:",
+
+        "Food:":
+            "खाना:",
+
+        "Food Price:":
+            "खाने की कीमत:",
+
+        "Owner:":
+            "मालिक:",
+
+        "1. What are you listing?":
+            "1. आप क्या लिस्ट कर रहे हैं?",
+
+        "2. Basic Information":
+            "2. मूल जानकारी",
+
+        "3. Location":
+            "3. स्थान",
+
+        "4. Pricing":
+            "4. कीमत",
+
+        "5. Property Features":
+            "5. प्रॉपर्टी की सुविधाएं",
+
+        "6. Food Details":
+            "6. खाने की जानकारी",
+
+        "7. Property Photos":
+            "7. प्रॉपर्टी की फोटो",
+
+        "8. Contact Details":
+            "8. संपर्क जानकारी",
+
+        "Your Name":
+            "आपका नाम",
+
+        "Phone Number":
+            "फोन नंबर",
+
+        "WhatsApp Number":
+            "WhatsApp नंबर",
+
+        "Preferred Contact":
+            "पसंदीदा संपर्क माध्यम",
+
+        "Upload Property Photos":
+            "प्रॉपर्टी की फोटो अपलोड करें",
+
+        "Add up to 8 clear photos of the property.":
+            "प्रॉपर्टी की अधिकतम 8 साफ फोटो अपलोड करें।",
+
+        "I confirm that the information provided in this listing is accurate and that the property/service is currently available. I understand that RoomUps will review this listing before publishing it.":
+            "मैं पुष्टि करता/करती हूं कि इस लिस्टिंग में दी गई जानकारी सही है और प्रॉपर्टी/सेवा वर्तमान में उपलब्ध है। मैं समझता/समझती हूं कि RoomUps इस लिस्टिंग को वेबसाइट पर प्रकाशित करने से पहले इसकी समीक्षा करेगा।",
+
+        "Mess":
+            "मेस",
+
+        "Tiffin Service":
+            "टिफिन सेवा",
+
+        "Yes":
+            "हां",
+
+        "No":
+            "नहीं",
+
+        "Call & WhatsApp":
+            "कॉल और WhatsApp",
+
+        "Call":
+            "कॉल",
+
+        "Getting your current location...":
+            "आपकी वर्तमान लोकेशन प्राप्त की जा रही है...",
+
+        "Location is unavailable in this browser. You can continue without it.":
+            "इस ब्राउज़र में लोकेशन उपलब्ध नहीं है। आप इसके बिना भी आगे बढ़ सकते हैं।",
+
+        "✓ Location added. You can still change or remove it before submitting.":
+            "✓ लोकेशन जोड़ दी गई है। सबमिट करने से पहले आप इसे बदल या हटा सकते हैं।",
+
+        "Unable to get location. That's okay — location is optional and you can continue.":
+            "लोकेशन प्राप्त नहीं हो सकी। कोई बात नहीं — लोकेशन वैकल्पिक है और आप आगे बढ़ सकते हैं।",
+
+        "Submitting...":
+            "सबमिट किया जा रहा है...",
+
+        "Searching...":
+            "खोजा जा रहा है...",
+
+        "Unable to search listings right now.":
+            "अभी लिस्टिंग खोजी नहीं जा सकती।",
+
+        "Please try again.":
+            "कृपया फिर से कोशिश करें।",
+
+        "Unable to submit property.":
+            "प्रॉपर्टी सबमिट नहीं हो सकी।",
+
+        "Your property has been submitted successfully for verification.":
+            "आपकी प्रॉपर्टी सत्यापन के लिए सफलतापूर्वक सबमिट हो गई है।",
+
+        "Please upload at least one property photo.":
+            "कृपया कम से कम एक प्रॉपर्टी फोटो अपलोड करें।"
 
     }
+
 };
 
-let roomUpsLanguage = localStorage.getItem("roomupsLanguage") || "en";
+
+let roomUpsLanguage =
+    localStorage.getItem(
+        "roomupsLanguage"
+    ) || "en";
+
 
 /*
  * IMPORTANT:
@@ -5824,184 +6315,434 @@ let roomUpsLanguage = localStorage.getItem("roomupsLanguage") || "en";
  *
  * We store each original text node value in a WeakMap instead.
  */
-const ROOMUPS_ORIGINAL_TEXT = new WeakMap();
+
+const ROOMUPS_ORIGINAL_TEXT =
+    new WeakMap();
+
 
 function getOriginalText(node){
-    if(ROOMUPS_ORIGINAL_TEXT.has(node)){
-        return ROOMUPS_ORIGINAL_TEXT.get(node);
+
+    if(
+        ROOMUPS_ORIGINAL_TEXT.has(
+            node
+        )
+    ){
+
+        return ROOMUPS_ORIGINAL_TEXT.get(
+            node
+        );
+
     }
 
-    const original = node.nodeValue || "";
-    ROOMUPS_ORIGINAL_TEXT.set(node, original);
+
+    const original =
+        node.nodeValue || "";
+
+
+    ROOMUPS_ORIGINAL_TEXT.set(
+        node,
+        original
+    );
+
+
     return original;
+
 }
 
-function translateTextNode(node, language){
-    if(!node || node.nodeType !== Node.TEXT_NODE){
+
+function translateTextNode(
+    node,
+    language
+){
+
+    if(
+        !node ||
+        node.nodeType !==
+            Node.TEXT_NODE
+    ){
+
         return;
+
     }
 
-    const original = getOriginalText(node);
+
+    const original =
+        getOriginalText(
+            node
+        );
+
 
     if(language === "hi"){
-        const key = original.trim();
-        const translated = ROOMUPS_TRANSLATIONS.hi[key];
+
+        const key =
+            original.trim();
+
+
+        const translated =
+            ROOMUPS_TRANSLATIONS.hi[
+                key
+            ];
+
 
         if(translated){
-            const leading = original.match(/^\s*/)?.[0] || "";
-            const trailing = original.match(/\s*$/)?.[0] || "";
-            node.nodeValue = leading + translated + trailing;
+
+            const leading =
+                original.match(
+                    /^\s*/
+                )?.[0] || "";
+
+
+            const trailing =
+                original.match(
+                    /\s*$/
+                )?.[0] || "";
+
+
+            node.nodeValue =
+                leading +
+                translated +
+                trailing;
+
         }else{
-            /*
-             * Keep text unchanged when there is no dictionary entry.
-             * This is useful for proper names, user-entered property names,
-             * area names, phone numbers, etc.
-             */
-            node.nodeValue = original;
+
+            node.nodeValue =
+                original;
+
         }
+
     }else{
-        node.nodeValue = original;
+
+        node.nodeValue =
+            original;
+
     }
+
 }
 
-function translateAttributes(language){
-    /*
-     * Translate common user-facing attributes too.
-     * This does not touch form values or backend data.
-     */
+
+function translateAttributes(
+    language
+){
+
     const attributeMap = {
-        "Example: Sharma Student PG": "उदाहरण: शर्मा स्टूडेंट PG",
-        "Tell students about your property or service...": "छात्रों को अपनी प्रॉपर्टी या सेवा के बारे में बताएं...",
-        "Example: Near Degree College": "उदाहरण: डिग्री कॉलेज के पास",
-        "Example: 5500": "उदाहरण: 5500",
-        "Example: 5000": "उदाहरण: 5000",
-        "Example: 2500": "उदाहरण: 2500",
-        "Full Name": "पूरा नाम",
-        "10-digit mobile number": "10 अंकों का मोबाइल नंबर",
-        "10-digit WhatsApp number": "10 अंकों का WhatsApp नंबर"
+
+        "Example: Sharma Student PG":
+            "उदाहरण: शर्मा स्टूडेंट PG",
+
+        "Tell students about your property or service...":
+            "छात्रों को अपनी प्रॉपर्टी या सेवा के बारे में बताएं...",
+
+        "Example: Near Degree College":
+            "उदाहरण: डिग्री कॉलेज के पास",
+
+        "Example: 5500":
+            "उदाहरण: 5500",
+
+        "Example: 5000":
+            "उदाहरण: 5000",
+
+        "Example: 2500":
+            "उदाहरण: 2500",
+
+        "Full Name":
+            "पूरा नाम",
+
+        "10-digit mobile number":
+            "10 अंकों का मोबाइल नंबर",
+
+        "10-digit WhatsApp number":
+            "10 अंकों का WhatsApp नंबर"
+
     };
 
-    document.querySelectorAll("input, textarea").forEach(function(element){
-        ["placeholder"].forEach(function(attribute){
-            const current = element.getAttribute(attribute);
 
-            if(!current){
-                return;
-            }
+    document
+        .querySelectorAll(
+            "input, textarea"
+        )
+        .forEach(
+            function(element){
 
-            if(!element.dataset.roomupsOriginalPlaceholder){
-                element.dataset.roomupsOriginalPlaceholder = current;
-            }
+                [
+                    "placeholder"
+                ]
+                .forEach(
+                    function(attribute){
 
-            const original = element.dataset.roomupsOriginalPlaceholder;
+                        const current =
+                            element.getAttribute(
+                                attribute
+                            );
 
-            if(language === "hi"){
-                element.setAttribute(
-                    attribute,
-                    attributeMap[original] || original
+
+                        if(!current){
+
+                            return;
+
+                        }
+
+
+                        if(
+                            !element.dataset
+                                .roomupsOriginalPlaceholder
+                        ){
+
+                            element.dataset
+                                .roomupsOriginalPlaceholder =
+                                    current;
+
+                        }
+
+
+                        const original =
+                            element.dataset
+                                .roomupsOriginalPlaceholder;
+
+
+                        if(
+                            language === "hi"
+                        ){
+
+                            element.setAttribute(
+                                attribute,
+                                attributeMap[
+                                    original
+                                ] || original
+                            );
+
+                        }else{
+
+                            element.setAttribute(
+                                attribute,
+                                original
+                            );
+
+                        }
+
+                    }
                 );
-            }else{
-                element.setAttribute(attribute, original);
+
             }
-        });
-    });
+        );
+
 }
 
-function applyLanguage(language){
-    roomUpsLanguage = language === "hi" ? "hi" : "en";
-    localStorage.setItem("roomupsLanguage", roomUpsLanguage);
 
-    document.documentElement.lang = roomUpsLanguage;
+function applyLanguage(
+    language
+){
 
-    const selector = document.getElementById("languageSelect");
+    roomUpsLanguage =
+        language === "hi"
+        ? "hi"
+        : "en";
+
+
+    localStorage.setItem(
+        "roomupsLanguage",
+        roomUpsLanguage
+    );
+
+
+    document.documentElement.lang =
+        roomUpsLanguage;
+
+
+    const selector =
+        document.getElementById(
+            "languageSelect"
+        );
+
+
     if(selector){
-        selector.value = roomUpsLanguage;
+
+        selector.value =
+            roomUpsLanguage;
+
     }
 
-    /*
-     * Translate every visible text node.
-     * OPTION elements are intentionally included, so the search and
-     * property-form dropdowns also change to Hindi.
-     */
-    const walker = document.createTreeWalker(
-        document.body,
-        NodeFilter.SHOW_TEXT,
-        {
-            acceptNode(node){
-                if(!node.nodeValue || !node.nodeValue.trim()){
-                    return NodeFilter.FILTER_REJECT;
+
+    const walker =
+        document.createTreeWalker(
+
+            document.body,
+
+            NodeFilter.SHOW_TEXT,
+
+            {
+
+                acceptNode(node){
+
+                    if(
+                        !node.nodeValue ||
+                        !node.nodeValue.trim()
+                    ){
+
+                        return NodeFilter
+                            .FILTER_REJECT;
+
+                    }
+
+
+                    const parent =
+                        node.parentElement;
+
+
+                    if(!parent){
+
+                        return NodeFilter
+                            .FILTER_REJECT;
+
+                    }
+
+
+                    if(
+                        [
+                            "SCRIPT",
+                            "STYLE"
+                        ].includes(
+                            parent.tagName
+                        )
+                    ){
+
+                        return NodeFilter
+                            .FILTER_REJECT;
+
+                    }
+
+
+                    return NodeFilter
+                        .FILTER_ACCEPT;
+
                 }
 
-                const parent = node.parentElement;
-
-                if(!parent){
-                    return NodeFilter.FILTER_REJECT;
-                }
-
-                if(["SCRIPT", "STYLE"].includes(parent.tagName)){
-                    return NodeFilter.FILTER_REJECT;
-                }
-
-                return NodeFilter.FILTER_ACCEPT;
             }
+
+        );
+
+
+    const nodes = [];
+
+    let node;
+
+
+    while(
+        (node = walker.nextNode())
+    ){
+
+        nodes.push(node);
+
+    }
+
+
+    nodes.forEach(
+        function(textNode){
+
+            translateTextNode(
+                textNode,
+                roomUpsLanguage
+            );
+
         }
     );
 
-    const nodes = [];
-    let node;
 
-    while((node = walker.nextNode())){
-        nodes.push(node);
-    }
+    translateAttributes(
+        roomUpsLanguage
+    );
 
-    nodes.forEach(function(textNode){
-        translateTextNode(textNode, roomUpsLanguage);
-    });
 
-    translateAttributes(roomUpsLanguage);
+    if(
+        roomUpsLanguage === "hi"
+    ){
 
-    if(roomUpsLanguage === "hi"){
         document.title =
             ROOMUPS_TRANSLATIONS.hi[
                 "RoomUps.in | Student Accommodation in Dharamshala"
             ] ||
             "RoomUps.in | धर्मशाला में छात्रों के लिए आवास";
+
     }else{
+
         document.title =
             "RoomUps.in | Student Accommodation in Dharamshala";
+
     }
+
 }
 
-function changeLanguage(language){
-    applyLanguage(language);
+
+function changeLanguage(
+    language
+){
+
+    applyLanguage(
+        language
+    );
+
 }
+
 
 /*
  * renderListings() creates new HTML dynamically.
  * Re-apply the selected language after every fresh render.
  */
-const roomUpsOriginalRenderListings = window.renderListings;
 
-if(typeof roomUpsOriginalRenderListings === "function"){
-    window.renderListings = function(listings){
-        roomUpsOriginalRenderListings(listings);
+const roomUpsOriginalRenderListings =
+    window.renderListings;
 
-        if(roomUpsLanguage === "hi"){
-            applyLanguage("hi");
-        }
-    };
+
+if(
+    typeof roomUpsOriginalRenderListings ===
+    "function"
+){
+
+    window.renderListings =
+        function(listings){
+
+            roomUpsOriginalRenderListings(
+                listings
+            );
+
+
+            if(
+                roomUpsLanguage === "hi"
+            ){
+
+                applyLanguage(
+                    "hi"
+                );
+
+            }
+
+        };
+
 }
+
 
 /*
  * Property details modal is also created dynamically.
  * applyLanguage() is already called from viewListing(), but this observer
  * also handles any future dynamically-created visible content safely.
  */
-window.addEventListener("DOMContentLoaded", function(){
-    setTimeout(function(){
-        applyLanguage(roomUpsLanguage);
-    }, 0);
-});
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        setTimeout(
+            function(){
+
+                applyLanguage(
+                    roomUpsLanguage
+                );
+
+            },
+            0
+        );
+
+    }
+);
 
 
 </script>
@@ -6012,111 +6753,144 @@ window.addEventListener("DOMContentLoaded", function(){
 ========================================================= -->
 
 <div
-class="modal-overlay"
-id="adminModal"
-onclick="closeAdminOutside(event)">
+    class="modal-overlay"
+    id="adminModal"
+    onclick="closeAdminOutside(event)">
 
-<div class="admin-panel">
 
-<div class="admin-header">
+    <div class="admin-panel">
 
-<div>
 
-<h2>RoomUps Admin Panel</h2>
+        <div class="admin-header">
 
-<p>Review and approve property submissions.</p>
+
+            <div>
+
+                <h2>
+                    RoomUps Admin Panel
+                </h2>
+
+
+                <p>
+                    Review and approve property submissions.
+                </p>
+
+            </div>
+
+
+            <button
+                class="close-modal"
+                onclick="closeAdminPanel()">
+
+                ×
+
+            </button>
+
+
+        </div>
+
+
+        <div class="admin-content">
+
+
+            <div
+                class="admin-login"
+                id="adminLogin">
+
+
+                <h2>
+                    Admin Login
+                </h2>
+
+
+                <p>
+
+                    Only the RoomUps administrator with the private access key should use this panel.
+
+                </p>
+
+
+                <input
+                    id="adminPassword"
+                    type="password"
+                    placeholder="Admin access key">
+
+
+                <button
+                    onclick="adminLogin()">
+
+                    Login
+
+                </button>
+
+
+                <p
+                    id="loginError"
+                    style="
+                        color:#A63B38;
+                        margin-top:12px;
+                        display:none;
+                    ">
+
+                </p>
+
+
+            </div>
+
+
+            <div
+                id="adminDashboard"
+                style="display:none;">
+
+
+                <div class="admin-toolbar">
+
+
+                    <div
+                        class="admin-count"
+                        id="pendingCount">
+
+                        Pending Listings: 0
+
+                    </div>
+
+
+                    <button
+                        class="logout-btn"
+                        onclick="adminLogout()">
+
+                        Logout
+
+                    </button>
+
+
+                </div>
+
+
+                <div
+                    class="admin-list"
+                    id="adminList">
+
+
+                    <div class="listing-message">
+
+                        Loading requests...
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
 
 </div>
-
-<button
-class="close-modal"
-onclick="closeAdminPanel()">
-
-×
-
-</button>
-
-</div>
-
-
-<div class="admin-content">
-
-
-<div
-class="admin-login"
-id="adminLogin">
-
-<h2>Admin Login</h2>
-
-<p>
-Only the RoomUps administrator with the private access key should use this panel.
-</p>
-
-
-<input
-id="adminPassword"
-type="password"
-placeholder="Admin access key">
-
-
-<button onclick="adminLogin()">
-Login
-</button>
-
-
-<p
-id="loginError"
-style="color:#A63B38;margin-top:12px;display:none;">
-</p>
-
-</div>
-
-
-<div
-id="adminDashboard"
-style="display:none;">
-
-<div class="admin-toolbar">
-
-<div
-class="admin-count"
-id="pendingCount">
-
-Pending Listings: 0
-
-</div>
-
-
-<button
-class="logout-btn"
-onclick="adminLogout()">
-
-Logout
-
-</button>
-
-</div>
-
-
-<div
-class="admin-list"
-id="adminList">
-
-<div class="listing-message">
-Loading requests...
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
 
 
 </body>
