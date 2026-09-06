@@ -1300,6 +1300,54 @@ footer{
     color:var(--navy);
 }
 
+.approved-section{
+    margin-top:30px;
+    padding-top:25px;
+    border-top:1px solid var(--border);
+}
+
+.approved-section-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:15px;
+}
+
+.approved-section-title h3{
+    color:var(--navy);
+    font-size:18px;
+}
+
+.approved-count{
+    padding:6px 10px;
+    border-radius:20px;
+    background:#E7F4EA;
+    color:#24703A;
+    font-size:10px;
+    font-weight:800;
+}
+
+.approved-list{
+    display:grid;
+    gap:15px;
+}
+
+.approved-badge{
+    height:max-content;
+    padding:6px 9px;
+    border-radius:20px;
+    background:#E7F4EA;
+    color:#24703A;
+    font-size:10px;
+    font-weight:800;
+}
+
+.remove-btn{
+    background:#FBE5E4;
+    color:#A63B38;
+}
+
 .admin-image-row{
     display:flex;
     gap:8px;
@@ -4963,6 +5011,7 @@ document.addEventListener(
                 adminLoginBox.style.display = "none";
                 adminDashboard.style.display = "block";
                 loadPendingListings();
+                loadApprovedAdminListings();
             }
         }
 
@@ -5463,6 +5512,7 @@ window.adminLogin = async function() {
     document.getElementById("adminDashboard").style.display = "block";
 
     renderPendingListings(result.listings || []);
+    loadApprovedAdminListings();
   } catch (error) {
     console.error(error);
     errorBox.textContent = "Login failed. Please check the admin access key.";
@@ -5511,6 +5561,350 @@ function renderPendingListings(listings) {
     createAdminCard(data);
   });
 }
+
+async function loadApprovedAdminListings() {
+
+  if (!adminToken) return;
+
+  const container =
+    document.getElementById("approvedList");
+
+  if (!container) return;
+
+  try {
+
+    const result =
+      await postToRoomUps({
+        action: "getApprovedAdminListings",
+        adminToken: adminToken
+      });
+
+    renderApprovedAdminListings(
+      result.listings || []
+    );
+
+  } catch (error) {
+
+    console.error(error);
+
+    container.innerHTML =
+      '<div class="listing-message">Unable to load live listings.</div>';
+
+  }
+
+}
+
+
+function renderApprovedAdminListings(listings) {
+
+  const container =
+    document.getElementById("approvedList");
+
+  const count =
+    document.getElementById("approvedCount");
+
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  if (count) {
+
+    count.textContent =
+      "Live Listings: " +
+      listings.length;
+
+  }
+
+  if (!listings.length) {
+
+    container.innerHTML =
+      '<div class="listing-message">No live approved listings.</div>';
+
+    return;
+
+  }
+
+  listings.forEach(
+    function(data) {
+      createApprovedAdminCard(data);
+    }
+  );
+
+}
+
+
+function createApprovedAdminCard(data) {
+
+  const container =
+    document.getElementById("approvedList");
+
+  if (!container) return;
+
+  const card =
+    document.createElement("div");
+
+  card.className =
+    "admin-card";
+
+
+  const hasCoordinates =
+    data.latitude !== undefined &&
+    data.latitude !== null &&
+    String(data.latitude).trim() !== "" &&
+    data.longitude !== undefined &&
+    data.longitude !== null &&
+    String(data.longitude).trim() !== "";
+
+
+  const mapsButton =
+    hasCoordinates
+      ? '<button class="maps-admin-btn" type="button">🗺️ Open Map</button>'
+      : "";
+
+
+  const facilities =
+    Array.isArray(data.facilities) &&
+    data.facilities.length
+      ? data.facilities.join(", ")
+      : "None";
+
+
+  const photoPreview =
+    Array.isArray(data.photoLinks) &&
+    data.photoLinks.length
+      ? '<div class="admin-image-row">' +
+        data.photoLinks.map(
+          function(link) {
+
+            return '<img src="' +
+              escapeHtml(link) +
+              '" alt="Property photo" loading="lazy">';
+
+          }
+        ).join("") +
+        '</div>'
+      : "";
+
+
+  card.innerHTML = `
+
+    <div class="admin-card-top">
+
+      <div>
+
+        <h3>
+          ${escapeHtml(
+            data.propertyName ||
+            "Unnamed Property"
+          )}
+        </h3>
+
+        <small>
+          ${escapeHtml(
+            data.propertyType || ""
+          )}
+        </small>
+
+      </div>
+
+      <div class="approved-badge">
+        LIVE
+      </div>
+
+    </div>
+
+
+    <div class="admin-details">
+
+      <div class="admin-detail">
+        <small>LISTING ID</small>
+        <strong>
+          ${escapeHtml(
+            data.listingId || ""
+          )}
+        </strong>
+      </div>
+
+      <div class="admin-detail">
+        <small>OWNER</small>
+        <strong>
+          ${escapeHtml(
+            data.ownerName || ""
+          )}
+        </strong>
+      </div>
+
+      <div class="admin-detail">
+        <small>PHONE</small>
+        <strong>
+          ${escapeHtml(
+            data.ownerPhone || ""
+          )}
+        </strong>
+      </div>
+
+      <div class="admin-detail">
+        <small>AREA</small>
+        <strong>
+          ${escapeHtml(
+            data.area || ""
+          )}
+        </strong>
+      </div>
+
+      <div class="admin-detail">
+        <small>RENT</small>
+        <strong>
+          ₹${Number(
+            data.rent || 0
+          ).toLocaleString("en-IN")}
+        </strong>
+      </div>
+
+      <div class="admin-detail">
+        <small>APPROVED</small>
+        <strong>
+          ${escapeHtml(
+            data.approvedAt || "-"
+          )}
+        </strong>
+      </div>
+
+    </div>
+
+
+    <p style="color:#526174;font-size:12px;line-height:1.6;margin-bottom:10px;">
+      ${escapeHtml(
+        data.description || ""
+      )}
+    </p>
+
+
+    <p style="color:#526174;font-size:12px;line-height:1.6;margin-bottom:10px;">
+      <strong>Address:</strong>
+      ${escapeHtml(
+        data.address || "-"
+      )}
+      <br>
+      <strong>Facilities:</strong>
+      ${escapeHtml(facilities)}
+    </p>
+
+
+    ${photoPreview}
+
+
+    <div class="admin-actions">
+
+      ${mapsButton}
+
+      <button
+        class="remove-btn"
+        type="button">
+        🗑️ Remove from Website
+      </button>
+
+    </div>
+
+  `;
+
+
+  if (mapsButton) {
+
+    card
+      .querySelector(".maps-admin-btn")
+      .addEventListener(
+        "click",
+        function() {
+
+          openAdminMap(
+            data.latitude,
+            data.longitude
+          );
+
+        }
+      );
+
+  }
+
+
+  card
+    .querySelector(".remove-btn")
+    .addEventListener(
+      "click",
+      function() {
+
+        removeApprovedListingFromWebsite(
+          data.listingId
+        );
+
+      }
+    );
+
+
+  container.appendChild(card);
+
+}
+
+
+window.removeApprovedListingFromWebsite =
+  async function(id) {
+
+    const confirmed =
+      confirm(
+        "Are you sure you want to remove this approved listing from the website?\n\n" +
+        "The listing will be removed from the live website but its record will remain in the admin data."
+      );
+
+    if (!confirmed) return;
+
+
+    try {
+
+      const result =
+        await postToRoomUps({
+
+          action:
+            "removeApprovedListing",
+
+          listingId:
+            id,
+
+          adminToken:
+            adminToken
+
+        });
+
+
+      alert(
+        result.message ||
+        "Listing removed from the website."
+      );
+
+
+      await loadApprovedAdminListings();
+
+      await loadPendingListings();
+
+      await loadApprovedListings();
+
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert(
+        "Unable to remove listing. " +
+        (
+          error.message ||
+          "Please try again."
+        )
+      );
+
+    }
+
+  };
+
 
 function createAdminCard(data) {
   const container = document.getElementById("adminList");
@@ -5600,6 +5994,7 @@ window.approveListing = async function(id) {
 
     alert(result.message);
     await loadPendingListings();
+    await loadApprovedAdminListings();
     loadApprovedListings();
   } catch (error) {
     console.error(error);
@@ -6177,6 +6572,37 @@ Loading requests...
 </div>
 
 </div>
+
+
+<div class="approved-section">
+
+<div class="approved-section-title">
+
+<h3>
+Live / Approved Listings
+</h3>
+
+<div
+class="approved-count"
+id="approvedCount">
+Live Listings: 0
+</div>
+
+</div>
+
+
+<div
+class="approved-list"
+id="approvedList">
+
+<div class="listing-message">
+Loading live listings...
+</div>
+
+</div>
+
+</div>
+
 
 </div>
 
